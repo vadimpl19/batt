@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<Workspace>
+  <ConfigDictionary>
+    
+  <CurrentConfigs><Project>zi_emb/Debug</Project></CurrentConfigs></ConfigDictionary>
+  <Desktop>
+    <Static>
+      <Workspace>
+        <ColumnWidths>
+          
+          
+          
+          
+        <Column0>186</Column0><Column1>27</Column1><Column2>27</Column2><Column3>27</Column3></ColumnWidths>
+      </Workspace>
+      <Build>
+        
+        
+        
+        
+      <ColumnWidth0>20</ColumnWidth0><ColumnWidth1>916</ColumnWidth1><ColumnWidth2>244</ColumnWidth2><ColumnWidth3>61</ColumnWidth3></Build>
+      <Debug-Log/>
+      <TerminalIO/>
+    <Find-in-Files><ColumnWidth0>440</ColumnWidth0><ColumnWidth1>62</ColumnWidth1><ColumnWidth2>754</ColumnWidth2></Find-in-Files></Static>
+    <Windows>
+      
+      
+    <Wnd2>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-22379-13750</Identity>
+            <TabName>Workspace</TabName>
+            <Factory>Workspace</Factory>
+            <Session>
+              
+            <NodeDict><ExpandedNode>zi_emb</ExpandedNode><ExpandedNode>zi_emb/hist.c</ExpandedNode></NodeDict></Session>
+          </Tab>
+        </Tabs>
+        
+      <SelectedTab>0</SelectedTab></Wnd2><Wnd3>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-26624-14079</Identity>
+            <TabName>Build</TabName>
+            <Factory>Build</Factory>
+            <Session/>
+          </Tab>
+          <Tab>
+            <Identity>TabID-24638-18210</Identity>
+            <TabName>Debug Log</TabName>
+            <Factory>Debug-Log</Factory>
+            <Session/>
+          </Tab>
+        <Tab><Identity>TabID-18136-7562</Identity><TabName>Find in Files</TabName><Factory>Find-in-Files</Factory><Session/></Tab></Tabs>
+        
+      <SelectedTab>0</SelectedTab></Wnd3></Windows>
+    <Editor>
+      
+      
+      
+      
+    <Pane><Tab><Factory>TextEditor</Factory><Filename>D:\current_prj\&#x437;&#x435;&#x440;&#x438;&#x43D;&#x433;\soft\zi_emb\base.c</Filename><XPos>0</XPos><YPos>248</YPos><SelStart>1342</SelStart><SelEnd>1342</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>D:\current_prj\&#x437;&#x435;&#x440;&#x438;&#x43D;&#x433;\soft\zi_emb\byte_stuff.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>902</SelStart><SelEnd>902</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>D:\current_prj\&#x437;&#x435;&#x440;&#x438;&#x43D;&#x433;\soft\zi_emb\coms.c</Filename><XPos>0</XPos><YPos>464</YPos><SelStart>11955</SelStart><SelEnd>11988</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>D:\current_prj\&#x437;&#x435;&#x440;&#x438;&#x43D;&#x433;\soft\zi_emb\main.c</Filename><XPos>0</XPos><YPos>78</YPos><SelStart>1918</SelStart><SelEnd>1918</SelEnd></Tab><ActiveTab>3</ActiveTab><Tab><Factory>TextEditor</Factory><Filename>D:\current_prj\&#x437;&#x435;&#x440;&#x438;&#x43D;&#x433;\soft\zi_emb\timeservice.c</Filename><XPos>0</XPos><YPos>54</YPos><SelStart>1444</SelStart><SelEnd>1444</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>D:\current_prj\&#x437;&#x435;&#x440;&#x438;&#x43D;&#x433;\soft\zi_emb\hwr.h</Filename><XPos>0</XPos><YPos>10</YPos><SelStart>720</SelStart><SelEnd>720</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>D:\current_prj\&#x437;&#x435;&#x440;&#x438;&#x43D;&#x433;\soft\zi_emb\byte_stuff.c</Filename><XPos>0</XPos><YPos>6</YPos><SelStart>698</SelStart><SelEnd>698</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>D:\current_prj\&#x437;&#x435;&#x440;&#x438;&#x43D;&#x433;\soft\zi_emb\hist.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>208</SelStart><SelEnd>208</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>D:\current_prj\&#x437;&#x435;&#x440;&#x438;&#x43D;&#x433;\soft\zi_emb\hist.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>292</SelStart><SelEnd>292</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>C:\Program Files\Common Files\IAR Systems\License\lms.log</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd></Tab></Pane><ActivePane>0</ActivePane><Sizes><Pane><X>1000000</X><Y>1000000</Y></Pane></Sizes><SplitMode>1</SplitMode></Editor>
+    <Positions>
+      
+      
+      
+      
+      
+    <Top><Row0><Sizes><Toolbar-0087e9e8><key>iaridepm.enu1</key></Toolbar-0087e9e8></Sizes></Row0><Row1><Sizes/></Row1></Top><Left><Row0><Sizes><Wnd2><Rect><Top>-2</Top><Left>-2</Left><Bottom>716</Bottom><Right>260</Right><x>-2</x><y>-2</y><xscreen>100</xscreen><yscreen>198</yscreen><sizeHorzCX>78125</sizeHorzCX><sizeHorzCY>207113</sizeHorzCY><sizeVertCX>204688</sizeVertCX><sizeVertCY>751046</sizeVertCY></Rect></Wnd2></Sizes></Row0></Left><Right><Row0><Sizes/></Row0></Right><Bottom><Row0><Sizes><Wnd3><Rect><Top>-2</Top><Left>-2</Left><Bottom>196</Bottom><Right>1282</Right><x>-2</x><y>-2</y><xscreen>1284</xscreen><yscreen>198</yscreen><sizeHorzCX>1003125</sizeHorzCX><sizeHorzCY>207113</sizeHorzCY><sizeVertCX>78125</sizeVertCX><sizeVertCY>207113</sizeVertCY></Rect></Wnd3></Sizes></Row0></Bottom><Float><Sizes/></Float></Positions>
+  </Desktop>
+</Workspace>
+
+

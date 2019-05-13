@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<Project>
+  <Desktop>
+    <Static>
+      <Debug-Log/>
+      <Build>
+        
+        
+        
+        
+      <ColumnWidth0>20</ColumnWidth0><ColumnWidth1>916</ColumnWidth1><ColumnWidth2>244</ColumnWidth2><ColumnWidth3>61</ColumnWidth3></Build>
+      <Workspace>
+        <ColumnWidths>
+          
+          
+          
+          
+        <Column0>183</Column0><Column1>27</Column1><Column2>27</Column2><Column3>27</Column3></ColumnWidths>
+      </Workspace>
+      <Disassembly>
+        <PreferedWindows>
+          
+          
+          
+          
+        <Position>2</Position><ScreenPosX>0</ScreenPosX><ScreenPosY>0</ScreenPosY><Windows/></PreferedWindows>
+        
+        
+        
+      <MixedMode>1</MixedMode><CodeCovEnabled>0</CodeCovEnabled><CodeCovShow>0</CodeCovShow></Disassembly>
+    <Watch><Format><struct_types/><watch_formats/></Format><Column0>100</Column0><Column1>100</Column1><Column2>100</Column2><Column3>100</Column3></Watch><Register/><Find-in-Files><ColumnWidth0>441</ColumnWidth0><ColumnWidth1>63</ColumnWidth1><ColumnWidth2>757</ColumnWidth2></Find-in-Files></Static>
+    <Windows>
+      
+      
+    <Wnd4>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-10000-18485</Identity>
+            <TabName>Debug Log</TabName>
+            <Factory>Debug-Log</Factory>
+            <Session/>
+          </Tab>
+          <Tab>
+            <Identity>TabID-9477-18494</Identity>
+            <TabName>Build</TabName>
+            <Factory>Build</Factory>
+            <Session/>
+          </Tab>
+        <Tab><Identity>TabID-3841-30123</Identity><TabName>Find in Files</TabName><Factory>Find-in-Files</Factory><Session/></Tab></Tabs>
+        
+      <SelectedTab>0</SelectedTab></Wnd4><Wnd5>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-20748-18488</Identity>
+            <TabName>Workspace</TabName>
+            <Factory>Workspace</Factory>
+            <Session>
+              
+            <NodeDict><ExpandedNode>zi_emb</ExpandedNode></NodeDict></Session>
+          </Tab>
+        </Tabs>
+        
+      <SelectedTab>0</SelectedTab></Wnd5><Wnd6><Tabs><Tab><Identity>TabID-20234-15692</Identity><TabName>Watch</TabName><Factory>Watch</Factory><Session><Expressions><Expression><Expression>rec0ctx.recst</Expression></Expression><Expression><Expression>adr</Expression></Expression><Expression><Expression>answerb[1]</Expression></Expression><Expression><Expression>answerb[0]</Expression></Expression><Expression><Expression>answerb[7]</Expression></Expression><Expression><Expression>answerb</Expression></Expression></Expressions><TabId>0</TabId><Column0>100</Column0><Column1>100</Column1><Column2>100</Column2><Column3>100</Column3></Session></Tab></Tabs><SelectedTab>0</SelectedTab></Wnd6><Wnd7><Tabs><Tab><Identity>TabID-17538-28843</Identity><TabName>Register</TabName><Factory>Register</Factory><Session><REG1>0</REG1><REG2>0</REG2><Group>25</Group><States>1</States><State0>UCSR0A</State0></Session></Tab></Tabs><SelectedTab>0</SelectedTab></Wnd7></Windows>
+    <Editor>
+      
+      
+      
+      
+    <Pane><Tab><Factory>TextEditor</Factory><Filename>D:\current_prj\&#x437;&#x435;&#x440;&#x438;&#x43D;&#x433;\soft\zi_emb\base.c</Filename><XPos>0</XPos><YPos>248</YPos><SelStart>1342</SelStart><SelEnd>1342</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>D:\current_prj\&#x437;&#x435;&#x440;&#x438;&#x43D;&#x433;\soft\zi_emb\byte_stuff.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>902</SelStart><SelEnd>902</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>D:\current_prj\&#x437;&#x435;&#x440;&#x438;&#x43D;&#x433;\soft\zi_emb\coms.c</Filename><XPos>0</XPos><YPos>464</YPos><SelStart>11955</SelStart><SelEnd>11988</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>D:\current_prj\&#x437;&#x435;&#x440;&#x438;&#x43D;&#x433;\soft\zi_emb\main.c</Filename><XPos>0</XPos><YPos>78</YPos><SelStart>1918</SelStart><SelEnd>1918</SelEnd></Tab><ActiveTab>3</ActiveTab><Tab><Factory>TextEditor</Factory><Filename>D:\current_prj\&#x437;&#x435;&#x440;&#x438;&#x43D;&#x433;\soft\zi_emb\timeservice.c</Filename><XPos>0</XPos><YPos>54</YPos><SelStart>1444</SelStart><SelEnd>1444</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>D:\current_prj\&#x437;&#x435;&#x440;&#x438;&#x43D;&#x433;\soft\zi_emb\hwr.h</Filename><XPos>0</XPos><YPos>10</YPos><SelStart>720</SelStart><SelEnd>720</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>D:\current_prj\&#x437;&#x435;&#x440;&#x438;&#x43D;&#x433;\soft\zi_emb\byte_stuff.c</Filename><XPos>0</XPos><YPos>6</YPos><SelStart>698</SelStart><SelEnd>698</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>D:\current_prj\&#x437;&#x435;&#x440;&#x438;&#x43D;&#x433;\soft\zi_emb\hist.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>208</SelStart><SelEnd>208</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>D:\current_prj\&#x437;&#x435;&#x440;&#x438;&#x43D;&#x433;\soft\zi_emb\hist.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>292</SelStart><SelEnd>292</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>C:\Program Files\Common Files\IAR Systems\License\lms.log</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd></Tab></Pane><ActivePane>0</ActivePane><Sizes><Pane><X>1000000</X><Y>1000000</Y></Pane></Sizes><SplitMode>1</SplitMode></Editor>
+    <Positions>
+      
+      
+      
+      
+      
+    <Top><Row0><Sizes><Toolbar-0087e9e8><key>iaridepm.enu1</key></Toolbar-0087e9e8></Sizes></Row0><Row1><Sizes><Toolbar-014f8f40><key>debuggergui.enu1</key></Toolbar-014f8f40></Sizes></Row1></Top><Left><Row0><Sizes><Wnd5><Rect><Top>-2</Top><Left>-2</Left><Bottom>592</Bottom><Right>257</Right><x>-2</x><y>-2</y><xscreen>0</xscreen><yscreen>0</yscreen><sizeHorzCX>0</sizeHorzCX><sizeHorzCY>0</sizeHorzCY><sizeVertCX>202344</sizeVertCX><sizeVertCY>621339</sizeVertCY></Rect></Wnd5></Sizes></Row0></Left><Right><Row0><Sizes><Wnd6><Rect><Top>-2</Top><Left>-2</Left><Bottom>592</Bottom><Right>198</Right><x>-2</x><y>-2</y><xscreen>200</xscreen><yscreen>200</yscreen><sizeHorzCX>156250</sizeHorzCX><sizeHorzCY>209205</sizeHorzCY><sizeVertCX>156250</sizeVertCX><sizeVertCY>621339</sizeVertCY></Rect></Wnd6></Sizes></Row0><Row1><Sizes><Wnd7><Rect><Top>-2</Top><Left>196</Left><Bottom>592</Bottom><Right>396</Right><x>196</x><y>-2</y><xscreen>200</xscreen><yscreen>200</yscreen><sizeHorzCX>156250</sizeHorzCX><sizeHorzCY>209205</sizeHorzCY><sizeVertCX>156250</sizeVertCX><sizeVertCY>621339</sizeVertCY></Rect></Wnd7></Sizes></Row1></Right><Bottom><Row0><Sizes><Wnd4><Rect><Top>-2</Top><Left>-2</Left><Bottom>296</Bottom><Right>1282</Right><x>-2</x><y>-2</y><xscreen>1284</xscreen><yscreen>298</yscreen><sizeHorzCX>1003125</sizeHorzCX><sizeHorzCY>311715</sizeHorzCY><sizeVertCX>0</sizeVertCX><sizeVertCY>0</sizeVertCY></Rect></Wnd4></Sizes></Row0></Bottom><Float><Sizes/></Float></Positions>
+  </Desktop>
+</Project>
+
+

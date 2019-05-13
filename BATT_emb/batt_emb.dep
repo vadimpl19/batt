@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<project>
+  <fileVersion>2</fileVersion>
+  <fileChecksum>1996238101</fileChecksum>
+  <configuration>
+    <name>Debug</name>
+    <outputs>
+      <file>$PROJ_DIR$\Debug\Obj\main.pbi</file>
+      <file>$TOOLKIT_DIR$\inc\ina90.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\byte_stuff.pbi</file>
+      <file>$PROJ_DIR$\Debug\List\crc.lst</file>
+      <file>$PROJ_DIR$\Debug\List\timeservice.lst</file>
+      <file>$PROJ_DIR$\Debug\Obj\timeservice.r90</file>
+      <file>$PROJ_DIR$\Debug\List\adc.lst</file>
+      <file>$PROJ_DIR$\Debug\Obj\adc.pbi</file>
+      <file>$PROJ_DIR$\Debug\List\batt_emb.map</file>
+      <file>$PROJ_DIR$\Debug\Obj\hist.r90</file>
+      <file>$PROJ_DIR$\Debug\List\main.lst</file>
+      <file>$PROJ_DIR$\Debug\Obj\batt_emb.pbd</file>
+      <file>$PROJ_DIR$\Debug\Exe\batt_emb.dbg</file>
+      <file>$PROJ_DIR$\Debug\Obj\base.pbi</file>
+      <file>$PROJ_DIR$\Debug\Exe\zi_emb.d90</file>
+      <file>$PROJ_DIR$\Debug\Obj\timeservice.pbi</file>
+      <file>$PROJ_DIR$\Debug\Exe\zc_emb.dbg</file>
+      <file>$PROJ_DIR$\Debug\List\hist.lst</file>
+      <file>$PROJ_DIR$\Debug\Obj\main.r90</file>
+      <file>$TOOLKIT_DIR$\src\template\cfgm128.xcl</file>
+      <file>$PROJ_DIR$\Debug\Exe\zi_emb.dbg</file>
+      <file>$PROJ_DIR$\Debug\List\coms.lst</file>
+      <file>$PROJ_DIR$\hist.h</file>
+      <file>$TOOLKIT_DIR$\src\template\cfg3s.xcl</file>
+      <file>$PROJ_DIR$\Debug\Obj\coms.r90</file>
+      <file>$PROJ_DIR$\Debug\Obj\base.r90</file>
+      <file>$PROJ_DIR$\func_handle.c</file>
+      <file>$PROJ_DIR$\Debug\Obj\crc.r90</file>
+      <file>$TOOLKIT_DIR$\inc\iomacro.h</file>
+      <file>$PROJ_DIR$\base.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\func_handle.pbi</file>
+      <file>$PROJ_DIR$\base.c</file>
+      <file>$PROJ_DIR$\Debug\List\byte_stuff.lst</file>
+      <file>$PROJ_DIR$\byte_stuff.c</file>
+      <file>$TOOLKIT_DIR$\inc\inavr.h</file>
+      <file>$PROJ_DIR$\timeservice.r90</file>
+      <file>$TOOLKIT_DIR$\inc\iom128.h</file>
+      <file>$TOOLKIT_DIR$\lib\clib\cl3s-ec_mul.r90</file>
+      <file>$TOOLKIT_DIR$\inc\intrinsics.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\byte_stuff.r90</file>
+      <file>$PROJ_DIR$\Debug\Obj\coms.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\zi_emb.pbd</file>
+      <file>$PROJ_DIR$\Debug\List\func_handle.lst</file>
+      <file>$PROJ_DIR$\Debug\Obj\func_handle.r90</file>
+      <file>$PROJ_DIR$\coms.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\hist.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\adc.r90</file>
+      <file>$PROJ_DIR$\Debug\Obj\zc_emb.pbd</file>
+      <file>$PROJ_DIR$\Debug\Exe\batt_activ.hex</file>
+      <file>$PROJ_DIR$\adc.h</file>
+      <file>$TOOLKIT_DIR$\inc\comp_a90.h</file>
+      <file>$PROJ_DIR$\func_handle.h</file>
+      <file>$PROJ_DIR$\byte_stuff.r90</file>
+      <file>$PROJ_DIR$\adc.c</file>
+      <file>$PROJ_DIR$\byte_stuff.h</file>
+      <file>$PROJ_DIR$\coms.c</file>
+      <file>$PROJ_DIR$\Debug\Obj\crc.pbi</file>
+      <file>$PROJ_DIR$\crc.c</file>
+      <file>$PROJ_DIR$\hist.c</file>
+      <file>$PROJ_DIR$\hwr.h</file>
+      <file>$PROJ_DIR$\main.c</file>
+      <file>$PROJ_DIR$\timeservice.c</file>
+      <file>$PROJ_DIR$\timeservice.h</file>
+      <file>$PROJ_DIR$\types.h</file>
+      <file>$PROJ_DIR$\zerodef.h</file>
+    </outputs>
+    <file>
+      <name>$PROJ_DIR$\Debug\Obj\batt_emb.pbd</name>
+      <inputs>
+        <tool>
+          <name>BILINK</name>
+          <file> 7 40 56 45 0 15</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Debug\Exe\batt_emb.dbg</name>
+      <outputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 8 48</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 19 23 46 24 27 9 18 5 52 37</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Debug\Exe\zi_emb.d90</name>
+      <inputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 19 23 39 24 27 9 18 5 37</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Debug\Exe\zc_emb.dbg</name>
+      <inputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 19 23 46 24 27 43 9 18 52 35 37</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Debug\Exe\zi_emb.dbg</name>
+      <inputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 19 23 39 24 27 9 18 5 37</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>[ROOT_NODE]</name>
+      <outputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 12 8 48</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\func_handle.c</name>
+      <outputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 43 42</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 30</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 63 59 36 28 1 34 38 50 62 44 51 49</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 63 59 36 28 1 34 38 50 62 44 51 49</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\base.c</name>
+      <outputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 25</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 13</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 63 36 28 1 34 38 50 29</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 63 36 28 1 34 38 50 29</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\byte_stuff.c</name>
+      <outputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 39 32</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 2</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 54 59 36 28 1 34 38 50 63 22</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 54 59 36 28 1 34 38 50 63 22</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Debug\Obj\zi_emb.pbd</name>
+      <inputs>
+        <tool>
+          <name>BILINK</name>
+          <file> 2 40 56 45 0 15</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Debug\Obj\zc_emb.pbd</name>
+      <inputs>
+        <tool>
+          <name>BILINK</name>
+          <file> 7 2 40 56 30 45 0 15</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\adc.c</name>
+      <outputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 46 6</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 7</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 1 34 38 50 36 28 63 49 59 62 44</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 34 38 50 36 28 63 49 59 62 44</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\coms.c</name>
+      <outputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 24 21</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 40</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 36 28 1 34 38 50 63 59 54 44 22 49 62 51</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 36 28 1 34 38 50 63 59 54 44 22 49 62 51</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\crc.c</name>
+      <outputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 27 3</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 56</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\hist.c</name>
+      <outputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 9 17</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 45</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 63 22</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 63 22</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\main.c</name>
+      <outputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 18 10</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 0</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 36 28 1 34 38 50 63 62 22 44 49 51 59</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 36 28 1 34 38 50 63 62 22 44 49 51 59</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\timeservice.c</name>
+      <outputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 5 4</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 15</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCAVR</name>
+          <file> 1 34 38 50 36 28 63 29 62</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 34 38 50 36 28 63 29 62</file>
+        </tool>
+      </inputs>
+    </file>
+  </configuration>
+  <configuration>
+    <name>Release</name>
+    <outputs/>
+    <forcedrebuild>
+      <name>[MULTI_TOOL]</name>
+      <tool>XLINK</tool>
+    </forcedrebuild>
+  </configuration>
+</project>
+
+

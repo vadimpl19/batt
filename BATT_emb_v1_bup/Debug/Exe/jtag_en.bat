@@ -1,0 +1,1 @@
+avreal32.exe -w -ab -p1 +mega128 -fjtagen=0; 

@@ -1,0 +1,84 @@
+###############################################################################
+#                                                                             #
+#                                                       09/Jan/2011  15:11:29 #
+# IAR Atmel AVR C/C++ Compiler V4.30A/W32, Evaluation Version                 #
+# Copyright 1996-2007 IAR Systems. All rights reserved.                       #
+#                                                                             #
+#    Source file  =  D:\proj\Batt4\BATT_emb\hist.c                            #
+#    Command line =  D:\proj\Batt4\BATT_emb\hist.c --cpu=m128 -ms -o          #
+#                    D:\proj\Batt4\BATT_emb\Debug\Obj\ -lCN                   #
+#                    D:\proj\Batt4\BATT_emb\Debug\List\ -y                    #
+#                    --initializers_in_flash -z2 --no_cse --no_inline         #
+#                    --no_code_motion --no_cross_call --no_clustering         #
+#                    --no_tbaa --debug -DENABLE_BIT_DEFINITIONS -e -I         #
+#                    "C:\Program Files\IAR Systems\Embedded Workbench 4.0     #
+#                    Evaluation\avr\INC\" -I "C:\Program Files\IAR            #
+#                    Systems\Embedded Workbench 4.0                           #
+#                    Evaluation\avr\INC\CLIB\" --eeprom_size 4096             #
+#    List file    =  D:\proj\Batt4\BATT_emb\Debug\List\hist.lst               #
+#    Object file  =  D:\proj\Batt4\BATT_emb\Debug\Obj\hist.r90                #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+D:\proj\Batt4\BATT_emb\hist.c
+      1          #include "types.h"
+      2          #define its_hist_source
+      3          #include "hist.h"
+
+   \                                 In  segment NEAR_Z, align 1, keep-with-next
+   \   00000000                      REQUIRE `?<Segment init: NEAR_Z>`
+      4          thist hist;
+   \                     hist:
+   \   00000000                      DS 8
+
+   \                                 In  segment NEAR_Z, align 1, keep-with-next
+   \   00000000                      REQUIRE `?<Segment init: NEAR_Z>`
+      5          UINT cnt;
+   \                     cnt:
+   \   00000000                      DS 2
+
+   \                                 In  segment CODE, align 2, keep-with-next
+      6          void inihist(UINT start_adr,UINT maxadr){
+   \                     inihist:
+      7          
+      8          }
+   \   00000000   9508               RET
+
+   \                                 In  segment CODE, align 2, keep-with-next
+      9          void addh(int h){
+   \                     addh:
+     10          //static int cnt=1;
+     11          //if (cnt<(sizeof(hist.harr)/2)){hist.harr[cnt++]=h;hist.harr[0]=cnt;};
+     12          //if (cnt<200){hist.harr[cnt++]=h;hist.harr[0]=cnt;};
+     13          }
+   \   00000000   9508               RET
+
+   Maximum stack usage in bytes:
+
+     Function CSTACK RSTACK
+     -------- ------ ------
+     addh         0      2
+     inihist      0      2
+
+
+   Segment part sizes:
+
+     Function/Label Bytes
+     -------------- -----
+     hist              8
+     cnt               2
+     inihist           2
+     addh              2
+      Others           7
+
+ 
+  4 bytes in segment CODE
+  7 bytes in segment INITTAB
+ 10 bytes in segment NEAR_Z
+ 
+  4 bytes of CODE memory (+ 7 bytes shared)
+ 10 bytes of DATA memory
+
+Errors: none
+Warnings: none

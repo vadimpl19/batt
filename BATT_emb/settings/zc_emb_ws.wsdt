@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<Workspace>
+  <ConfigDictionary>
+    
+  <CurrentConfigs><Project>zc_emb/Debug</Project></CurrentConfigs></ConfigDictionary>
+  <Desktop>
+    <Static>
+      <Workspace>
+        <ColumnWidths>
+          
+          
+          
+          
+        <Column0>190</Column0><Column1>27</Column1><Column2>27</Column2><Column3>27</Column3></ColumnWidths>
+      </Workspace>
+      <Build>
+        
+        
+        
+        
+      <ColumnWidth0>20</ColumnWidth0><ColumnWidth1>916</ColumnWidth1><ColumnWidth2>244</ColumnWidth2><ColumnWidth3>61</ColumnWidth3></Build>
+      <Debug-Log/>
+    <TerminalIO/><Find-in-Files><ColumnWidth0>440</ColumnWidth0><ColumnWidth1>62</ColumnWidth1><ColumnWidth2>754</ColumnWidth2></Find-in-Files></Static>
+    <Windows>
+      
+      
+    <Wnd0>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-6918-4100</Identity>
+            <TabName>Workspace</TabName>
+            <Factory>Workspace</Factory>
+            <Session>
+              
+            <NodeDict><ExpandedNode>zc_emb</ExpandedNode><ExpandedNode>zc_emb/Output</ExpandedNode><ExpandedNode>zc_emb/main.c</ExpandedNode></NodeDict></Session>
+          </Tab>
+        </Tabs>
+        
+      <SelectedTab>0</SelectedTab></Wnd0><Wnd1>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-27579-7192</Identity>
+            <TabName>Build</TabName>
+            <Factory>Build</Factory>
+            <Session/>
+          </Tab>
+          <Tab>
+            <Identity>TabID-17646-7378</Identity>
+            <TabName>Debug Log</TabName>
+            <Factory>Debug-Log</Factory>
+            <Session/>
+          </Tab>
+        <Tab><Identity>TabID-24082-15469</Identity><TabName>Find in Files</TabName><Factory>Find-in-Files</Factory><Session/></Tab></Tabs>
+        
+      <SelectedTab>0</SelectedTab></Wnd1></Windows>
+    <Editor>
+      
+      
+      
+      
+    <Pane><Tab><Factory>TextEditor</Factory><Filename>D:\current_prj\&#x437;&#x435;&#x440;&#x438;&#x43D;&#x433;\soft\zc_emb\coms.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>147</SelStart><SelEnd>147</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>D:\current_prj\&#x437;&#x435;&#x440;&#x438;&#x43D;&#x433;\soft\zc_emb\hist.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>C:\Program Files\IAR Systems\Embedded Workbench 4.0 Evaluation\avr\inc\inavr.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>C:\Program Files\IAR Systems\Embedded Workbench 4.0 Evaluation\avr\inc\iom128.h</Filename><XPos>0</XPos><YPos>409</YPos><SelStart>18749</SelStart><SelEnd>18749</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>D:\current_prj\&#x437;&#x435;&#x440;&#x438;&#x43D;&#x433;\soft\zc_emb\byte_stuff.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>D:\current_prj\&#x437;&#x435;&#x440;&#x438;&#x43D;&#x433;\soft\zc_emb\hwr.h</Filename><XPos>0</XPos><YPos>36</YPos><SelStart>844</SelStart><SelEnd>844</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>D:\current_prj\&#x437;&#x435;&#x440;&#x438;&#x43D;&#x433;\soft\zc_emb\timeservice.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>1191</SelStart><SelEnd>1191</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>D:\current_prj\&#x437;&#x435;&#x440;&#x438;&#x43D;&#x433;\soft\zc_emb\timeservice.c</Filename><XPos>0</XPos><YPos>64</YPos><SelStart>2016</SelStart><SelEnd>2016</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>D:\current_prj\&#x437;&#x435;&#x440;&#x438;&#x43D;&#x433;\soft\zc_emb\types.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>D:\current_prj\&#x437;&#x435;&#x440;&#x438;&#x43D;&#x433;\soft\zc_emb\func_handle.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>852</SelStart><SelEnd>852</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>D:\current_prj\&#x437;&#x435;&#x440;&#x438;&#x43D;&#x433;\soft\zc_emb\main.c</Filename><XPos>0</XPos><YPos>102</YPos><SelStart>2458</SelStart><SelEnd>2458</SelEnd></Tab><ActiveTab>10</ActiveTab><Tab><Factory>TextEditor</Factory><Filename>D:\current_prj\&#x437;&#x435;&#x440;&#x438;&#x43D;&#x433;\soft\zc_emb\adc.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>20</SelStart><SelEnd>20</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>D:\current_prj\&#x437;&#x435;&#x440;&#x438;&#x43D;&#x433;\soft\zc_emb\func_handle.c</Filename><XPos>0</XPos><YPos>49</YPos><SelStart>1812</SelStart><SelEnd>1812</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>D:\current_prj\&#x437;&#x435;&#x440;&#x438;&#x43D;&#x433;\soft\zc_emb\adc.c</Filename><XPos>0</XPos><YPos>3</YPos><SelStart>684</SelStart><SelEnd>684</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>D:\current_prj\&#x437;&#x435;&#x440;&#x438;&#x43D;&#x433;\soft\zc_emb\coms.c</Filename><XPos>0</XPos><YPos>474</YPos><SelStart>12589</SelStart><SelEnd>12589</SelEnd></Tab></Pane><ActivePane>0</ActivePane><Sizes><Pane><X>1000000</X><Y>1000000</Y></Pane></Sizes><SplitMode>1</SplitMode></Editor>
+    <Positions>
+      
+      
+      
+      
+      
+    <Top><Row0><Sizes><Toolbar-0087fa68><key>iaridepm.enu1</key></Toolbar-0087fa68></Sizes></Row0></Top><Left><Row0><Sizes><Wnd0><Rect><Top>-2</Top><Left>-2</Left><Bottom>704</Bottom><Right>264</Right><x>-2</x><y>-2</y><xscreen>0</xscreen><yscreen>0</yscreen><sizeHorzCX>0</sizeHorzCX><sizeHorzCY>0</sizeHorzCY><sizeVertCX>207813</sizeVertCX><sizeVertCY>738494</sizeVertCY></Rect></Wnd0></Sizes></Row0></Left><Right><Row0><Sizes/></Row0></Right><Bottom><Row0><Sizes><Wnd1><Rect><Top>-2</Top><Left>-2</Left><Bottom>208</Bottom><Right>1282</Right><x>-2</x><y>-2</y><xscreen>1284</xscreen><yscreen>210</yscreen><sizeHorzCX>1003125</sizeHorzCX><sizeHorzCY>219665</sizeHorzCY><sizeVertCX>0</sizeVertCX><sizeVertCY>0</sizeVertCY></Rect></Wnd1></Sizes></Row0></Bottom><Float><Sizes/></Float></Positions>
+  </Desktop>
+</Workspace>
+
+

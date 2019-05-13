@@ -1,0 +1,2542 @@
+###############################################################################
+#                                                                             #
+#                                                       12/Jan/2011  12:16:46 #
+# IAR Atmel AVR C/C++ Compiler V4.30A/W32, Evaluation Version                 #
+# Copyright 1996-2007 IAR Systems. All rights reserved.                       #
+#                                                                             #
+#    Source file  =  D:\current_prj\batt\BATT_emb\main.c                      #
+#    Command line =  D:\current_prj\batt\BATT_emb\main.c --cpu=m128 -ms -o    #
+#                    D:\current_prj\batt\BATT_emb\Debug\Obj\ -lCN             #
+#                    D:\current_prj\batt\BATT_emb\Debug\List\ -y              #
+#                    --initializers_in_flash -z2 --no_cse --no_inline         #
+#                    --no_code_motion --no_cross_call --no_clustering         #
+#                    --no_tbaa --debug -DENABLE_BIT_DEFINITIONS -e -I         #
+#                    "C:\Program Files\IAR Systems\Embedded Workbench 4.0     #
+#                    Evaluation\avr\INC\" -I "C:\Program Files\IAR            #
+#                    Systems\Embedded Workbench 4.0                           #
+#                    Evaluation\avr\INC\CLIB\" --eeprom_size 4096             #
+#    List file    =  D:\current_prj\batt\BATT_emb\Debug\List\main.lst         #
+#    Object file  =  D:\current_prj\batt\BATT_emb\Debug\Obj\main.r90          #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+D:\current_prj\batt\BATT_emb\main.c
+      1          #include <iom128.h>
+
+   \                                 In  segment ABSOLUTE, at 0x22
+   \   <unnamed> volatile __io _A_DDRE
+   \                     _A_DDRE:
+   \   00000000                      DS 1
+
+   \                                 In  segment ABSOLUTE, at 0x31
+   \   <unnamed> volatile __io _A_DDRD
+   \                     _A_DDRD:
+   \   00000000                      DS 1
+
+   \                                 In  segment ABSOLUTE, at 0x32
+   \   <unnamed> volatile __io _A_PORTD
+   \                     _A_PORTD:
+   \   00000000                      DS 1
+
+   \                                 In  segment ABSOLUTE, at 0x34
+   \   <unnamed> volatile __io _A_DDRC
+   \                     _A_DDRC:
+   \   00000000                      DS 1
+
+   \                                 In  segment ABSOLUTE, at 0x35
+   \   <unnamed> volatile __io _A_PORTC
+   \                     _A_PORTC:
+   \   00000000                      DS 1
+
+   \                                 In  segment ABSOLUTE, at 0x37
+   \   <unnamed> volatile __io _A_DDRB
+   \                     _A_DDRB:
+   \   00000000                      DS 1
+
+   \                                 In  segment ABSOLUTE, at 0x38
+   \   <unnamed> volatile __io _A_PORTB
+   \                     _A_PORTB:
+   \   00000000                      DS 1
+
+   \                                 In  segment ABSOLUTE, at 0x3a
+   \   <unnamed> volatile __io _A_DDRA
+   \                     _A_DDRA:
+   \   00000000                      DS 1
+
+   \                                 In  segment ABSOLUTE, at 0x3b
+   \   <unnamed> volatile __io _A_PORTA
+   \                     _A_PORTA:
+   \   00000000                      DS 1
+
+   \                                 In  segment ABSOLUTE, at 0x41
+   \   <unnamed> volatile __io _A_WDTCR
+   \                     _A_WDTCR:
+   \   00000000                      DS 1
+
+   \                                 In  segment ABSOLUTE, at 0x4a
+   \   <unnamed> volatile __io _A_OCR1A
+   \                     _A_OCR1A:
+   \   00000000                      DS 2
+
+   \                                 In  segment ABSOLUTE, at 0x4e
+   \   <unnamed> volatile __io _A_TCCR1B
+   \                     _A_TCCR1B:
+   \   00000000                      DS 1
+
+   \                                 In  segment ABSOLUTE, at 0x4f
+   \   <unnamed> volatile __io _A_TCCR1A
+   \                     _A_TCCR1A:
+   \   00000000                      DS 1
+
+   \                                 In  segment ABSOLUTE, at 0x56
+   \   <unnamed> volatile __io _A_TIFR
+   \                     _A_TIFR:
+   \   00000000                      DS 1
+
+   \                                 In  segment ABSOLUTE, at 0x64
+   \   <unnamed> volatile __io _A_DDRG
+   \                     _A_DDRG:
+   \   00000000                      DS 1
+
+   \                                 In  segment ABSOLUTE, at 0x65
+   \   <unnamed> volatile __io _A_PORTG
+   \                     _A_PORTG:
+   \   00000000                      DS 1
+
+   \                                 In  segment ABSOLUTE, at 0x86
+   \   <unnamed> volatile __io _A_OCR3A
+   \                     _A_OCR3A:
+   \   00000000                      DS 2
+
+   \                                 In  segment ABSOLUTE, at 0x88
+   \   <unnamed> volatile __io _A_TCNT3
+   \                     _A_TCNT3:
+   \   00000000                      DS 2
+
+   \                                 In  segment ABSOLUTE, at 0x8a
+   \   <unnamed> volatile __io _A_TCCR3B
+   \                     _A_TCCR3B:
+   \   00000000                      DS 1
+
+   \                                 In  segment ABSOLUTE, at 0x8b
+   \   <unnamed> volatile __io _A_TCCR3A
+   \                     _A_TCCR3A:
+   \   00000000                      DS 1
+      2          #include "ina90.h"
+      3          //#include "string.h"
+      4          //#include "stdio.h"
+      5          
+      6          #include "types.h"
+      7          #include "timeservice.h"
+      8          #include "hist.h"
+      9          #include "coms.h"
+     10          #include "adc.h"
+     11          #include "func_handle.h"
+     12          #include "hwr.h"
+     13          UINT get_sp();
+
+   \                                 In  segment NEAR_Z, align 1, keep-with-next
+   \   00000000                      REQUIRE `?<Segment init: NEAR_Z>`
+     14          char stepcnt;         
+   \                     stepcnt:
+   \   00000000                      DS 1
+     15          
+
+   \                                 In  segment CODE, align 2, keep-with-next
+     16          void delayloop(unsigned int d){
+   \                     delayloop:
+   \   00000000   2F39               MOV     R19, R25
+   \   00000002   2F48               MOV     R20, R24
+     17          unsigned int i,i2;
+     18          for (i=0;i<d;i++)
+   \   00000004   E0E0               LDI     R30, 0
+   \   00000006   E0F0               LDI     R31, 0
+   \                     ??delayloop_0:
+   \   00000008   17E0               CP      R30, R16
+   \   0000000A   07F1               CPC     R31, R17
+   \   0000000C   F458               BRCC    ??delayloop_1
+     19            for (i2=0;i2<1100;i2++) _NOP();
+   \   0000000E   E080               LDI     R24, 0
+   \   00000010   E090               LDI     R25, 0
+   \                     ??delayloop_2:
+   \   00000012   348C               CPI     R24, 76
+   \   00000014   E024               LDI     R18, 4
+   \   00000016   0792               CPC     R25, R18
+   \   00000018   F418               BRCC    ??delayloop_3
+   \   0000001A   0000               NOP
+   \   0000001C   9601               ADIW    R25:R24, 1
+   \   0000001E   CFF9               RJMP    ??delayloop_2
+   \                     ??delayloop_3:
+   \   00000020   9631               ADIW    R31:R30, 1
+   \   00000022   CFF2               RJMP    ??delayloop_0
+     20          };
+   \                     ??delayloop_1:
+   \   00000024   2F84               MOV     R24, R20
+   \   00000026   2F93               MOV     R25, R19
+   \   00000028   9508               RET
+
+   \                                 In  segment CODE, align 2, keep-with-next
+     21          int setdac(int outb){//установка напряжения в милливольтах
+   \                     setdac:
+   \   00000000   0198               MOVW    R19:R18, R17:R16
+     22            //1 разряд цап = 1 мв  
+     23             CLR=1;  
+   \   00000002   91000065           LDS     R16, 101
+   \   00000006   6008               ORI     R16, 0x08
+   \   00000008   93000065           STS     101, R16
+     24             WR=1;
+   \   0000000C   9AC7               SBI     0x18, 0x07
+     25             PORTD_Bit7=outb&1;
+   \   0000000E   2F02               MOV     R16, R18
+   \   00000010   FB00               BST     R16, 0
+   \   00000012   B302               IN      R16, 0x12
+   \   00000014   F907               BLD     R16, 7
+   \   00000016   BB02               OUT     0x12, R16
+     26             outb=outb>>1;
+   \   00000018   9535               ASR     R19
+   \   0000001A   9527               ROR     R18
+     27             PORTD_Bit6=outb&1;
+   \   0000001C   2F02               MOV     R16, R18
+   \   0000001E   FB00               BST     R16, 0
+   \   00000020   B302               IN      R16, 0x12
+   \   00000022   F906               BLD     R16, 6
+   \   00000024   BB02               OUT     0x12, R16
+     28             outb=outb>>1;
+   \   00000026   9535               ASR     R19
+   \   00000028   9527               ROR     R18
+     29             PORTD_Bit6=outb&1;
+   \   0000002A   2F02               MOV     R16, R18
+   \   0000002C   FB00               BST     R16, 0
+   \   0000002E   B302               IN      R16, 0x12
+   \   00000030   F906               BLD     R16, 6
+   \   00000032   BB02               OUT     0x12, R16
+     30             outb=outb>>1;
+   \   00000034   9535               ASR     R19
+   \   00000036   9527               ROR     R18
+     31             PORTD_Bit5=outb&1;
+   \   00000038   2F02               MOV     R16, R18
+   \   0000003A   FB00               BST     R16, 0
+   \   0000003C   B302               IN      R16, 0x12
+   \   0000003E   F905               BLD     R16, 5
+   \   00000040   BB02               OUT     0x12, R16
+     32             outb=outb>>1;
+   \   00000042   9535               ASR     R19
+   \   00000044   9527               ROR     R18
+     33             PORTD_Bit4=outb&1;
+   \   00000046   2F02               MOV     R16, R18
+   \   00000048   FB00               BST     R16, 0
+   \   0000004A   B302               IN      R16, 0x12
+   \   0000004C   F904               BLD     R16, 4
+   \   0000004E   BB02               OUT     0x12, R16
+     34             outb=outb>>1;
+   \   00000050   9535               ASR     R19
+   \   00000052   9527               ROR     R18
+     35             PORTD_Bit3=outb&1;
+   \   00000054   2F02               MOV     R16, R18
+   \   00000056   FB00               BST     R16, 0
+   \   00000058   B302               IN      R16, 0x12
+   \   0000005A   F903               BLD     R16, 3
+   \   0000005C   BB02               OUT     0x12, R16
+     36             outb=outb>>1;
+   \   0000005E   9535               ASR     R19
+   \   00000060   9527               ROR     R18
+     37             PORTD_Bit2=outb&1;
+   \   00000062   2F02               MOV     R16, R18
+   \   00000064   FB00               BST     R16, 0
+   \   00000066   B302               IN      R16, 0x12
+   \   00000068   F902               BLD     R16, 2
+   \   0000006A   BB02               OUT     0x12, R16
+     38             outb=outb>>1;
+   \   0000006C   9535               ASR     R19
+   \   0000006E   9527               ROR     R18
+     39             PORTD_Bit1=outb&1;
+   \   00000070   2F02               MOV     R16, R18
+   \   00000072   FB00               BST     R16, 0
+   \   00000074   B302               IN      R16, 0x12
+   \   00000076   F901               BLD     R16, 1
+   \   00000078   BB02               OUT     0x12, R16
+     40             outb=outb>>1;
+   \   0000007A   9535               ASR     R19
+   \   0000007C   9527               ROR     R18
+     41             PORTD_Bit0=outb&1;
+   \   0000007E   2F02               MOV     R16, R18
+   \   00000080   FB00               BST     R16, 0
+   \   00000082   B302               IN      R16, 0x12
+   \   00000084   F900               BLD     R16, 0
+   \   00000086   BB02               OUT     0x12, R16
+     42             outb=outb>>1;
+   \   00000088   9535               ASR     R19
+   \   0000008A   9527               ROR     R18
+     43             PORTB_Bit5=outb&1;
+   \   0000008C   2F02               MOV     R16, R18
+   \   0000008E   FB00               BST     R16, 0
+   \   00000090   B308               IN      R16, 0x18
+   \   00000092   F905               BLD     R16, 5
+   \   00000094   BB08               OUT     0x18, R16
+     44             outb=outb>>1;
+   \   00000096   9535               ASR     R19
+   \   00000098   9527               ROR     R18
+     45             PORTB_Bit6=outb&1;
+   \   0000009A   2F02               MOV     R16, R18
+   \   0000009C   FB00               BST     R16, 0
+   \   0000009E   B308               IN      R16, 0x18
+   \   000000A0   F906               BLD     R16, 6
+   \   000000A2   BB08               OUT     0x18, R16
+     46             WR=0;
+   \   000000A4   98C7               CBI     0x18, 0x07
+     47             WR=0;
+   \   000000A6   98C7               CBI     0x18, 0x07
+     48             WR=0;
+   \   000000A8   98C7               CBI     0x18, 0x07
+     49             WR=0;
+   \   000000AA   98C7               CBI     0x18, 0x07
+     50             LDAC=0;
+   \   000000AC   91000065           LDS     R16, 101
+   \   000000B0   7E0F               ANDI    R16, 0xEF
+   \   000000B2   93000065           STS     101, R16
+     51             WR=1;
+   \   000000B6   9AC7               SBI     0x18, 0x07
+     52             LDAC=1;
+   \   000000B8   91000065           LDS     R16, 101
+   \   000000BC   6100               ORI     R16, 0x10
+   \   000000BE   93000065           STS     101, R16
+     53             return 0;
+   \   000000C2   E000               LDI     R16, 0
+   \   000000C4   E010               LDI     R17, 0
+   \   000000C6   9508               RET
+   \   000000C8                      REQUIRE _A_PORTG
+   \   000000C8                      REQUIRE _A_PORTD
+   \   000000C8                      REQUIRE _A_PORTB
+     54          }
+     55          /*
+     56          void setcur (char i){//установка тока активации i - ток в миллиамперах
+     57           long l=169;
+     58           l=l*i;
+     59           l=(a*l+b +5)/10;//делим на 10 с округлением
+     60           setdac(l);
+     61          }
+     62          */
+     63          typedef struct{
+     64            int offsadc;
+     65            int dac1;
+     66            int dac100;
+     67            long a,b;//коэффициенты прямой, аппроксимации dac
+     68          }tcalibr;
+
+   \                                 In  segment NEAR_Z, align 1, keep-with-next
+   \   00000000                      REQUIRE `?<Segment init: NEAR_Z>`
+     69          tcalibr cal;
+   \                     cal:
+   \   00000000                      DS 14
+
+   \                                 In  segment CODE, align 2, keep-with-next
+     70          void setcur (char i){//установка тока активации i - ток в миллиамперах
+   \                     setcur:
+   \   00000000   ........           CALL    ?PROLOGUE8_L09
+   \   00000004                      REQUIRE ?Register_R4_is_cg_reg
+   \   00000004                      REQUIRE ?Register_R5_is_cg_reg
+   \   00000004                      REQUIRE ?Register_R6_is_cg_reg
+   \   00000004                      REQUIRE ?Register_R7_is_cg_reg
+   \   00000004   2F80               MOV     R24, R16
+     71            if(i==0){
+   \   00000006   2388               TST     R24
+   \   00000008   F421               BRNE    ??setcur_0
+     72              setdac(0);
+   \   0000000A   E000               LDI     R16, 0
+   \   0000000C   E010               LDI     R17, 0
+   \   0000000E   ....               RCALL   setdac
+     73              return;
+   \   00000010   C02A               RJMP    ??setcur_1
+     74            }  
+     75           long l=cal.a;
+   \                     ??setcur_0:
+   \   00000012   ....               LDI     R30, LOW(cal)
+   \   00000014   ....               LDI     R31, (cal) >> 8
+   \   00000016   8106               LDD     R16, Z+6
+   \   00000018   8117               LDD     R17, Z+7
+   \   0000001A   8520               LDD     R18, Z+8
+   \   0000001C   8531               LDD     R19, Z+9
+   \   0000001E   0128               MOVW    R5:R4, R17:R16
+   \   00000020   0139               MOVW    R7:R6, R19:R18
+     76           l=l*i;
+   \   00000022   01A2               MOVW    R21:R20, R5:R4
+   \   00000024   01B3               MOVW    R23:R22, R7:R6
+   \   00000026   2F08               MOV     R16, R24
+   \   00000028   E010               LDI     R17, 0
+   \   0000002A   E020               LDI     R18, 0
+   \   0000002C   E030               LDI     R19, 0
+   \   0000002E   ........           CALL    ?L_EC_MUL_L03
+   \   00000032   0128               MOVW    R5:R4, R17:R16
+   \   00000034   0139               MOVW    R7:R6, R19:R18
+     77           l=(l+cal.b +50)/100;//делим на 10 с округлением
+   \   00000036   ....               LDI     R30, LOW(cal)
+   \   00000038   ....               LDI     R31, (cal) >> 8
+   \   0000003A   8502               LDD     R16, Z+10
+   \   0000003C   8513               LDD     R17, Z+11
+   \   0000003E   8524               LDD     R18, Z+12
+   \   00000040   8535               LDD     R19, Z+13
+   \   00000042   0D04               ADD     R16, R4
+   \   00000044   1D15               ADC     R17, R5
+   \   00000046   1D26               ADC     R18, R6
+   \   00000048   1D37               ADC     R19, R7
+   \   0000004A   5C0E               SUBI    R16, 206
+   \   0000004C   4F1F               SBCI    R17, 255
+   \   0000004E   4F2F               SBCI    R18, 255
+   \   00000050   4F3F               SBCI    R19, 255
+   \   00000052   E644               LDI     R20, 100
+   \   00000054   E050               LDI     R21, 0
+   \   00000056   E060               LDI     R22, 0
+   \   00000058   E070               LDI     R23, 0
+   \   0000005A   ........           CALL    ?SL_DIVMOD_L03
+   \   0000005E   0128               MOVW    R5:R4, R17:R16
+   \   00000060   0139               MOVW    R7:R6, R19:R18
+     78           setdac(l);
+   \   00000062   0182               MOVW    R17:R16, R5:R4
+   \   00000064   ....               RCALL   setdac
+     79          }
+   \                     ??setcur_1:
+   \   00000066   E0E8               LDI     R30, 8
+   \   00000068   ........           JMP     ?EPILOGUE_B8_L09
+
+   \                                 In  segment NEAR_I, align 1, keep-with-next
+   \   00000000                      REQUIRE `?<Segment init: NEAR_I>`
+     80          long activ_time=10000;
+   \                     activ_time:
+   \   00000000                      DS 4
+   \   00000004                      REQUIRE `?<Initializer for activ_time>`
+     81          ///////////////////////////////////////////////////////////////////////////
+
+   \                                 In  segment CODE, align 2, keep-with-next
+     82          int calibration(){// калибровка офсетов ацп, офсета цап и коэф. усиления цап
+   \                     calibration:
+   \   00000000   ........           CALL    ?PROLOGUE10_L09
+   \   00000004                      REQUIRE ?Register_R4_is_cg_reg
+   \   00000004                      REQUIRE ?Register_R5_is_cg_reg
+   \   00000004                      REQUIRE ?Register_R6_is_cg_reg
+   \   00000004                      REQUIRE ?Register_R7_is_cg_reg
+   \   00000004                      REQUIRE ?Register_R8_is_cg_reg
+   \   00000004                      REQUIRE ?Register_R9_is_cg_reg
+     83          ///////////////////////////////////////////////////////////////////////////
+     84            int toutdel=100;
+   \   00000004   E604               LDI     R16, 100
+   \   00000006   2E60               MOV     R6, R16
+   \   00000008   2477               CLR     R7
+     85            cal.offsadc=0;
+   \   0000000A   E000               LDI     R16, 0
+   \   0000000C   E010               LDI     R17, 0
+   \   0000000E   ....               LDI     R30, LOW(cal)
+   \   00000010   ....               LDI     R31, (cal) >> 8
+   \   00000012   8300               ST      Z, R16
+   \   00000014   8311               STD     Z+1, R17
+     86            cal.b=0;
+   \   00000016   E000               LDI     R16, 0
+   \   00000018   E010               LDI     R17, 0
+   \   0000001A   E020               LDI     R18, 0
+   \   0000001C   E030               LDI     R19, 0
+   \   0000001E   ....               LDI     R30, LOW(cal)
+   \   00000020   ....               LDI     R31, (cal) >> 8
+   \   00000022   8702               STD     Z+10, R16
+   \   00000024   8713               STD     Z+11, R17
+   \   00000026   8724               STD     Z+12, R18
+   \   00000028   8735               STD     Z+13, R19
+     87            cal.a=1690;
+   \   0000002A   E90A               LDI     R16, 154
+   \   0000002C   E016               LDI     R17, 6
+   \   0000002E   E020               LDI     R18, 0
+   \   00000030   E030               LDI     R19, 0
+   \   00000032   ....               LDI     R30, LOW(cal)
+   \   00000034   ....               LDI     R31, (cal) >> 8
+   \   00000036   8306               STD     Z+6, R16
+   \   00000038   8317               STD     Z+7, R17
+   \   0000003A   8720               STD     Z+8, R18
+   \   0000003C   8731               STD     Z+9, R19
+     88            red1=1;
+   \   0000003E   9AAA               SBI     0x15, 0x02
+     89            red2=1;
+   \   00000040   9AAD               SBI     0x15, 0x05
+     90            red3=1;
+   \   00000042   9ADB               SBI     0x1B, 0x03
+     91            red4=1;
+   \   00000044   9AD8               SBI     0x1B, 0x00
+     92            gr1=0;
+   \   00000046   98A8               CBI     0x15, 0x00
+     93            gr2=0;
+   \   00000048   98AB               CBI     0x15, 0x03
+     94            gr3=0;
+   \   0000004A   98AE               CBI     0x15, 0x06
+     95            gr4=0;
+   \   0000004C   98DA               CBI     0x1B, 0x02
+     96            yel1=0;
+   \   0000004E   98A9               CBI     0x15, 0x01
+     97            yel2=0;
+   \   00000050   98AC               CBI     0x15, 0x04
+     98            yel3=0;
+   \   00000052   98AF               CBI     0x15, 0x07
+     99            yel4=0;
+   \   00000054   98D9               CBI     0x1B, 0x01
+    100            setcur(0);
+   \   00000056   E000               LDI     R16, 0
+   \   00000058   ....               RCALL   setcur
+    101            settout(0,toutdel);
+   \   0000005A   0193               MOVW    R19:R18, R7:R6
+   \   0000005C   E000               LDI     R16, 0
+   \   0000005E   ........           CALL    settout
+    102            while(!toutexpired(0))__watchdog_reset();
+   \                     ??calibration_0:
+   \   00000062   E000               LDI     R16, 0
+   \   00000064   ........           CALL    toutexpired
+   \   00000068   2300               TST     R16
+   \   0000006A   F411               BRNE    ??calibration_1
+   \   0000006C   95A8               WDR
+   \   0000006E   CFF9               RJMP    ??calibration_0
+    103            if(batt[0].v<3){
+   \                     ??calibration_1:
+   \   00000070   ....               LDI     R30, LOW(batt)
+   \   00000072   ....               LDI     R31, (batt) >> 8
+   \   00000074   8101               LDD     R16, Z+1
+   \   00000076   8112               LDD     R17, Z+2
+   \   00000078   3003               CPI     R16, 3
+   \   0000007A   4010               SBCI    R17, 0
+   \   0000007C   F4DC               BRGE    ??calibration_2
+    104            red1=0;
+   \   0000007E   98AA               CBI     0x15, 0x02
+    105            red2=0;
+   \   00000080   98AD               CBI     0x15, 0x05
+    106            red3=0;
+   \   00000082   98DB               CBI     0x1B, 0x03
+    107            red4=0;
+   \   00000084   98D8               CBI     0x1B, 0x00
+    108            gr1=1;
+   \   00000086   9AA8               SBI     0x15, 0x00
+    109            gr2=1;
+   \   00000088   9AAB               SBI     0x15, 0x03
+    110            gr3=1;
+   \   0000008A   9AAE               SBI     0x15, 0x06
+    111            gr4=1;
+   \   0000008C   9ADA               SBI     0x1B, 0x02
+    112            yel1=1;
+   \   0000008E   9AA9               SBI     0x15, 0x01
+    113            yel2=1;
+   \   00000090   9AAC               SBI     0x15, 0x04
+    114            yel3=1;
+   \   00000092   9AAF               SBI     0x15, 0x07
+    115            yel4=1;
+   \   00000094   9AD9               SBI     0x1B, 0x01
+    116            settout(0,1000);
+   \   00000096   EE28               LDI     R18, 232
+   \   00000098   E033               LDI     R19, 3
+   \   0000009A   E000               LDI     R16, 0
+   \   0000009C   ........           CALL    settout
+    117            while(!toutexpired(0))__watchdog_reset();
+   \                     ??calibration_3:
+   \   000000A0   E000               LDI     R16, 0
+   \   000000A2   ........           CALL    toutexpired
+   \   000000A6   2300               TST     R16
+   \   000000A8   F411               BRNE    ??calibration_4
+   \   000000AA   95A8               WDR
+   \   000000AC   CFF9               RJMP    ??calibration_3
+    118               return -1; //калибровка невозможна - отсутствует батарея
+   \                     ??calibration_4:
+   \   000000AE   EF0F               LDI     R16, 255
+   \   000000B0   EF1F               LDI     R17, 255
+   \   000000B2   C0A1               RJMP    ??calibration_5
+    119            }   
+    120            //cal.offsadc=batt[0].curr-cal.offsadc;
+    121          //  cal.offsadc=batt[0].curr-cal.offsadc;
+    122            setcur(1);
+   \                     ??calibration_2:
+   \   000000B4   E001               LDI     R16, 1
+   \   000000B6   ....               RCALL   setcur
+    123            settout(0,toutdel);
+   \   000000B8   0193               MOVW    R19:R18, R7:R6
+   \   000000BA   E000               LDI     R16, 0
+   \   000000BC   ........           CALL    settout
+    124            while(!toutexpired(0))__watchdog_reset();
+   \                     ??calibration_6:
+   \   000000C0   E000               LDI     R16, 0
+   \   000000C2   ........           CALL    toutexpired
+   \   000000C6   2300               TST     R16
+   \   000000C8   F411               BRNE    ??calibration_7
+   \   000000CA   95A8               WDR
+   \   000000CC   CFF9               RJMP    ??calibration_6
+    125            cal.dac1=batt[0].curr; //оффсет в десятках микроампер
+   \                     ??calibration_7:
+   \   000000CE   ....               LDI     R30, LOW(batt)
+   \   000000D0   ....               LDI     R31, (batt) >> 8
+   \   000000D2   8103               LDD     R16, Z+3
+   \   000000D4   8114               LDD     R17, Z+4
+   \   000000D6   ....               LDI     R30, LOW(cal)
+   \   000000D8   ....               LDI     R31, (cal) >> 8
+   \   000000DA   8302               STD     Z+2, R16
+   \   000000DC   8313               STD     Z+3, R17
+    126          
+    127            setcur(100);
+   \   000000DE   E604               LDI     R16, 100
+   \   000000E0   ....               RCALL   setcur
+    128            settout(0,toutdel);
+   \   000000E2   0193               MOVW    R19:R18, R7:R6
+   \   000000E4   E000               LDI     R16, 0
+   \   000000E6   ........           CALL    settout
+    129            while(!toutexpired(0))__watchdog_reset();
+   \                     ??calibration_8:
+   \   000000EA   E000               LDI     R16, 0
+   \   000000EC   ........           CALL    toutexpired
+   \   000000F0   2300               TST     R16
+   \   000000F2   F411               BRNE    ??calibration_9
+   \   000000F4   95A8               WDR
+   \   000000F6   CFF9               RJMP    ??calibration_8
+    130            cal.dac100=batt[0].curr;
+   \                     ??calibration_9:
+   \   000000F8   ....               LDI     R30, LOW(batt)
+   \   000000FA   ....               LDI     R31, (batt) >> 8
+   \   000000FC   8103               LDD     R16, Z+3
+   \   000000FE   8114               LDD     R17, Z+4
+   \   00000100   ....               LDI     R30, LOW(cal)
+   \   00000102   ....               LDI     R31, (cal) >> 8
+   \   00000104   8304               STD     Z+4, R16
+   \   00000106   8315               STD     Z+5, R17
+    131            cal.b=(100-cal.dac1)*169 ;//правильный коэф 16.9 - размер шунта
+   \   00000108   E644               LDI     R20, 100
+   \   0000010A   E050               LDI     R21, 0
+   \   0000010C   ....               LDI     R30, LOW(cal)
+   \   0000010E   ....               LDI     R31, (cal) >> 8
+   \   00000110   8102               LDD     R16, Z+2
+   \   00000112   8113               LDD     R17, Z+3
+   \   00000114   1B40               SUB     R20, R16
+   \   00000116   0B51               SBC     R21, R17
+   \   00000118   EA09               LDI     R16, 169
+   \   0000011A   E010               LDI     R17, 0
+   \   0000011C   ........           CALL    ?S_EC_MUL_L02
+   \   00000120   2F21               MOV     R18, R17
+   \   00000122   0F22               LSL     R18
+   \   00000124   0B22               SBC     R18, R18
+   \   00000126   2F32               MOV     R19, R18
+   \   00000128   ....               LDI     R30, LOW(cal)
+   \   0000012A   ....               LDI     R31, (cal) >> 8
+   \   0000012C   8702               STD     Z+10, R16
+   \   0000012E   8713               STD     Z+11, R17
+   \   00000130   8724               STD     Z+12, R18
+   \   00000132   8735               STD     Z+13, R19
+    132            cal.b=cal.b/10;
+   \   00000134   ....               LDI     R30, LOW(cal)
+   \   00000136   ....               LDI     R31, (cal) >> 8
+   \   00000138   8502               LDD     R16, Z+10
+   \   0000013A   8513               LDD     R17, Z+11
+   \   0000013C   8524               LDD     R18, Z+12
+   \   0000013E   8535               LDD     R19, Z+13
+   \   00000140   E04A               LDI     R20, 10
+   \   00000142   E050               LDI     R21, 0
+   \   00000144   E060               LDI     R22, 0
+   \   00000146   E070               LDI     R23, 0
+   \   00000148   ........           CALL    ?SL_DIVMOD_L03
+   \   0000014C   ....               LDI     R30, LOW(cal)
+   \   0000014E   ....               LDI     R31, (cal) >> 8
+   \   00000150   8702               STD     Z+10, R16
+   \   00000152   8713               STD     Z+11, R17
+   \   00000154   8724               STD     Z+12, R18
+   \   00000156   8735               STD     Z+13, R19
+    133            double d=(cal.dac100-cal.dac1);
+   \   00000158   ....               LDI     R30, LOW(cal)
+   \   0000015A   ....               LDI     R31, (cal) >> 8
+   \   0000015C   8104               LDD     R16, Z+4
+   \   0000015E   8115               LDD     R17, Z+5
+   \   00000160   ....               LDI     R30, LOW(cal)
+   \   00000162   ....               LDI     R31, (cal) >> 8
+   \   00000164   8122               LDD     R18, Z+2
+   \   00000166   8133               LDD     R19, Z+3
+   \   00000168   1B02               SUB     R16, R18
+   \   0000016A   0B13               SBC     R17, R19
+   \   0000016C   2F21               MOV     R18, R17
+   \   0000016E   0F22               LSL     R18
+   \   00000170   0B22               SBC     R18, R18
+   \   00000172   2F32               MOV     R19, R18
+   \   00000174   ........           CALL    ?SL2F_L04
+   \   00000178   01C8               MOVW    R25:R24, R17:R16
+   \   0000017A   01D9               MOVW    R27:R26, R19:R18
+    134            d=9900/d;
+   \   0000017C   E000               LDI     R16, 0
+   \   0000017E   EB10               LDI     R17, 176
+   \   00000180   E12A               LDI     R18, 26
+   \   00000182   E436               LDI     R19, 70
+   \   00000184   01AC               MOVW    R21:R20, R25:R24
+   \   00000186   01BD               MOVW    R23:R22, R27:R26
+   \   00000188   ........           CALL    ?F_DIV_L04
+   \   0000018C   01C8               MOVW    R25:R24, R17:R16
+   \   0000018E   01D9               MOVW    R27:R26, R19:R18
+    135            cal.a=1690*d+0.5;
+   \   00000190   018C               MOVW    R17:R16, R25:R24
+   \   00000192   019D               MOVW    R19:R18, R27:R26
+   \   00000194   E040               LDI     R20, 0
+   \   00000196   E450               LDI     R21, 64
+   \   00000198   ED63               LDI     R22, 211
+   \   0000019A   E474               LDI     R23, 68
+   \   0000019C   ........           CALL    ?F_MUL_L04
+   \   000001A0   E040               LDI     R20, 0
+   \   000001A2   E050               LDI     R21, 0
+   \   000001A4   E060               LDI     R22, 0
+   \   000001A6   E37F               LDI     R23, 63
+   \   000001A8   ........           CALL    ?F_ADD_L04
+   \   000001AC   ........           CALL    ?F2SL_L04
+   \   000001B0   ....               LDI     R30, LOW(cal)
+   \   000001B2   ....               LDI     R31, (cal) >> 8
+   \   000001B4   8306               STD     Z+6, R16
+   \   000001B6   8317               STD     Z+7, R17
+   \   000001B8   8720               STD     Z+8, R18
+   \   000001BA   8731               STD     Z+9, R19
+    136            
+    137            char * p=(char *)&cal;
+   \   000001BC   ....               LDI     R16, LOW(cal)
+   \   000001BE   ....               LDI     R17, (cal) >> 8
+   \   000001C0   0128               MOVW    R5:R4, R17:R16
+    138            __watchdog_reset();
+   \   000001C2   95A8               WDR
+    139            for(int i=0;i<sizeof(tcalibr);i++){
+   \   000001C4   2488               CLR     R8
+   \   000001C6   2499               CLR     R9
+   \                     ??calibration_10:
+   \   000001C8   E00E               LDI     R16, 14
+   \   000001CA   1680               CP      R8, R16
+   \   000001CC   E000               LDI     R16, 0
+   \   000001CE   0690               CPC     R9, R16
+   \   000001D0   F490               BRCC    ??calibration_5
+    140               setch(1000+i,*p++);
+   \   000001D2   01F2               MOVW    R31:R30, R5:R4
+   \   000001D4   8120               LD      R18, Z
+   \   000001D6   E030               LDI     R19, 0
+   \   000001D8   0184               MOVW    R17:R16, R9:R8
+   \   000001DA   5108               SUBI    R16, 24
+   \   000001DC   4F1C               SBCI    R17, 252
+   \   000001DE   ........           CALL    setch
+   \   000001E2   E001               LDI     R16, 1
+   \   000001E4   0E40               ADD     R4, R16
+   \   000001E6   E000               LDI     R16, 0
+   \   000001E8   1E50               ADC     R5, R16
+    141               __watchdog_reset();
+   \   000001EA   95A8               WDR
+    142            }
+   \   000001EC   E001               LDI     R16, 1
+   \   000001EE   0E80               ADD     R8, R16
+   \   000001F0   E000               LDI     R16, 0
+   \   000001F2   1E90               ADC     R9, R16
+   \   000001F4   CFE9               RJMP    ??calibration_10
+   \                     ??calibration_5:
+   \   000001F6   E0EA               LDI     R30, 10
+   \   000001F8   ........           JMP     ?EPILOGUE_B10_L09
+   \   000001FC                      REQUIRE _A_PORTC
+   \   000001FC                      REQUIRE _A_PORTA
+    143          }  
+    144          ///////////////////////////////////////////////////////////////////////////
+
+   \                                 In  segment CODE, align 2, keep-with-next
+    145          int load_calibr(){//загрузка калибровочных коэффициентов из eeprom
+   \                     load_calibr:
+   \   00000000   2F79               MOV     R23, R25
+   \   00000002   2E08               MOV     R0, R24
+    146          ///////////////////////////////////////////////////////////////////////////
+    147            char * p=(char *)&cal;
+   \   00000004   ....               LDI     R16, LOW(cal)
+   \   00000006   ....               LDI     R17, (cal) >> 8
+   \   00000008   01C8               MOVW    R25:R24, R17:R16
+    148            char ch;
+    149            for(int i=0;i<sizeof(tcalibr);i++ ){
+   \   0000000A   E020               LDI     R18, 0
+   \   0000000C   E030               LDI     R19, 0
+   \                     ??load_calibr_0:
+   \   0000000E   302E               CPI     R18, 14
+   \   00000010   E000               LDI     R16, 0
+   \   00000012   0730               CPC     R19, R16
+   \   00000014   F468               BRCC    ??load_calibr_1
+    150               ch=*(( unsigned char __eeprom *)(1000+i));
+   \   00000016   01A9               MOVW    R21:R20, R19:R18
+   \   00000018   5148               SUBI    R20, 24
+   \   0000001A   4F5C               SBCI    R21, 252
+   \   0000001C   ........           CALL    __eeget8_16
+   \   00000020   2F60               MOV     R22, R16
+    151               *p=ch;
+   \   00000022   01FC               MOVW    R31:R30, R25:R24
+   \   00000024   8360               ST      Z, R22
+    152               p++;
+   \   00000026   9601               ADIW    R25:R24, 1
+    153               __watchdog_reset();
+   \   00000028   95A8               WDR
+    154            };
+   \   0000002A   5F2F               SUBI    R18, 255
+   \   0000002C   4F3F               SBCI    R19, 255
+   \   0000002E   CFEF               RJMP    ??load_calibr_0
+    155            if(cal.offsadc==0xff){ //eeprom чистое, задаем параметры по умолчанию
+   \                     ??load_calibr_1:
+   \   00000030   ....               LDI     R30, LOW(cal)
+   \   00000032   ....               LDI     R31, (cal) >> 8
+   \   00000034   8100               LD      R16, Z
+   \   00000036   8111               LDD     R17, Z+1
+   \   00000038   3F0F               CPI     R16, 255
+   \   0000003A   E020               LDI     R18, 0
+   \   0000003C   0712               CPC     R17, R18
+   \   0000003E   F4D1               BRNE    ??load_calibr_2
+    156               cal.offsadc=0;
+   \   00000040   E000               LDI     R16, 0
+   \   00000042   E010               LDI     R17, 0
+   \   00000044   ....               LDI     R30, LOW(cal)
+   \   00000046   ....               LDI     R31, (cal) >> 8
+   \   00000048   8300               ST      Z, R16
+   \   0000004A   8311               STD     Z+1, R17
+    157               cal.a=1690;
+   \   0000004C   E90A               LDI     R16, 154
+   \   0000004E   E016               LDI     R17, 6
+   \   00000050   E020               LDI     R18, 0
+   \   00000052   E030               LDI     R19, 0
+   \   00000054   ....               LDI     R30, LOW(cal)
+   \   00000056   ....               LDI     R31, (cal) >> 8
+   \   00000058   8306               STD     Z+6, R16
+   \   0000005A   8317               STD     Z+7, R17
+   \   0000005C   8720               STD     Z+8, R18
+   \   0000005E   8731               STD     Z+9, R19
+    158               cal.b=0;
+   \   00000060   E000               LDI     R16, 0
+   \   00000062   E010               LDI     R17, 0
+   \   00000064   E020               LDI     R18, 0
+   \   00000066   E030               LDI     R19, 0
+   \   00000068   ....               LDI     R30, LOW(cal)
+   \   0000006A   ....               LDI     R31, (cal) >> 8
+   \   0000006C   8702               STD     Z+10, R16
+   \   0000006E   8713               STD     Z+11, R17
+   \   00000070   8724               STD     Z+12, R18
+   \   00000072   8735               STD     Z+13, R19
+    159            }
+    160          }
+   \                     ??load_calibr_2:
+   \   00000074   2D80               MOV     R24, R0
+   \   00000076   2F97               MOV     R25, R23
+   \   00000078   9508               RET
+    161          
+    162          
+    163          ///////////////////////////////////////////////////////////////////////////
+
+   \                                 In  segment CODE, align 2, keep-with-next
+    164          void setredon(char num){// зажечь красную лампочку на соотв. номеру батарейке
+   \                     setredon:
+    165          ///////////////////////////////////////////////////////////////////////////
+    166            switch(num){
+   \   00000000   2F10               MOV     R17, R16
+   \   00000002   5010               SUBI    R17, 0
+   \   00000004   F039               BREQ    ??setredon_0
+   \   00000006   951A               DEC     R17
+   \   00000008   F039               BREQ    ??setredon_1
+   \   0000000A   951A               DEC     R17
+   \   0000000C   F039               BREQ    ??setredon_2
+   \   0000000E   951A               DEC     R17
+   \   00000010   F039               BREQ    ??setredon_3
+   \   00000012   9508               RET
+    167            case 0: red1=0;
+   \                     ??setredon_0:
+   \   00000014   98AA               CBI     0x15, 0x02
+   \   00000016   9508               RET
+    168              break;
+    169            case 1: red2=0;
+   \                     ??setredon_1:
+   \   00000018   98AD               CBI     0x15, 0x05
+   \   0000001A   9508               RET
+    170              break;
+    171            case 2: red3=0;
+   \                     ??setredon_2:
+   \   0000001C   98DB               CBI     0x1B, 0x03
+   \   0000001E   9508               RET
+    172              break;
+    173            case 3: red4=0;
+   \                     ??setredon_3:
+   \   00000020   98D8               CBI     0x1B, 0x00
+    174            }
+    175          }
+   \   00000022   9508               RET
+   \   00000024                      REQUIRE _A_PORTC
+   \   00000024                      REQUIRE _A_PORTA
+    176          ///////////////////////////////////////////////////////////////////////////
+
+   \                                 In  segment CODE, align 2, keep-with-next
+    177          void setredoff(char num){// потушить красную лампочку на соотв. номеру батарейке
+   \                     setredoff:
+    178          ///////////////////////////////////////////////////////////////////////////
+    179            switch(num){
+   \   00000000   2F10               MOV     R17, R16
+   \   00000002   5010               SUBI    R17, 0
+   \   00000004   F039               BREQ    ??setredoff_0
+   \   00000006   951A               DEC     R17
+   \   00000008   F039               BREQ    ??setredoff_1
+   \   0000000A   951A               DEC     R17
+   \   0000000C   F039               BREQ    ??setredoff_2
+   \   0000000E   951A               DEC     R17
+   \   00000010   F039               BREQ    ??setredoff_3
+   \   00000012   9508               RET
+    180            case 0: red1=1;
+   \                     ??setredoff_0:
+   \   00000014   9AAA               SBI     0x15, 0x02
+   \   00000016   9508               RET
+    181              break;
+    182            case 1: red2=1;
+   \                     ??setredoff_1:
+   \   00000018   9AAD               SBI     0x15, 0x05
+   \   0000001A   9508               RET
+    183              break;
+    184            case 2: red3=1;
+   \                     ??setredoff_2:
+   \   0000001C   9ADB               SBI     0x1B, 0x03
+   \   0000001E   9508               RET
+    185              break;
+    186            case 3: red4=1;
+   \                     ??setredoff_3:
+   \   00000020   9AD8               SBI     0x1B, 0x00
+    187            }
+    188          }
+   \   00000022   9508               RET
+   \   00000024                      REQUIRE _A_PORTC
+   \   00000024                      REQUIRE _A_PORTA
+    189          ///////////////////////////////////////////////////////////////////////////
+
+   \                                 In  segment CODE, align 2, keep-with-next
+    190          void setyelon(char num){// зажечь желт. лампочку на соотв. номеру батарейке
+   \                     setyelon:
+    191          ///////////////////////////////////////////////////////////////////////////
+    192            switch(num){
+   \   00000000   2F10               MOV     R17, R16
+   \   00000002   5010               SUBI    R17, 0
+   \   00000004   F039               BREQ    ??setyelon_0
+   \   00000006   951A               DEC     R17
+   \   00000008   F039               BREQ    ??setyelon_1
+   \   0000000A   951A               DEC     R17
+   \   0000000C   F039               BREQ    ??setyelon_2
+   \   0000000E   951A               DEC     R17
+   \   00000010   F039               BREQ    ??setyelon_3
+   \   00000012   9508               RET
+    193            case 0: yel1=0;
+   \                     ??setyelon_0:
+   \   00000014   98A9               CBI     0x15, 0x01
+   \   00000016   9508               RET
+    194              break;
+    195            case 1: yel2=0;
+   \                     ??setyelon_1:
+   \   00000018   98AC               CBI     0x15, 0x04
+   \   0000001A   9508               RET
+    196              break;
+    197            case 2: yel3=0;
+   \                     ??setyelon_2:
+   \   0000001C   98AF               CBI     0x15, 0x07
+   \   0000001E   9508               RET
+    198              break;
+    199            case 3: yel4=0;
+   \                     ??setyelon_3:
+   \   00000020   98D9               CBI     0x1B, 0x01
+    200            }
+    201          }
+   \   00000022   9508               RET
+   \   00000024                      REQUIRE _A_PORTC
+   \   00000024                      REQUIRE _A_PORTA
+    202          ///////////////////////////////////////////////////////////////////////////
+
+   \                                 In  segment CODE, align 2, keep-with-next
+    203          void setyeloff(char num){// потушить желт. лампочку на соотв. номеру батарейке
+   \                     setyeloff:
+    204          ///////////////////////////////////////////////////////////////////////////
+    205            switch(num){
+   \   00000000   2F10               MOV     R17, R16
+   \   00000002   5010               SUBI    R17, 0
+   \   00000004   F039               BREQ    ??setyeloff_0
+   \   00000006   951A               DEC     R17
+   \   00000008   F039               BREQ    ??setyeloff_1
+   \   0000000A   951A               DEC     R17
+   \   0000000C   F039               BREQ    ??setyeloff_2
+   \   0000000E   951A               DEC     R17
+   \   00000010   F039               BREQ    ??setyeloff_3
+   \   00000012   9508               RET
+    206            case 0: yel1=1;
+   \                     ??setyeloff_0:
+   \   00000014   9AA9               SBI     0x15, 0x01
+   \   00000016   9508               RET
+    207              break;
+    208            case 1: yel2=1;
+   \                     ??setyeloff_1:
+   \   00000018   9AAC               SBI     0x15, 0x04
+   \   0000001A   9508               RET
+    209              break;
+    210            case 2: yel3=1;
+   \                     ??setyeloff_2:
+   \   0000001C   9AAF               SBI     0x15, 0x07
+   \   0000001E   9508               RET
+    211              break;
+    212            case 3: yel4=1;
+   \                     ??setyeloff_3:
+   \   00000020   9AD9               SBI     0x1B, 0x01
+    213            }
+    214          }
+   \   00000022   9508               RET
+   \   00000024                      REQUIRE _A_PORTC
+   \   00000024                      REQUIRE _A_PORTA
+    215          ///////////////////////////////////////////////////////////////////////////
+
+   \                                 In  segment CODE, align 2, keep-with-next
+    216          void setyel(char num,char state){// установить свечение желт лампы в соотв с зад. состоянием
+   \                     setyel:
+    217          ///////////////////////////////////////////////////////////////////////////
+    218            switch(num){
+   \   00000000   2F20               MOV     R18, R16
+   \   00000002   5020               SUBI    R18, 0
+   \   00000004   F039               BREQ    ??setyel_0
+   \   00000006   952A               DEC     R18
+   \   00000008   F059               BREQ    ??setyel_1
+   \   0000000A   952A               DEC     R18
+   \   0000000C   F079               BREQ    ??setyel_2
+   \   0000000E   952A               DEC     R18
+   \   00000010   F099               BREQ    ??setyel_3
+   \   00000012   9508               RET
+    219            case 0: yel1=state;
+   \                     ??setyel_0:
+   \   00000014   2F21               MOV     R18, R17
+   \   00000016   FD20               SBRC    R18, 0
+   \   00000018   9AA9               SBI     0x15, 0x01
+   \                     ??setyel_4:
+   \   0000001A   FF20               SBRS    R18, 0
+   \   0000001C   98A9               CBI     0x15, 0x01
+   \                     ??setyel_5:
+   \   0000001E   9508               RET
+    220              break;
+    221            case 1: yel2=state;
+   \                     ??setyel_1:
+   \   00000020   2F21               MOV     R18, R17
+   \   00000022   FD20               SBRC    R18, 0
+   \   00000024   9AAC               SBI     0x15, 0x04
+   \                     ??setyel_6:
+   \   00000026   FF20               SBRS    R18, 0
+   \   00000028   98AC               CBI     0x15, 0x04
+   \                     ??setyel_7:
+   \   0000002A   9508               RET
+    222              break;
+    223            case 2: yel3=state;
+   \                     ??setyel_2:
+   \   0000002C   2F21               MOV     R18, R17
+   \   0000002E   FD20               SBRC    R18, 0
+   \   00000030   9AAF               SBI     0x15, 0x07
+   \                     ??setyel_8:
+   \   00000032   FF20               SBRS    R18, 0
+   \   00000034   98AF               CBI     0x15, 0x07
+   \                     ??setyel_9:
+   \   00000036   9508               RET
+    224              break;
+    225            case 3: yel4=state;
+   \                     ??setyel_3:
+   \   00000038   2F21               MOV     R18, R17
+   \   0000003A   FD20               SBRC    R18, 0
+   \   0000003C   9AD9               SBI     0x1B, 0x01
+   \                     ??setyel_10:
+   \   0000003E   FF20               SBRS    R18, 0
+   \   00000040   98D9               CBI     0x1B, 0x01
+    226            }
+    227          }
+   \                     ??setyel_11:
+   \   00000042   9508               RET
+   \   00000044                      REQUIRE _A_PORTC
+   \   00000044                      REQUIRE _A_PORTA
+    228          ///////////////////////////////////////////////////////////////////////////
+
+   \                                 In  segment CODE, align 2, keep-with-next
+    229          void setgron(char num){// зажечь зел. лампочку на соотв. номеру батарейке
+   \                     setgron:
+    230          ///////////////////////////////////////////////////////////////////////////
+    231            switch(num){
+   \   00000000   2F10               MOV     R17, R16
+   \   00000002   5010               SUBI    R17, 0
+   \   00000004   F039               BREQ    ??setgron_0
+   \   00000006   951A               DEC     R17
+   \   00000008   F039               BREQ    ??setgron_1
+   \   0000000A   951A               DEC     R17
+   \   0000000C   F039               BREQ    ??setgron_2
+   \   0000000E   951A               DEC     R17
+   \   00000010   F039               BREQ    ??setgron_3
+   \   00000012   9508               RET
+    232            case 0: gr1=0;
+   \                     ??setgron_0:
+   \   00000014   98A8               CBI     0x15, 0x00
+   \   00000016   9508               RET
+    233              break;
+    234            case 1: gr2=0;
+   \                     ??setgron_1:
+   \   00000018   98AB               CBI     0x15, 0x03
+   \   0000001A   9508               RET
+    235              break;
+    236            case 2: gr3=0;
+   \                     ??setgron_2:
+   \   0000001C   98AE               CBI     0x15, 0x06
+   \   0000001E   9508               RET
+    237              break;
+    238            case 3: gr4=0;
+   \                     ??setgron_3:
+   \   00000020   98DA               CBI     0x1B, 0x02
+    239            }
+    240          }
+   \   00000022   9508               RET
+   \   00000024                      REQUIRE _A_PORTC
+   \   00000024                      REQUIRE _A_PORTA
+    241          ///////////////////////////////////////////////////////////////////////////
+
+   \                                 In  segment CODE, align 2, keep-with-next
+    242          void setgroff(char num){// потушить зел. лампочку на соотв. номеру батарейке
+   \                     setgroff:
+    243          ///////////////////////////////////////////////////////////////////////////
+    244            switch(num){
+   \   00000000   2F10               MOV     R17, R16
+   \   00000002   5010               SUBI    R17, 0
+   \   00000004   F039               BREQ    ??setgroff_0
+   \   00000006   951A               DEC     R17
+   \   00000008   F039               BREQ    ??setgroff_1
+   \   0000000A   951A               DEC     R17
+   \   0000000C   F039               BREQ    ??setgroff_2
+   \   0000000E   951A               DEC     R17
+   \   00000010   F039               BREQ    ??setgroff_3
+   \   00000012   9508               RET
+    245            case 0: gr1=1;
+   \                     ??setgroff_0:
+   \   00000014   9AA8               SBI     0x15, 0x00
+   \   00000016   9508               RET
+    246              break;
+    247            case 1: gr2=1;
+   \                     ??setgroff_1:
+   \   00000018   9AAB               SBI     0x15, 0x03
+   \   0000001A   9508               RET
+    248              break;
+    249            case 2: gr3=1;
+   \                     ??setgroff_2:
+   \   0000001C   9AAE               SBI     0x15, 0x06
+   \   0000001E   9508               RET
+    250              break;
+    251            case 3: gr4=1;
+   \                     ??setgroff_3:
+   \   00000020   9ADA               SBI     0x1B, 0x02
+    252            }
+    253          }
+   \   00000022   9508               RET
+   \   00000024                      REQUIRE _A_PORTC
+   \   00000024                      REQUIRE _A_PORTA
+    254          
+    255          ///////////////////////////////////////////////////////////////////////////
+
+   \                                 In  segment CODE, align 2, keep-with-next
+    256          void inistates(){// иниц2иация нач. состояния активации батарей
+   \                     inistates:
+   \   00000000   ........           CALL    ?PROLOGUE3_L09
+    257          ///////////////////////////////////////////////////////////////////////////
+    258            for(int i=0;i<3;i++){
+   \   00000004   E080               LDI     R24, 0
+   \   00000006   E090               LDI     R25, 0
+   \                     ??inistates_0:
+   \   00000008   3083               CPI     R24, 3
+   \   0000000A   E000               LDI     R16, 0
+   \   0000000C   0790               CPC     R25, R16
+   \   0000000E   F494               BRGE    ??inistates_1
+    259              batt[i].state=0;
+   \   00000010   E0A0               LDI     R26, 0
+   \   00000012   01AC               MOVW    R21:R20, R25:R24
+   \   00000014   E107               LDI     R16, 23
+   \   00000016   E010               LDI     R17, 0
+   \   00000018   ........           CALL    ?S_EC_MUL_L02
+   \   0000001C   01F8               MOVW    R31:R30, R17:R16
+   \   0000001E   ....               SUBI    R30, LOW((-(batt) & 0xFFFF))
+   \   00000020   ....               SBCI    R31, (-(batt) & 0xFFFF) >> 8
+   \   00000022   83A0               ST      Z, R26
+    260              setgroff(i);
+   \   00000024   2F08               MOV     R16, R24
+   \   00000026   ....               RCALL   setgroff
+    261              setyeloff(i);
+   \   00000028   2F08               MOV     R16, R24
+   \   0000002A   ....               RCALL   setyeloff
+    262              setredoff(i);
+   \   0000002C   2F08               MOV     R16, R24
+   \   0000002E   ....               RCALL   setredoff
+    263            }
+   \   00000030   9601               ADIW    R25:R24, 1
+   \   00000032   CFEA               RJMP    ??inistates_0
+    264          };
+   \                     ??inistates_1:
+   \   00000034   E0E3               LDI     R30, 3
+   \   00000036   ........           JMP     ?EPILOGUE_B3_L09
+    265          ///////////////////////////////////////////////////////////////////////////
+
+   \                                 In  segment CODE, align 2, keep-with-next
+    266          void setstate(int num){// автомат состояния батареи
+   \                     setstate:
+   \   00000000   ........           CALL    ?PROLOGUE7_L09
+   \   00000004                      REQUIRE ?Register_R4_is_cg_reg
+   \   00000004                      REQUIRE ?Register_R5_is_cg_reg
+   \   00000004                      REQUIRE ?Register_R6_is_cg_reg
+   \   00000004   01C8               MOVW    R25:R24, R17:R16
+    267          ///////////////////////////////////////////////////////////////////////////
+    268            tbatt* b=&batt[num];
+   \   00000006   ....               LDI     R16, LOW(batt)
+   \   00000008   2E40               MOV     R4, R16
+   \   0000000A   ....               LDI     R16, (batt) >> 8
+   \   0000000C   2E50               MOV     R5, R16
+   \   0000000E   01AC               MOVW    R21:R20, R25:R24
+   \   00000010   E107               LDI     R16, 23
+   \   00000012   E010               LDI     R17, 0
+   \   00000014   ........           CALL    ?S_EC_MUL_L02
+   \   00000018   0E40               ADD     R4, R16
+   \   0000001A   1E51               ADC     R5, R17
+   \   0000001C   01D2               MOVW    R27:R26, R5:R4
+    269            if (b->curr>profile.act_cur_level*100)setredon(num);
+   \   0000001E   9140....           LDS     R20, (profile + 62)
+   \   00000022   E050               LDI     R21, 0
+   \   00000024   E604               LDI     R16, 100
+   \   00000026   E010               LDI     R17, 0
+   \   00000028   ........           CALL    ?S_EC_MUL_L02
+   \   0000002C   01FD               MOVW    R31:R30, R27:R26
+   \   0000002E   8123               LDD     R18, Z+3
+   \   00000030   8134               LDD     R19, Z+4
+   \   00000032   1702               CP      R16, R18
+   \   00000034   0713               CPC     R17, R19
+   \   00000036   F41C               BRGE    ??setstate_0
+   \   00000038   2F08               MOV     R16, R24
+   \   0000003A   ....               RCALL   setredon
+   \   0000003C   C002               RJMP    ??setstate_1
+    270            else setredoff(num);
+   \                     ??setstate_0:
+   \   0000003E   2F08               MOV     R16, R24
+   \   00000040   ....               RCALL   setredoff
+    271            if(work_mode!=0){
+   \                     ??setstate_1:
+   \   00000042   9100....           LDS     R16, work_mode
+   \   00000046   2300               TST     R16
+   \   00000048   F111               BREQ    ??setstate_2
+    272              char allowcur=1;
+   \   0000004A   2466               CLR     R6
+   \   0000004C   9463               INC     R6
+    273              for(int i=0;i<4;i++){
+   \   0000004E   2444               CLR     R4
+   \   00000050   2455               CLR     R5
+   \                     ??setstate_3:
+   \   00000052   E004               LDI     R16, 4
+   \   00000054   1640               CP      R4, R16
+   \   00000056   E000               LDI     R16, 0
+   \   00000058   0650               CPC     R5, R16
+   \   0000005A   F48C               BRGE    ??setstate_4
+    274                 if(batt[i].state==3)allowcur=0;
+   \   0000005C   01A2               MOVW    R21:R20, R5:R4
+   \   0000005E   E107               LDI     R16, 23
+   \   00000060   E010               LDI     R17, 0
+   \   00000062   ........           CALL    ?S_EC_MUL_L02
+   \   00000066   01F8               MOVW    R31:R30, R17:R16
+   \   00000068   ....               SUBI    R30, LOW((-(batt) & 0xFFFF))
+   \   0000006A   ....               SBCI    R31, (-(batt) & 0xFFFF) >> 8
+   \   0000006C   8100               LD      R16, Z
+   \   0000006E   3003               CPI     R16, 3
+   \   00000070   F409               BRNE    ??setstate_5
+   \   00000072   2466               CLR     R6
+    275              };   
+   \                     ??setstate_5:
+   \   00000074   E001               LDI     R16, 1
+   \   00000076   0E40               ADD     R4, R16
+   \   00000078   E000               LDI     R16, 0
+   \   0000007A   1E50               ADC     R5, R16
+   \   0000007C   CFEA               RJMP    ??setstate_3
+    276              if(allowcur){
+   \                     ??setstate_4:
+   \   0000007E   2066               TST     R6
+   \   00000080   F031               BREQ    ??setstate_2
+    277                 setcur(profile.act_cur);
+   \   00000082   9100....           LDS     R16, (profile + 61)
+   \   00000086   ....               RCALL   setcur
+    278                 work_mode=0;
+   \   00000088   E000               LDI     R16, 0
+   \   0000008A   9300....           STS     work_mode, R16
+    279              };   
+    280            } 
+    281            switch (b->state){
+   \                     ??setstate_2:
+   \   0000008E   910C               LD      R16, X
+   \   00000090   5000               SUBI    R16, 0
+   \   00000092   F051               BREQ    ??setstate_6
+   \   00000094   950A               DEC     R16
+   \   00000096   F409               BRNE    $+2+2
+   \   00000098   C07D               RJMP    ??setstate_7
+   \   0000009A   950A               DEC     R16
+   \   0000009C   F409               BRNE    $+2+2
+   \   0000009E   C136               RJMP    ??setstate_8
+   \   000000A0   950A               DEC     R16
+   \   000000A2   F409               BRNE    $+2+2
+   \   000000A4   C193               RJMP    ??setstate_9
+   \   000000A6   C19F               RJMP    ??setstate_10
+    282            case 0://нач. состояние, ожидаем установки батареи
+    283              setgroff(num);
+   \                     ??setstate_6:
+   \   000000A8   2F08               MOV     R16, R24
+   \   000000AA   ....               RCALL   setgroff
+    284              setyeloff(num);
+   \   000000AC   2F08               MOV     R16, R24
+   \   000000AE   ....               RCALL   setyeloff
+    285              if(!(batt[0].state||batt[1].state||batt[2].state||batt[3].state))
+   \   000000B0   9100....           LDS     R16, batt
+   \   000000B4   2300               TST     R16
+   \   000000B6   F479               BRNE    ??setstate_11
+   \   000000B8   9100....           LDS     R16, (batt + 23)
+   \   000000BC   2300               TST     R16
+   \   000000BE   F459               BRNE    ??setstate_11
+   \   000000C0   9100....           LDS     R16, (batt + 46)
+   \   000000C4   2300               TST     R16
+   \   000000C6   F439               BRNE    ??setstate_11
+   \   000000C8   9100....           LDS     R16, (batt + 69)
+   \   000000CC   2300               TST     R16
+   \   000000CE   F419               BRNE    ??setstate_11
+    286                       work_mode=0; //сброс установленной моды когда все бат. вытащены
+   \   000000D0   E000               LDI     R16, 0
+   \   000000D2   9300....           STS     work_mode, R16
+    287              b->charge=0;
+   \                     ??setstate_11:
+   \   000000D6   E000               LDI     R16, 0
+   \   000000D8   E010               LDI     R17, 0
+   \   000000DA   E020               LDI     R18, 0
+   \   000000DC   E030               LDI     R19, 0
+   \   000000DE   01FD               MOVW    R31:R30, R27:R26
+   \   000000E0   8B03               STD     Z+19, R16
+   \   000000E2   8B14               STD     Z+20, R17
+   \   000000E4   8B25               STD     Z+21, R18
+   \   000000E6   8B36               STD     Z+22, R19
+    288              b->charge_hi=0;
+   \   000000E8   E000               LDI     R16, 0
+   \   000000EA   E010               LDI     R17, 0
+   \   000000EC   01FD               MOVW    R31:R30, R27:R26
+   \   000000EE   8B01               STD     Z+17, R16
+   \   000000F0   8B12               STD     Z+18, R17
+    289            //  if(work_mode!=0)break;
+    290              if(b->v>300){
+   \   000000F2   01FD               MOVW    R31:R30, R27:R26
+   \   000000F4   8101               LDD     R16, Z+1
+   \   000000F6   8112               LDD     R17, Z+2
+   \   000000F8   320D               CPI     R16, 45
+   \   000000FA   E021               LDI     R18, 1
+   \   000000FC   0712               CPC     R17, R18
+   \   000000FE   F40C               BRGE    $+2+2
+   \   00000100   C172               RJMP    ??setstate_10
+    291                b->time=0;
+   \   00000102   E000               LDI     R16, 0
+   \   00000104   E010               LDI     R17, 0
+   \   00000106   E020               LDI     R18, 0
+   \   00000108   E030               LDI     R19, 0
+   \   0000010A   01FD               MOVW    R31:R30, R27:R26
+   \   0000010C   8305               STD     Z+5, R16
+   \   0000010E   8316               STD     Z+6, R17
+   \   00000110   8327               STD     Z+7, R18
+   \   00000112   8730               STD     Z+8, R19
+    292                if(work_mode!=0) {
+   \   00000114   9100....           LDS     R16, work_mode
+   \   00000118   2300               TST     R16
+   \   0000011A   F0B9               BREQ    ??setstate_12
+    293                  b->state=2;
+   \   0000011C   E002               LDI     R16, 2
+   \   0000011E   930C               ST      X, R16
+    294                  b->begt=0;
+   \   00000120   E000               LDI     R16, 0
+   \   00000122   E010               LDI     R17, 0
+   \   00000124   E020               LDI     R18, 0
+   \   00000126   E030               LDI     R19, 0
+   \   00000128   01FD               MOVW    R31:R30, R27:R26
+   \   0000012A   8701               STD     Z+9, R16
+   \   0000012C   8712               STD     Z+10, R17
+   \   0000012E   8723               STD     Z+11, R18
+   \   00000130   8734               STD     Z+12, R19
+    295                  b->endt=0;
+   \   00000132   E000               LDI     R16, 0
+   \   00000134   E010               LDI     R17, 0
+   \   00000136   E020               LDI     R18, 0
+   \   00000138   E030               LDI     R19, 0
+   \   0000013A   01FD               MOVW    R31:R30, R27:R26
+   \   0000013C   8705               STD     Z+13, R16
+   \   0000013E   8716               STD     Z+14, R17
+   \   00000140   8727               STD     Z+15, R18
+   \   00000142   8B30               STD     Z+16, R19
+    296                  b->state=2;
+   \   00000144   E002               LDI     R16, 2
+   \   00000146   930C               ST      X, R16
+    297                  break;
+   \   00000148   C14E               RJMP    ??setstate_10
+    298                }  
+    299                 b->state=1;
+   \                     ??setstate_12:
+   \   0000014A   E001               LDI     R16, 1
+   \   0000014C   930C               ST      X, R16
+    300                 b->begt=curtime;
+   \   0000014E   ....               LDI     R30, LOW(curtime)
+   \   00000150   ....               LDI     R31, (curtime) >> 8
+   \   00000152   8100               LD      R16, Z
+   \   00000154   8111               LDD     R17, Z+1
+   \   00000156   8122               LDD     R18, Z+2
+   \   00000158   8133               LDD     R19, Z+3
+   \   0000015A   01FD               MOVW    R31:R30, R27:R26
+   \   0000015C   8701               STD     Z+9, R16
+   \   0000015E   8712               STD     Z+10, R17
+   \   00000160   8723               STD     Z+11, R18
+   \   00000162   8734               STD     Z+12, R19
+    301                 b->endt=b->begt+activ_time;
+   \   00000164   01FD               MOVW    R31:R30, R27:R26
+   \   00000166   8501               LDD     R16, Z+9
+   \   00000168   8512               LDD     R17, Z+10
+   \   0000016A   8523               LDD     R18, Z+11
+   \   0000016C   8534               LDD     R19, Z+12
+   \   0000016E   ....               LDI     R30, LOW(activ_time)
+   \   00000170   ....               LDI     R31, (activ_time) >> 8
+   \   00000172   8140               LD      R20, Z
+   \   00000174   8151               LDD     R21, Z+1
+   \   00000176   8162               LDD     R22, Z+2
+   \   00000178   8173               LDD     R23, Z+3
+   \   0000017A   0F40               ADD     R20, R16
+   \   0000017C   1F51               ADC     R21, R17
+   \   0000017E   1F62               ADC     R22, R18
+   \   00000180   1F73               ADC     R23, R19
+   \   00000182   01FD               MOVW    R31:R30, R27:R26
+   \   00000184   8745               STD     Z+13, R20
+   \   00000186   8756               STD     Z+14, R21
+   \   00000188   8767               STD     Z+15, R22
+   \   0000018A   8B70               STD     Z+16, R23
+    302                 
+    303                 setcur(profile.act_cur);
+   \   0000018C   9100....           LDS     R16, (profile + 61)
+   \   00000190   ....               RCALL   setcur
+   \   00000192   C129               RJMP    ??setstate_10
+    304              }
+    305              break;
+    306           case 1: //идет активация
+    307             setgroff(num);
+   \                     ??setstate_7:
+   \   00000194   2F08               MOV     R16, R24
+   \   00000196   ....               RCALL   setgroff
+    308            setyelon(num);
+   \   00000198   2F08               MOV     R16, R24
+   \   0000019A   ....               RCALL   setyelon
+    309            if(curtime!=b->begt){
+   \   0000019C   ....               LDI     R30, LOW(curtime)
+   \   0000019E   ....               LDI     R31, (curtime) >> 8
+   \   000001A0   8100               LD      R16, Z
+   \   000001A2   8111               LDD     R17, Z+1
+   \   000001A4   8122               LDD     R18, Z+2
+   \   000001A6   8133               LDD     R19, Z+3
+   \   000001A8   01FD               MOVW    R31:R30, R27:R26
+   \   000001AA   8541               LDD     R20, Z+9
+   \   000001AC   8552               LDD     R21, Z+10
+   \   000001AE   8563               LDD     R22, Z+11
+   \   000001B0   8574               LDD     R23, Z+12
+   \   000001B2   1704               CP      R16, R20
+   \   000001B4   0715               CPC     R17, R21
+   \   000001B6   0726               CPC     R18, R22
+   \   000001B8   0737               CPC     R19, R23
+   \   000001BA   F141               BREQ    ??setstate_13
+    310              b->time+=curtime-b->begt;
+   \   000001BC   01FD               MOVW    R31:R30, R27:R26
+   \   000001BE   8145               LDD     R20, Z+5
+   \   000001C0   8156               LDD     R21, Z+6
+   \   000001C2   8167               LDD     R22, Z+7
+   \   000001C4   8570               LDD     R23, Z+8
+   \   000001C6   ....               LDI     R30, LOW(curtime)
+   \   000001C8   ....               LDI     R31, (curtime) >> 8
+   \   000001CA   8100               LD      R16, Z
+   \   000001CC   8111               LDD     R17, Z+1
+   \   000001CE   8122               LDD     R18, Z+2
+   \   000001D0   8133               LDD     R19, Z+3
+   \   000001D2   0F04               ADD     R16, R20
+   \   000001D4   1F15               ADC     R17, R21
+   \   000001D6   1F26               ADC     R18, R22
+   \   000001D8   1F37               ADC     R19, R23
+   \   000001DA   01FD               MOVW    R31:R30, R27:R26
+   \   000001DC   8541               LDD     R20, Z+9
+   \   000001DE   8552               LDD     R21, Z+10
+   \   000001E0   8563               LDD     R22, Z+11
+   \   000001E2   8574               LDD     R23, Z+12
+   \   000001E4   1B04               SUB     R16, R20
+   \   000001E6   0B15               SBC     R17, R21
+   \   000001E8   0B26               SBC     R18, R22
+   \   000001EA   0B37               SBC     R19, R23
+   \   000001EC   01FD               MOVW    R31:R30, R27:R26
+   \   000001EE   8305               STD     Z+5, R16
+   \   000001F0   8316               STD     Z+6, R17
+   \   000001F2   8327               STD     Z+7, R18
+   \   000001F4   8730               STD     Z+8, R19
+    311              b->begt=curtime;
+   \   000001F6   ....               LDI     R30, LOW(curtime)
+   \   000001F8   ....               LDI     R31, (curtime) >> 8
+   \   000001FA   8100               LD      R16, Z
+   \   000001FC   8111               LDD     R17, Z+1
+   \   000001FE   8122               LDD     R18, Z+2
+   \   00000200   8133               LDD     R19, Z+3
+   \   00000202   01FD               MOVW    R31:R30, R27:R26
+   \   00000204   8701               STD     Z+9, R16
+   \   00000206   8712               STD     Z+10, R17
+   \   00000208   8723               STD     Z+11, R18
+   \   0000020A   8734               STD     Z+12, R19
+    312            }
+    313            if(b->time>=profile.act_time){
+   \                     ??setstate_13:
+   \   0000020C   01FD               MOVW    R31:R30, R27:R26
+   \   0000020E   8105               LDD     R16, Z+5
+   \   00000210   8116               LDD     R17, Z+6
+   \   00000212   8127               LDD     R18, Z+7
+   \   00000214   8530               LDD     R19, Z+8
+   \   00000216   ....               LDI     R30, LOW((profile + 63))
+   \   00000218   ....               LDI     R31, HIGH((profile + 63))
+   \   0000021A   8140               LD      R20, Z
+   \   0000021C   8151               LDD     R21, Z+1
+   \   0000021E   8162               LDD     R22, Z+2
+   \   00000220   8173               LDD     R23, Z+3
+   \   00000222   1704               CP      R16, R20
+   \   00000224   0715               CPC     R17, R21
+   \   00000226   0726               CPC     R18, R22
+   \   00000228   0737               CPC     R19, R23
+   \   0000022A   F044               BRLT    ??setstate_14
+    314               b->state=3;
+   \   0000022C   E003               LDI     R16, 3
+   \   0000022E   930C               ST      X, R16
+    315               setcur(0);
+   \   00000230   E000               LDI     R16, 0
+   \   00000232   ....               RCALL   setcur
+    316               work_mode=1;
+   \   00000234   E001               LDI     R16, 1
+   \   00000236   9300....           STS     work_mode, R16
+    317               break;
+   \   0000023A   C0D5               RJMP    ??setstate_10
+    318            }
+    319               if(work_mode==1){
+   \                     ??setstate_14:
+   \   0000023C   9100....           LDS     R16, work_mode
+   \   00000240   3001               CPI     R16, 1
+   \   00000242   F5F1               BRNE    ??setstate_15
+    320                setyel(num,(curtime&0x0f)>>2);
+   \   00000244   ....               LDI     R30, LOW(curtime)
+   \   00000246   ....               LDI     R31, (curtime) >> 8
+   \   00000248   8100               LD      R16, Z
+   \   0000024A   8111               LDD     R17, Z+1
+   \   0000024C   8122               LDD     R18, Z+2
+   \   0000024E   8133               LDD     R19, Z+3
+   \   00000250   2F10               MOV     R17, R16
+   \   00000252   701F               ANDI    R17, 0x0F
+   \   00000254   9515               ASR     R17
+   \   00000256   9515               ASR     R17
+   \   00000258   2F08               MOV     R16, R24
+   \   0000025A   ....               RCALL   setyel
+    321                b->time+=curtime-b->begt;
+   \   0000025C   01FD               MOVW    R31:R30, R27:R26
+   \   0000025E   8145               LDD     R20, Z+5
+   \   00000260   8156               LDD     R21, Z+6
+   \   00000262   8167               LDD     R22, Z+7
+   \   00000264   8570               LDD     R23, Z+8
+   \   00000266   ....               LDI     R30, LOW(curtime)
+   \   00000268   ....               LDI     R31, (curtime) >> 8
+   \   0000026A   8100               LD      R16, Z
+   \   0000026C   8111               LDD     R17, Z+1
+   \   0000026E   8122               LDD     R18, Z+2
+   \   00000270   8133               LDD     R19, Z+3
+   \   00000272   0F04               ADD     R16, R20
+   \   00000274   1F15               ADC     R17, R21
+   \   00000276   1F26               ADC     R18, R22
+   \   00000278   1F37               ADC     R19, R23
+   \   0000027A   01FD               MOVW    R31:R30, R27:R26
+   \   0000027C   8541               LDD     R20, Z+9
+   \   0000027E   8552               LDD     R21, Z+10
+   \   00000280   8563               LDD     R22, Z+11
+   \   00000282   8574               LDD     R23, Z+12
+   \   00000284   1B04               SUB     R16, R20
+   \   00000286   0B15               SBC     R17, R21
+   \   00000288   0B26               SBC     R18, R22
+   \   0000028A   0B37               SBC     R19, R23
+   \   0000028C   01FD               MOVW    R31:R30, R27:R26
+   \   0000028E   8305               STD     Z+5, R16
+   \   00000290   8316               STD     Z+6, R17
+   \   00000292   8327               STD     Z+7, R18
+   \   00000294   8730               STD     Z+8, R19
+    322                b->begt=0;
+   \   00000296   E000               LDI     R16, 0
+   \   00000298   E010               LDI     R17, 0
+   \   0000029A   E020               LDI     R18, 0
+   \   0000029C   E030               LDI     R19, 0
+   \   0000029E   01FD               MOVW    R31:R30, R27:R26
+   \   000002A0   8701               STD     Z+9, R16
+   \   000002A2   8712               STD     Z+10, R17
+   \   000002A4   8723               STD     Z+11, R18
+   \   000002A6   8734               STD     Z+12, R19
+    323                b->endt=0;
+   \   000002A8   E000               LDI     R16, 0
+   \   000002AA   E010               LDI     R17, 0
+   \   000002AC   E020               LDI     R18, 0
+   \   000002AE   E030               LDI     R19, 0
+   \   000002B0   01FD               MOVW    R31:R30, R27:R26
+   \   000002B2   8705               STD     Z+13, R16
+   \   000002B4   8716               STD     Z+14, R17
+   \   000002B6   8727               STD     Z+15, R18
+   \   000002B8   8B30               STD     Z+16, R19
+    324                b->state=2;
+   \   000002BA   E002               LDI     R16, 2
+   \   000002BC   930C               ST      X, R16
+    325                break;
+   \   000002BE   C093               RJMP    ??setstate_10
+    326             }
+    327          
+    328            if(b->v<300){ //аварийное завершение автивации - батарею вытащили.
+   \                     ??setstate_15:
+   \   000002C0   01FD               MOVW    R31:R30, R27:R26
+   \   000002C2   8101               LDD     R16, Z+1
+   \   000002C4   8112               LDD     R17, Z+2
+   \   000002C6   320C               CPI     R16, 44
+   \   000002C8   E021               LDI     R18, 1
+   \   000002CA   0712               CPC     R17, R18
+   \   000002CC   F00C               BRLT    $+2+2
+   \   000002CE   C08B               RJMP    ??setstate_10
+    329                b->time=0;
+   \   000002D0   E000               LDI     R16, 0
+   \   000002D2   E010               LDI     R17, 0
+   \   000002D4   E020               LDI     R18, 0
+   \   000002D6   E030               LDI     R19, 0
+   \   000002D8   01FD               MOVW    R31:R30, R27:R26
+   \   000002DA   8305               STD     Z+5, R16
+   \   000002DC   8316               STD     Z+6, R17
+   \   000002DE   8327               STD     Z+7, R18
+   \   000002E0   8730               STD     Z+8, R19
+    330                  b->state=0;
+   \   000002E2   E000               LDI     R16, 0
+   \   000002E4   930C               ST      X, R16
+    331                  b->begt=0;
+   \   000002E6   E000               LDI     R16, 0
+   \   000002E8   E010               LDI     R17, 0
+   \   000002EA   E020               LDI     R18, 0
+   \   000002EC   E030               LDI     R19, 0
+   \   000002EE   01FD               MOVW    R31:R30, R27:R26
+   \   000002F0   8701               STD     Z+9, R16
+   \   000002F2   8712               STD     Z+10, R17
+   \   000002F4   8723               STD     Z+11, R18
+   \   000002F6   8734               STD     Z+12, R19
+    332                  b->endt=0;
+   \   000002F8   E000               LDI     R16, 0
+   \   000002FA   E010               LDI     R17, 0
+   \   000002FC   E020               LDI     R18, 0
+   \   000002FE   E030               LDI     R19, 0
+   \   00000300   01FD               MOVW    R31:R30, R27:R26
+   \   00000302   8705               STD     Z+13, R16
+   \   00000304   8716               STD     Z+14, R17
+   \   00000306   8727               STD     Z+15, R18
+   \   00000308   8B30               STD     Z+16, R19
+    333                  break;
+   \   0000030A   C06D               RJMP    ??setstate_10
+    334            }  
+    335          
+    336          
+    337            break;
+    338            case 2://ток снят, но активация незавершена
+    339              setyel(num,(curtime&0x0f)>>2);
+   \                     ??setstate_8:
+   \   0000030C   ....               LDI     R30, LOW(curtime)
+   \   0000030E   ....               LDI     R31, (curtime) >> 8
+   \   00000310   8100               LD      R16, Z
+   \   00000312   8111               LDD     R17, Z+1
+   \   00000314   8122               LDD     R18, Z+2
+   \   00000316   8133               LDD     R19, Z+3
+   \   00000318   2F10               MOV     R17, R16
+   \   0000031A   701F               ANDI    R17, 0x0F
+   \   0000031C   9515               ASR     R17
+   \   0000031E   9515               ASR     R17
+   \   00000320   2F08               MOV     R16, R24
+   \   00000322   ....               RCALL   setyel
+    340               if(b->v<300){ //аварийное завершение автивации - батарею вытащили.
+   \   00000324   01FD               MOVW    R31:R30, R27:R26
+   \   00000326   8101               LDD     R16, Z+1
+   \   00000328   8112               LDD     R17, Z+2
+   \   0000032A   320C               CPI     R16, 44
+   \   0000032C   E021               LDI     R18, 1
+   \   0000032E   0712               CPC     R17, R18
+   \   00000330   F4F4               BRGE    ??setstate_16
+    341                b->time=0;
+   \   00000332   E000               LDI     R16, 0
+   \   00000334   E010               LDI     R17, 0
+   \   00000336   E020               LDI     R18, 0
+   \   00000338   E030               LDI     R19, 0
+   \   0000033A   01FD               MOVW    R31:R30, R27:R26
+   \   0000033C   8305               STD     Z+5, R16
+   \   0000033E   8316               STD     Z+6, R17
+   \   00000340   8327               STD     Z+7, R18
+   \   00000342   8730               STD     Z+8, R19
+    342                  b->state=0;
+   \   00000344   E000               LDI     R16, 0
+   \   00000346   930C               ST      X, R16
+    343                  b->begt=0;
+   \   00000348   E000               LDI     R16, 0
+   \   0000034A   E010               LDI     R17, 0
+   \   0000034C   E020               LDI     R18, 0
+   \   0000034E   E030               LDI     R19, 0
+   \   00000350   01FD               MOVW    R31:R30, R27:R26
+   \   00000352   8701               STD     Z+9, R16
+   \   00000354   8712               STD     Z+10, R17
+   \   00000356   8723               STD     Z+11, R18
+   \   00000358   8734               STD     Z+12, R19
+    344                  b->endt=0;
+   \   0000035A   E000               LDI     R16, 0
+   \   0000035C   E010               LDI     R17, 0
+   \   0000035E   E020               LDI     R18, 0
+   \   00000360   E030               LDI     R19, 0
+   \   00000362   01FD               MOVW    R31:R30, R27:R26
+   \   00000364   8705               STD     Z+13, R16
+   \   00000366   8716               STD     Z+14, R17
+   \   00000368   8727               STD     Z+15, R18
+   \   0000036A   8B30               STD     Z+16, R19
+    345                  break;
+   \   0000036C   C03C               RJMP    ??setstate_10
+    346               }  
+    347             
+    348              if(work_mode==0){//возвращаемся в режим активации
+   \                     ??setstate_16:
+   \   0000036E   9100....           LDS     R16, work_mode
+   \   00000372   2300               TST     R16
+   \   00000374   F5C1               BRNE    ??setstate_10
+    349                b->state=1;
+   \   00000376   E001               LDI     R16, 1
+   \   00000378   930C               ST      X, R16
+    350                b->begt=curtime;
+   \   0000037A   ....               LDI     R30, LOW(curtime)
+   \   0000037C   ....               LDI     R31, (curtime) >> 8
+   \   0000037E   8100               LD      R16, Z
+   \   00000380   8111               LDD     R17, Z+1
+   \   00000382   8122               LDD     R18, Z+2
+   \   00000384   8133               LDD     R19, Z+3
+   \   00000386   01FD               MOVW    R31:R30, R27:R26
+   \   00000388   8701               STD     Z+9, R16
+   \   0000038A   8712               STD     Z+10, R17
+   \   0000038C   8723               STD     Z+11, R18
+   \   0000038E   8734               STD     Z+12, R19
+    351                b->endt=b->begt+(activ_time-b->time);
+   \   00000390   01FD               MOVW    R31:R30, R27:R26
+   \   00000392   8541               LDD     R20, Z+9
+   \   00000394   8552               LDD     R21, Z+10
+   \   00000396   8563               LDD     R22, Z+11
+   \   00000398   8574               LDD     R23, Z+12
+   \   0000039A   ....               LDI     R30, LOW(activ_time)
+   \   0000039C   ....               LDI     R31, (activ_time) >> 8
+   \   0000039E   8100               LD      R16, Z
+   \   000003A0   8111               LDD     R17, Z+1
+   \   000003A2   8122               LDD     R18, Z+2
+   \   000003A4   8133               LDD     R19, Z+3
+   \   000003A6   0F04               ADD     R16, R20
+   \   000003A8   1F15               ADC     R17, R21
+   \   000003AA   1F26               ADC     R18, R22
+   \   000003AC   1F37               ADC     R19, R23
+   \   000003AE   01FD               MOVW    R31:R30, R27:R26
+   \   000003B0   8145               LDD     R20, Z+5
+   \   000003B2   8156               LDD     R21, Z+6
+   \   000003B4   8167               LDD     R22, Z+7
+   \   000003B6   8570               LDD     R23, Z+8
+   \   000003B8   1B04               SUB     R16, R20
+   \   000003BA   0B15               SBC     R17, R21
+   \   000003BC   0B26               SBC     R18, R22
+   \   000003BE   0B37               SBC     R19, R23
+   \   000003C0   01FD               MOVW    R31:R30, R27:R26
+   \   000003C2   8705               STD     Z+13, R16
+   \   000003C4   8716               STD     Z+14, R17
+   \   000003C6   8727               STD     Z+15, R18
+   \   000003C8   8B30               STD     Z+16, R19
+   \   000003CA   C00D               RJMP    ??setstate_10
+    352              }
+    353              break;
+    354            case 3: //активация завершена  
+    355              setgron(num);
+   \                     ??setstate_9:
+   \   000003CC   2F08               MOV     R16, R24
+   \   000003CE   ....               RCALL   setgron
+    356              setyeloff(num);
+   \   000003D0   2F08               MOV     R16, R24
+   \   000003D2   ....               RCALL   setyeloff
+    357              if(b->v<100){
+   \   000003D4   01FD               MOVW    R31:R30, R27:R26
+   \   000003D6   8101               LDD     R16, Z+1
+   \   000003D8   8112               LDD     R17, Z+2
+   \   000003DA   3604               CPI     R16, 100
+   \   000003DC   E020               LDI     R18, 0
+   \   000003DE   0712               CPC     R17, R18
+   \   000003E0   F414               BRGE    ??setstate_10
+    358                  b->state=0;
+   \   000003E2   E000               LDI     R16, 0
+   \   000003E4   930C               ST      X, R16
+    359                  
+    360              }
+    361            }  
+    362          }
+   \                     ??setstate_10:
+   \   000003E6   E0E7               LDI     R30, 7
+   \   000003E8   ........           JMP     ?EPILOGUE_B7_L09
+    363          ///////////////////////////////////////////////////////////////////////////
+    364          // Инициируем порты ввода вывода для чтения перемычек и зажигания лампочек
+
+   \                                 In  segment CODE, align 2, keep-with-next
+    365          void iniports(){
+   \                     iniports:
+    366            DDRA=0x0f;
+   \   00000000   E00F               LDI     R16, 15
+   \   00000002   BB0A               OUT     0x1A, R16
+    367            DDRB=0xe0;
+   \   00000004   EE00               LDI     R16, 224
+   \   00000006   BB07               OUT     0x17, R16
+    368            DDRC=0xff;
+   \   00000008   EF0F               LDI     R16, 255
+   \   0000000A   BB04               OUT     0x14, R16
+    369            DDRD=0xff;
+   \   0000000C   EF0F               LDI     R16, 255
+   \   0000000E   BB01               OUT     0x11, R16
+    370            DDRE =0xfc;
+   \   00000010   EF0C               LDI     R16, 252
+   \   00000012   B902               OUT     0x02, R16
+    371            DDRG=0xff;
+   \   00000014   EF0F               LDI     R16, 255
+   \   00000016   93000064           STS     100, R16
+    372            
+    373          //DDRF |= 0xc0;//KT1 KT2
+    374          }
+   \   0000001A   9508               RET
+   \   0000001C                      REQUIRE _A_DDRG
+   \   0000001C                      REQUIRE _A_DDRE
+   \   0000001C                      REQUIRE _A_DDRD
+   \   0000001C                      REQUIRE _A_DDRC
+   \   0000001C                      REQUIRE _A_DDRB
+   \   0000001C                      REQUIRE _A_DDRA
+    375          /*
+    376          getstack()
+    377                { char * st; int i;
+    378                    st=(char*)hrem[0x10]; 
+    379                    for (i=1;i<0x80;i++){hrem[i+0x10]=*st; st--;}
+    380                };    
+    381          */
+    382          extern thist hist;
+    383          //extern enum {data,adrLo,adrHi,page,compl} state;
+    384          
+    385          extern unsigned int ADCw, ADCo;
+
+   \                                 In  segment NEAR_Z, align 1, keep-with-next
+   \   00000000                      REQUIRE `?<Segment init: NEAR_Z>`
+    386          unsigned int Uref;//опорное напряжение
+   \                     Uref:
+   \   00000000                      DS 2
+    387          
+
+   \                                 In  segment CODE, align 2, keep-with-next
+    388          void Init(void)
+   \                     Init:
+    389          {
+    390          	/******** Timer1 init ********/
+    391          	TCCR1A = 0;
+   \   00000000   E000               LDI     R16, 0
+   \   00000002   BD0F               OUT     0x2F, R16
+    392          	TCCR1B = (1<<CS11);//CTC mode, Fclk = Fmclk
+   \   00000004   E002               LDI     R16, 2
+   \   00000006   BD0E               OUT     0x2E, R16
+    393          	OCR1A = 0xffff;//68 us
+   \   00000008   EF0F               LDI     R16, 255
+   \   0000000A   EF1F               LDI     R17, 255
+   \   0000000C   BD1B               OUT     0x2B, R17
+   \   0000000E   BD0A               OUT     0x2A, R16
+    394          	
+    395          	/******** Timer3 init ********/
+    396          //      TIMSK |= (1<<OCIE1A); разрешили прерывание от таймера.
+    397              	TCCR3A = 0;
+   \   00000010   E000               LDI     R16, 0
+   \   00000012   9300008B           STS     139, R16
+    398                TCCR3B = (1<<CS31);// / делитель на 8
+   \   00000016   E002               LDI     R16, 2
+   \   00000018   9300008A           STS     138, R16
+    399                TCNT3 = 0;
+   \   0000001C   E000               LDI     R16, 0
+   \   0000001E   E010               LDI     R17, 0
+   \   00000020   93100089           STS     137, R17
+   \   00000024   93000088           STS     136, R16
+    400                OCR3A=0xffff;
+   \   00000028   EF0F               LDI     R16, 255
+   \   0000002A   EF1F               LDI     R17, 255
+   \   0000002C   93100087           STS     135, R17
+   \   00000030   93000086           STS     134, R16
+    401                
+    402                TIFR = (1<<OCF3A); //сбросили имевшееся прерывание.
+   \   00000034   E100               LDI     R16, 16
+   \   00000036   BF06               OUT     0x36, R16
+    403          }
+   \   00000038   9508               RET
+   \   0000003A                      REQUIRE _A_OCR1A
+   \   0000003A                      REQUIRE _A_TCCR1B
+   \   0000003A                      REQUIRE _A_TCCR1A
+   \   0000003A                      REQUIRE _A_TIFR
+   \   0000003A                      REQUIRE _A_OCR3A
+   \   0000003A                      REQUIRE _A_TCNT3
+   \   0000003A                      REQUIRE _A_TCCR3B
+   \   0000003A                      REQUIRE _A_TCCR3A
+
+   \                                 In  segment CODE, align 2, keep-with-next
+    404          void setind_prof(){ //индикация в режиме работы по профилю
+   \                     setind_prof:
+   \   00000000   939A               ST      -Y, R25
+   \   00000002   938A               ST      -Y, R24
+    405              yel1=(time>>7)&1;
+   \   00000004   ....               LDI     R30, LOW(time)
+   \   00000006   ....               LDI     R31, (time) >> 8
+   \   00000008   8100               LD      R16, Z
+   \   0000000A   8111               LDD     R17, Z+1
+   \   0000000C   0F00               LSL     R16
+   \   0000000E   0B00               SBC     R16, R16
+   \   00000010   FB00               BST     R16, 0
+   \   00000012   B305               IN      R16, 0x15
+   \   00000014   F901               BLD     R16, 1
+   \   00000016   BB05               OUT     0x15, R16
+    406              yel2=yel1;
+   \   00000018   B305               IN      R16, 0x15
+   \   0000001A   2F10               MOV     R17, R16
+   \   0000001C   FD11               SBRC    R17, 1
+   \   0000001E   9AAC               SBI     0x15, 0x04
+   \                     ??setind_prof_0:
+   \   00000020   FF11               SBRS    R17, 1
+   \   00000022   98AC               CBI     0x15, 0x04
+    407              yel3=yel1;
+   \                     ??setind_prof_1:
+   \   00000024   B305               IN      R16, 0x15
+   \   00000026   2F10               MOV     R17, R16
+   \   00000028   FD11               SBRC    R17, 1
+   \   0000002A   9AAF               SBI     0x15, 0x07
+   \                     ??setind_prof_2:
+   \   0000002C   FF11               SBRS    R17, 1
+   \   0000002E   98AF               CBI     0x15, 0x07
+    408              yel4=yel1;
+   \                     ??setind_prof_3:
+   \   00000030   B305               IN      R16, 0x15
+   \   00000032   2F10               MOV     R17, R16
+   \   00000034   FD11               SBRC    R17, 1
+   \   00000036   9AD9               SBI     0x1B, 0x01
+   \                     ??setind_prof_4:
+   \   00000038   FF11               SBRS    R17, 1
+   \   0000003A   98D9               CBI     0x1B, 0x01
+    409              int c=profile.act_cur_level*100;
+   \                     ??setind_prof_5:
+   \   0000003C   9140....           LDS     R20, (profile + 62)
+   \   00000040   E050               LDI     R21, 0
+   \   00000042   E604               LDI     R16, 100
+   \   00000044   E010               LDI     R17, 0
+   \   00000046   ........           CALL    ?S_EC_MUL_L02
+   \   0000004A   01C8               MOVW    R25:R24, R17:R16
+    410              if(batt[0].curr>c)red1=0;
+   \   0000004C   ....               LDI     R30, LOW(batt)
+   \   0000004E   ....               LDI     R31, (batt) >> 8
+   \   00000050   8103               LDD     R16, Z+3
+   \   00000052   8114               LDD     R17, Z+4
+   \   00000054   1780               CP      R24, R16
+   \   00000056   0791               CPC     R25, R17
+   \   00000058   F414               BRGE    ??setind_prof_6
+   \   0000005A   98AA               CBI     0x15, 0x02
+   \   0000005C   C001               RJMP    ??setind_prof_7
+    411              else red1=1;
+   \                     ??setind_prof_6:
+   \   0000005E   9AAA               SBI     0x15, 0x02
+    412              if(batt[1].curr>c)red2=0;
+   \                     ??setind_prof_7:
+   \   00000060   ....               LDI     R30, LOW(batt)
+   \   00000062   ....               LDI     R31, (batt) >> 8
+   \   00000064   8D02               LDD     R16, Z+26
+   \   00000066   8D13               LDD     R17, Z+27
+   \   00000068   1780               CP      R24, R16
+   \   0000006A   0791               CPC     R25, R17
+   \   0000006C   F414               BRGE    ??setind_prof_8
+   \   0000006E   98AD               CBI     0x15, 0x05
+   \   00000070   C001               RJMP    ??setind_prof_9
+    413              else red2=1;
+   \                     ??setind_prof_8:
+   \   00000072   9AAD               SBI     0x15, 0x05
+    414              if(batt[2].curr>c)red3=0;
+   \                     ??setind_prof_9:
+   \   00000074   ....               LDI     R30, LOW(batt)
+   \   00000076   ....               LDI     R31, (batt) >> 8
+   \   00000078   A901               LDD     R16, Z+49
+   \   0000007A   A912               LDD     R17, Z+50
+   \   0000007C   1780               CP      R24, R16
+   \   0000007E   0791               CPC     R25, R17
+   \   00000080   F414               BRGE    ??setind_prof_10
+   \   00000082   98DB               CBI     0x1B, 0x03
+   \   00000084   C001               RJMP    ??setind_prof_11
+    415              else red3=1;
+   \                     ??setind_prof_10:
+   \   00000086   9ADB               SBI     0x1B, 0x03
+    416              if(batt[3].curr>c)red4=0;
+   \                     ??setind_prof_11:
+   \   00000088   ....               LDI     R30, LOW((batt + 72))
+   \   0000008A   ....               LDI     R31, HIGH((batt + 72))
+   \   0000008C   8100               LD      R16, Z
+   \   0000008E   8111               LDD     R17, Z+1
+   \   00000090   1780               CP      R24, R16
+   \   00000092   0791               CPC     R25, R17
+   \   00000094   F414               BRGE    ??setind_prof_12
+   \   00000096   98D8               CBI     0x1B, 0x00
+   \   00000098   C001               RJMP    ??setind_prof_13
+    417              else red4=1;
+   \                     ??setind_prof_12:
+   \   0000009A   9AD8               SBI     0x1B, 0x00
+    418              if(batt[0].v>300)gr1=yel1;
+   \                     ??setind_prof_13:
+   \   0000009C   ....               LDI     R30, LOW(batt)
+   \   0000009E   ....               LDI     R31, (batt) >> 8
+   \   000000A0   8101               LDD     R16, Z+1
+   \   000000A2   8112               LDD     R17, Z+2
+   \   000000A4   320D               CPI     R16, 45
+   \   000000A6   E021               LDI     R18, 1
+   \   000000A8   0712               CPC     R17, R18
+   \   000000AA   F03C               BRLT    ??setind_prof_14
+   \   000000AC   B305               IN      R16, 0x15
+   \   000000AE   2F10               MOV     R17, R16
+   \   000000B0   FD11               SBRC    R17, 1
+   \   000000B2   9AA8               SBI     0x15, 0x00
+   \                     ??setind_prof_15:
+   \   000000B4   FF11               SBRS    R17, 1
+   \   000000B6   98A8               CBI     0x15, 0x00
+   \                     ??setind_prof_16:
+   \   000000B8   C001               RJMP    ??setind_prof_17
+    419              else gr1=1;
+   \                     ??setind_prof_14:
+   \   000000BA   9AA8               SBI     0x15, 0x00
+    420              if(batt[1].v>300)gr2=yel1;
+   \                     ??setind_prof_17:
+   \   000000BC   ....               LDI     R30, LOW(batt)
+   \   000000BE   ....               LDI     R31, (batt) >> 8
+   \   000000C0   8D00               LDD     R16, Z+24
+   \   000000C2   8D11               LDD     R17, Z+25
+   \   000000C4   320D               CPI     R16, 45
+   \   000000C6   E021               LDI     R18, 1
+   \   000000C8   0712               CPC     R17, R18
+   \   000000CA   F03C               BRLT    ??setind_prof_18
+   \   000000CC   B305               IN      R16, 0x15
+   \   000000CE   2F10               MOV     R17, R16
+   \   000000D0   FD11               SBRC    R17, 1
+   \   000000D2   9AAB               SBI     0x15, 0x03
+   \                     ??setind_prof_19:
+   \   000000D4   FF11               SBRS    R17, 1
+   \   000000D6   98AB               CBI     0x15, 0x03
+   \                     ??setind_prof_20:
+   \   000000D8   C001               RJMP    ??setind_prof_21
+    421              else gr2=1;
+   \                     ??setind_prof_18:
+   \   000000DA   9AAB               SBI     0x15, 0x03
+    422              if(batt[2].v>300)gr3=yel1;
+   \                     ??setind_prof_21:
+   \   000000DC   ....               LDI     R30, LOW(batt)
+   \   000000DE   ....               LDI     R31, (batt) >> 8
+   \   000000E0   A507               LDD     R16, Z+47
+   \   000000E2   A910               LDD     R17, Z+48
+   \   000000E4   320D               CPI     R16, 45
+   \   000000E6   E021               LDI     R18, 1
+   \   000000E8   0712               CPC     R17, R18
+   \   000000EA   F03C               BRLT    ??setind_prof_22
+   \   000000EC   B305               IN      R16, 0x15
+   \   000000EE   2F10               MOV     R17, R16
+   \   000000F0   FD11               SBRC    R17, 1
+   \   000000F2   9AAE               SBI     0x15, 0x06
+   \                     ??setind_prof_23:
+   \   000000F4   FF11               SBRS    R17, 1
+   \   000000F6   98AE               CBI     0x15, 0x06
+   \                     ??setind_prof_24:
+   \   000000F8   C001               RJMP    ??setind_prof_25
+    423              else gr3=1;
+   \                     ??setind_prof_22:
+   \   000000FA   9AAE               SBI     0x15, 0x06
+    424              if(batt[3].v>300)gr4=yel1;
+   \                     ??setind_prof_25:
+   \   000000FC   ....               LDI     R30, LOW((batt + 70))
+   \   000000FE   ....               LDI     R31, HIGH((batt + 70))
+   \   00000100   8100               LD      R16, Z
+   \   00000102   8111               LDD     R17, Z+1
+   \   00000104   320D               CPI     R16, 45
+   \   00000106   E021               LDI     R18, 1
+   \   00000108   0712               CPC     R17, R18
+   \   0000010A   F03C               BRLT    ??setind_prof_26
+   \   0000010C   B305               IN      R16, 0x15
+   \   0000010E   2F10               MOV     R17, R16
+   \   00000110   FD11               SBRC    R17, 1
+   \   00000112   9ADA               SBI     0x1B, 0x02
+   \                     ??setind_prof_27:
+   \   00000114   FF11               SBRS    R17, 1
+   \   00000116   98DA               CBI     0x1B, 0x02
+   \                     ??setind_prof_28:
+   \   00000118   C001               RJMP    ??setind_prof_29
+    425              else gr4=1;
+   \                     ??setind_prof_26:
+   \   0000011A   9ADA               SBI     0x1B, 0x02
+    426          
+    427          }
+   \                     ??setind_prof_29:
+   \   0000011C   9189               LD      R24, Y+
+   \   0000011E   9199               LD      R25, Y+
+   \   00000120   9508               RET
+   \   00000122                      REQUIRE _A_PORTC
+   \   00000122                      REQUIRE _A_PORTA
+    428          void ini_addsamples();
+    429          void addsamples();
+    430          extern long nextsampletime;
+    431          extern char * forsend;
+    432          ////////////////////////////////////////////////////////////////////////////////
+
+   \                                 In  segment CODE, align 2, keep-with-next
+    433          void ini_workbyprofile(){ //инициация режима работы по профилю
+   \                     ini_workbyprofile:
+    434          ////////////////////////////////////////////////////////////////////////////////  
+    435            work_mode=10;
+   \   00000000   E00A               LDI     R16, 10
+   \   00000002   9300....           STS     work_mode, R16
+    436            stepcnt=0;
+   \   00000006   E000               LDI     R16, 0
+   \   00000008   9300....           STS     stepcnt, R16
+    437            long_settout(0,profile.dur[stepcnt]);
+   \   0000000C   9100....           LDS     R16, stepcnt
+   \   00000010   E010               LDI     R17, 0
+   \   00000012   0F00               LSL     R16
+   \   00000014   1F11               ROL     R17
+   \   00000016   0F00               LSL     R16
+   \   00000018   1F11               ROL     R17
+   \   0000001A   01F8               MOVW    R31:R30, R17:R16
+   \   0000001C   ....               SUBI    R30, LOW((-(profile) & 0xFFFF))
+   \   0000001E   ....               SBCI    R31, (-(profile) & 0xFFFF) >> 8
+   \   00000020   8945               LDD     R20, Z+21
+   \   00000022   8956               LDD     R21, Z+22
+   \   00000024   8967               LDD     R22, Z+23
+   \   00000026   8D70               LDD     R23, Z+24
+   \   00000028   E000               LDI     R16, 0
+   \   0000002A   ........           CALL    long_settout
+    438            setcur(profile.curr[stepcnt]);
+   \   0000002E   9100....           LDS     R16, stepcnt
+   \   00000032   E010               LDI     R17, 0
+   \   00000034   0F00               LSL     R16
+   \   00000036   1F11               ROL     R17
+   \   00000038   01F8               MOVW    R31:R30, R17:R16
+   \   0000003A   ....               SUBI    R30, LOW((-(profile) & 0xFFFF))
+   \   0000003C   ....               SBCI    R31, (-(profile) & 0xFFFF) >> 8
+   \   0000003E   8101               LDD     R16, Z+1
+   \   00000040   8112               LDD     R17, Z+2
+   \   00000042   ....               RCALL   setcur
+    439            nextsampletime=curtime=0;
+   \   00000044   E000               LDI     R16, 0
+   \   00000046   E010               LDI     R17, 0
+   \   00000048   E020               LDI     R18, 0
+   \   0000004A   E030               LDI     R19, 0
+   \   0000004C   ....               LDI     R30, LOW(curtime)
+   \   0000004E   ....               LDI     R31, (curtime) >> 8
+   \   00000050   8300               ST      Z, R16
+   \   00000052   8311               STD     Z+1, R17
+   \   00000054   8322               STD     Z+2, R18
+   \   00000056   8333               STD     Z+3, R19
+   \   00000058   ....               LDI     R30, LOW(nextsampletime)
+   \   0000005A   ....               LDI     R31, (nextsampletime) >> 8
+   \   0000005C   8300               ST      Z, R16
+   \   0000005E   8311               STD     Z+1, R17
+   \   00000060   8322               STD     Z+2, R18
+   \   00000062   8333               STD     Z+3, R19
+    440            forsend=prbuf1; //передаем с 1-го, заполняем 0-й
+   \   00000064   ....               LDI     R16, LOW(prbuf1)
+   \   00000066   ....               LDI     R17, (prbuf1) >> 8
+   \   00000068   ....               LDI     R30, LOW(forsend)
+   \   0000006A   ....               LDI     R31, (forsend) >> 8
+   \   0000006C   8300               ST      Z, R16
+   \   0000006E   8311               STD     Z+1, R17
+    441            curbuf=prbuf0;
+   \   00000070   ....               LDI     R16, LOW(prbuf0)
+   \   00000072   ....               LDI     R17, (prbuf0) >> 8
+   \   00000074   ....               LDI     R30, LOW(curbuf)
+   \   00000076   ....               LDI     R31, (curbuf) >> 8
+   \   00000078   8300               ST      Z, R16
+   \   0000007A   8311               STD     Z+1, R17
+    442               //senlen=curoffset+1;
+    443            curoffset=  framenum+2;
+   \   0000007C   E007               LDI     R16, 7
+   \   0000007E   E010               LDI     R17, 0
+   \   00000080   ....               LDI     R30, LOW(curoffset)
+   \   00000082   ....               LDI     R31, (curoffset) >> 8
+   \   00000084   8300               ST      Z, R16
+   \   00000086   8311               STD     Z+1, R17
+    444          }
+   \   00000088   9508               RET
+    445          extern char* forsend;
+    446          ////////////////////////////////////////////////////////////////////////////////
+
+   \                                 In  segment CODE, align 2, keep-with-next
+    447          void ini_activation(){ //инициация режима активации
+   \                     ini_activation:
+   \   00000000   ........           CALL    ?PROLOGUE6_L09
+   \   00000004                      REQUIRE ?Register_R4_is_cg_reg
+   \   00000004                      REQUIRE ?Register_R5_is_cg_reg
+    448          ////////////////////////////////////////////////////////////////////////////////  
+    449               work_mode=0;
+   \   00000004   E000               LDI     R16, 0
+   \   00000006   9300....           STS     work_mode, R16
+    450               for(int i=0;i<4;i++){
+   \   0000000A   2444               CLR     R4
+   \   0000000C   2455               CLR     R5
+   \                     ??ini_activation_0:
+   \   0000000E   E004               LDI     R16, 4
+   \   00000010   1640               CP      R4, R16
+   \   00000012   E000               LDI     R16, 0
+   \   00000014   0650               CPC     R5, R16
+   \   00000016   F57C               BRGE    ??ini_activation_1
+    451                 batt[i].charge=0;
+   \   00000018   E080               LDI     R24, 0
+   \   0000001A   E090               LDI     R25, 0
+   \   0000001C   E0A0               LDI     R26, 0
+   \   0000001E   E0B0               LDI     R27, 0
+   \   00000020   01A2               MOVW    R21:R20, R5:R4
+   \   00000022   E107               LDI     R16, 23
+   \   00000024   E010               LDI     R17, 0
+   \   00000026   ........           CALL    ?S_EC_MUL_L02
+   \   0000002A   01F8               MOVW    R31:R30, R17:R16
+   \   0000002C   ....               SUBI    R30, LOW((-(batt) & 0xFFFF))
+   \   0000002E   ....               SBCI    R31, (-(batt) & 0xFFFF) >> 8
+   \   00000030   8B83               STD     Z+19, R24
+   \   00000032   8B94               STD     Z+20, R25
+   \   00000034   8BA5               STD     Z+21, R26
+   \   00000036   8BB6               STD     Z+22, R27
+    452                 batt[i].time=0;
+   \   00000038   E080               LDI     R24, 0
+   \   0000003A   E090               LDI     R25, 0
+   \   0000003C   E0A0               LDI     R26, 0
+   \   0000003E   E0B0               LDI     R27, 0
+   \   00000040   01A2               MOVW    R21:R20, R5:R4
+   \   00000042   E107               LDI     R16, 23
+   \   00000044   E010               LDI     R17, 0
+   \   00000046   ........           CALL    ?S_EC_MUL_L02
+   \   0000004A   01F8               MOVW    R31:R30, R17:R16
+   \   0000004C   ....               SUBI    R30, LOW((-(batt) & 0xFFFF))
+   \   0000004E   ....               SBCI    R31, (-(batt) & 0xFFFF) >> 8
+   \   00000050   8385               STD     Z+5, R24
+   \   00000052   8396               STD     Z+6, R25
+   \   00000054   83A7               STD     Z+7, R26
+   \   00000056   87B0               STD     Z+8, R27
+    453                 batt[i].state=0;
+   \   00000058   E080               LDI     R24, 0
+   \   0000005A   01A2               MOVW    R21:R20, R5:R4
+   \   0000005C   E107               LDI     R16, 23
+   \   0000005E   E010               LDI     R17, 0
+   \   00000060   ........           CALL    ?S_EC_MUL_L02
+   \   00000064   01F8               MOVW    R31:R30, R17:R16
+   \   00000066   ....               SUBI    R30, LOW((-(batt) & 0xFFFF))
+   \   00000068   ....               SBCI    R31, (-(batt) & 0xFFFF) >> 8
+   \   0000006A   8380               ST      Z, R24
+    454               }
+   \   0000006C   E001               LDI     R16, 1
+   \   0000006E   0E40               ADD     R4, R16
+   \   00000070   E000               LDI     R16, 0
+   \   00000072   1E50               ADC     R5, R16
+   \   00000074   CFCC               RJMP    ??ini_activation_0
+    455               setcur(profile.act_cur);
+   \                     ??ini_activation_1:
+   \   00000076   9100....           LDS     R16, (profile + 61)
+   \   0000007A   ....               RCALL   setcur
+    456          }
+   \   0000007C   E0E6               LDI     R30, 6
+   \   0000007E   ........           JMP     ?EPILOGUE_B6_L09
+
+   \                                 In  segment CODE, align 2, keep-with-next
+    457          main(){
+   \                     main:
+   \   00000000   939A               ST      -Y, R25
+   \   00000002   938A               ST      -Y, R24
+    458          __disable_interrupt(); 
+   \   00000004   94F8               CLI
+    459          WDTCR |= (1<<WDCE);
+   \   00000006   B501               IN      R16, 0x21
+   \   00000008   6100               ORI     R16, 0x10
+   \   0000000A   BD01               OUT     0x21, R16
+    460          WDTCR |= (1<<WDP0) | (1<<WDP1) | (1<<WDP2);
+   \   0000000C   B501               IN      R16, 0x21
+   \   0000000E   6007               ORI     R16, 0x07
+   \   00000010   BD01               OUT     0x21, R16
+    461          __enable_interrupt();
+   \   00000012   9478               SEI
+    462          
+    463          iniports();
+   \   00000014   ....               RCALL   iniports
+    464          
+    465          Init();
+   \   00000016   ....               RCALL   Init
+    466          
+    467          //redonw                                                     
+    468          
+    469          //inibase();
+    470          initime();
+   \   00000018   ........           CALL    initime
+    471          //inihist(0xa1,0xff);
+    472          
+    473          //iniuart0(576,0);
+    474          //ini_addsamles();
+    475          ini_addsamples();
+   \   0000001C   ........           CALL    ini_addsamples
+    476          iniuart0(1152,0);
+   \   00000020   E020               LDI     R18, 0
+   \   00000022   E800               LDI     R16, 128
+   \   00000024   E014               LDI     R17, 4
+   \   00000026   ........           CALL    iniuart0
+    477          //iniuart1(576,0);
+    478          
+    479          __watchdog_reset();
+   \   0000002A   95A8               WDR
+    480          
+    481          //delayloop(50);    
+    482          hist.harr[0]=1;
+   \   0000002C   E001               LDI     R16, 1
+   \   0000002E   E010               LDI     R17, 0
+   \   00000030   ....               LDI     R30, LOW(hist)
+   \   00000032   ....               LDI     R31, (hist) >> 8
+   \   00000034   8304               STD     Z+4, R16
+   \   00000036   8315               STD     Z+5, R17
+    483          hist.harr[1]=0x2002;
+   \   00000038   E002               LDI     R16, 2
+   \   0000003A   E210               LDI     R17, 32
+   \   0000003C   ....               LDI     R30, LOW(hist)
+   \   0000003E   ....               LDI     R31, (hist) >> 8
+   \   00000040   8306               STD     Z+6, R16
+   \   00000042   8317               STD     Z+7, R17
+    484          hist.harr[3]=3;
+   \   00000044   E003               LDI     R16, 3
+   \   00000046   E010               LDI     R17, 0
+   \   00000048   ....               LDI     R30, LOW(hist)
+   \   0000004A   ....               LDI     R31, (hist) >> 8
+   \   0000004C   8702               STD     Z+10, R16
+   \   0000004E   8713               STD     Z+11, R17
+    485          
+    486          
+    487          adcini();
+   \   00000050   ........           CALL    adcini
+    488          setcur(profile.act_cur);
+   \   00000054   9100....           LDS     R16, (profile + 61)
+   \   00000058   ....               RCALL   setcur
+    489          work_mode=0;
+   \   0000005A   E000               LDI     R16, 0
+   \   0000005C   9300....           STS     work_mode, R16
+    490          read_settings();
+   \   00000060   ........           CALL    read_settings
+    491          load_calibr();
+   \   00000064   ....               RCALL   load_calibr
+    492          
+    493          //ini_workbyprofile();
+    494          ini_activation();
+   \   00000066   ....               RCALL   ini_activation
+    495          for (;;){//int ii;
+    496            addsamples();
+   \                     ??main_0:
+   \   00000068   ........           CALL    addsamples
+    497            if(work_mode==10){
+   \   0000006C   9100....           LDS     R16, work_mode
+   \   00000070   300A               CPI     R16, 10
+   \   00000072   F589               BRNE    ??main_1
+    498               //разряд по профилю
+    499              setind_prof();
+   \   00000074   ....               RCALL   setind_prof
+    500              if(long_toutexpired(0)){
+   \   00000076   E000               LDI     R16, 0
+   \   00000078   ........           CALL    long_toutexpired
+   \   0000007C   2300               TST     R16
+   \   0000007E   F1A9               BREQ    ??main_2
+    501                stepcnt++;
+   \   00000080   ....               LDI     R30, LOW(stepcnt)
+   \   00000082   ....               LDI     R31, (stepcnt) >> 8
+   \   00000084   8100               LD      R16, Z
+   \   00000086   9503               INC     R16
+   \   00000088   8300               ST      Z, R16
+    502                if(stepcnt>=profile.cnt)stepcnt=0;
+   \   0000008A   9100....           LDS     R16, stepcnt
+   \   0000008E   9110....           LDS     R17, profile
+   \   00000092   1701               CP      R16, R17
+   \   00000094   F018               BRCS    ??main_3
+   \   00000096   E000               LDI     R16, 0
+   \   00000098   9300....           STS     stepcnt, R16
+    503                long_settout(0,profile.dur[stepcnt]);
+   \                     ??main_3:
+   \   0000009C   9100....           LDS     R16, stepcnt
+   \   000000A0   E010               LDI     R17, 0
+   \   000000A2   0F00               LSL     R16
+   \   000000A4   1F11               ROL     R17
+   \   000000A6   0F00               LSL     R16
+   \   000000A8   1F11               ROL     R17
+   \   000000AA   01F8               MOVW    R31:R30, R17:R16
+   \   000000AC   ....               SUBI    R30, LOW((-(profile) & 0xFFFF))
+   \   000000AE   ....               SBCI    R31, (-(profile) & 0xFFFF) >> 8
+   \   000000B0   8945               LDD     R20, Z+21
+   \   000000B2   8956               LDD     R21, Z+22
+   \   000000B4   8967               LDD     R22, Z+23
+   \   000000B6   8D70               LDD     R23, Z+24
+   \   000000B8   E000               LDI     R16, 0
+   \   000000BA   ........           CALL    long_settout
+    504                setcur(profile.curr[stepcnt]);
+   \   000000BE   9100....           LDS     R16, stepcnt
+   \   000000C2   E010               LDI     R17, 0
+   \   000000C4   0F00               LSL     R16
+   \   000000C6   1F11               ROL     R17
+   \   000000C8   01F8               MOVW    R31:R30, R17:R16
+   \   000000CA   ....               SUBI    R30, LOW((-(profile) & 0xFFFF))
+   \   000000CC   ....               SBCI    R31, (-(profile) & 0xFFFF) >> 8
+   \   000000CE   8101               LDD     R16, Z+1
+   \   000000D0   8112               LDD     R17, Z+2
+   \   000000D2   ....               RCALL   setcur
+   \   000000D4   C00A               RJMP    ??main_2
+    505                  
+    506              }
+    507            }else{
+    508               for(int i=0;i<4;i++) setstate(i);
+   \                     ??main_1:
+   \   000000D6   E080               LDI     R24, 0
+   \   000000D8   E090               LDI     R25, 0
+   \                     ??main_4:
+   \   000000DA   3084               CPI     R24, 4
+   \   000000DC   E000               LDI     R16, 0
+   \   000000DE   0790               CPC     R25, R16
+   \   000000E0   F424               BRGE    ??main_2
+   \   000000E2   018C               MOVW    R17:R16, R25:R24
+   \   000000E4   ....               RCALL   setstate
+   \   000000E6   9601               ADIW    R25:R24, 1
+   \   000000E8   CFF8               RJMP    ??main_4
+    509            }   
+    510            __watchdog_reset();
+   \                     ??main_2:
+   \   000000EA   95A8               WDR
+    511            req0handle();
+   \   000000EC   ........           CALL    req0handle
+   \   000000F0   CFBB               RJMP    ??main_0
+   \   000000F2                      REQUIRE _A_WDTCR
+    512          }};
+
+   \                                 In  segment NEAR_ID, align 1, keep-with-next
+   \                     `?<Initializer for activ_time>`:
+   \   00000000   27100000           DD 10000
+
+   Maximum stack usage in bytes:
+
+     Function              CSTACK RSTACK
+     --------              ------ ------
+     Init                      0      2
+     calibration              10      4
+       -> setcur              10      2
+       -> settout             10      2
+       -> toutexpired         10      2
+       -> settout             10      2
+       -> toutexpired         10      2
+       -> setcur              10      2
+       -> settout             10      2
+       -> toutexpired         10      2
+       -> setcur              10      2
+       -> settout             10      2
+       -> toutexpired         10      2
+       -> setch               10      2
+     delayloop                 0      2
+     ini_activation            6      4
+       -> setcur               6      2
+     ini_workbyprofile         0      2
+       -> long_settout         0      2
+       -> setcur               0      2
+     iniports                  0      2
+     inistates                 3      4
+       -> setgroff             3      2
+       -> setyeloff            3      2
+       -> setredoff            3      2
+     load_calibr               0      4
+     main                      2      2
+       -> iniports             2      2
+       -> Init                 2      2
+       -> initime              2      2
+       -> ini_addsamples       2      2
+       -> iniuart0             2      2
+       -> adcini               2      2
+       -> setcur               2      2
+       -> read_settings        2      2
+       -> load_calibr          2      2
+       -> ini_activation       2      2
+       -> addsamples           2      2
+       -> setind_prof          2      2
+       -> long_toutexpired     2      2
+       -> long_settout         2      2
+       -> setcur               2      2
+       -> setstate             2      2
+       -> req0handle           2      2
+     setcur                    8      4
+       -> setdac               8      2
+       -> setdac               8      2
+     setdac                    0      2
+     setgroff                  0      2
+     setgron                   0      2
+     setind_prof               2      4
+     setredoff                 0      2
+     setredon                  0      2
+     setstate                  7      4
+       -> setredon             7      2
+       -> setredoff            7      2
+       -> setcur               7      2
+       -> setgroff             7      2
+       -> setyeloff            7      2
+       -> setcur               7      2
+       -> setgroff             7      2
+       -> setyelon             7      2
+       -> setcur               7      2
+       -> setyel               7      2
+       -> setyel               7      2
+       -> setgron              7      2
+       -> setyeloff            7      2
+     setyel                    0      2
+     setyeloff                 0      2
+     setyelon                  0      2
+
+
+   Segment part sizes:
+
+     Function/Label                Bytes
+     --------------                -----
+     _A_DDRE                          1
+     _A_DDRD                          1
+     _A_PORTD                         1
+     _A_DDRC                          1
+     _A_PORTC                         1
+     _A_DDRB                          1
+     _A_PORTB                         1
+     _A_DDRA                          1
+     _A_PORTA                         1
+     _A_WDTCR                         1
+     _A_OCR1A                         2
+     _A_TCCR1B                        1
+     _A_TCCR1A                        1
+     _A_TIFR                          1
+     _A_DDRG                          1
+     _A_PORTG                         1
+     _A_OCR3A                         2
+     _A_TCNT3                         2
+     _A_TCCR3B                        1
+     _A_TCCR3A                        1
+     stepcnt                          1
+     delayloop                       42
+     setdac                         200
+     cal                             14
+     setcur                         108
+     activ_time                       4
+     calibration                    508
+     load_calibr                    122
+     setredon                        36
+     setredoff                       36
+     setyelon                        36
+     setyeloff                       36
+     setyel                          68
+     setgron                         36
+     setgroff                        36
+     inistates                       58
+     setstate                      1004
+     iniports                        28
+     Uref                             2
+     Init                            58
+     setind_prof                    290
+     ini_workbyprofile              138
+     ini_activation                 130
+     main                           242
+     ?<Initializer for activ_time>    4
+      Others                         14
+
+ 
+    23 bytes in segment ABSOLUTE
+ 3 212 bytes in segment CODE
+    14 bytes in segment INITTAB
+     4 bytes in segment NEAR_I
+     4 bytes in segment NEAR_ID
+    17 bytes in segment NEAR_Z
+ 
+ 3 216 bytes of CODE memory (+ 14 bytes shared)
+    21 bytes of DATA memory (+ 23 bytes shared)
+
+Errors: none
+Warnings: 3

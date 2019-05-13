@@ -1,0 +1,105 @@
+###############################################################################
+#                                                                             #
+#                                                       09/Jan/2011  09:07:44 #
+# IAR Atmel AVR C/C++ Compiler V4.30A/W32, Evaluation Version                 #
+# Copyright 1996-2007 IAR Systems. All rights reserved.                       #
+#                                                                             #
+#    Source file  =  D:\current_prj\batt\BATT_emb\func_handle.c               #
+#    Command line =  D:\current_prj\batt\BATT_emb\func_handle.c --cpu=m128    #
+#                    -ms -o D:\current_prj\batt\BATT_emb\Debug\Obj\ -lCN      #
+#                    D:\current_prj\batt\BATT_emb\Debug\List\ -y              #
+#                    --initializers_in_flash -z2 --no_cse --no_inline         #
+#                    --no_code_motion --no_cross_call --no_clustering         #
+#                    --no_tbaa --debug -DENABLE_BIT_DEFINITIONS -e -I         #
+#                    "C:\Program Files\IAR Systems\Embedded Workbench 4.0     #
+#                    Evaluation\avr\INC\" -I "C:\Program Files\IAR            #
+#                    Systems\Embedded Workbench 4.0                           #
+#                    Evaluation\avr\INC\CLIB\" --eeprom_size 4096             #
+#    List file    =  D:\current_prj\batt\BATT_emb\Debug\List\func_handle.lst  #
+#    Object file  =  D:\current_prj\batt\BATT_emb\Debug\Obj\func_handle.r90   #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+D:\current_prj\batt\BATT_emb\func_handle.c
+      1          
+      2          #include "types.h"
+      3          #include "hwr.h"
+      4          #include "timeservice.h"
+      5          
+      6          #include "coms.h"
+      7          #include "func_handle.h"
+      8          #include "adc.h"
+
+   \                                 In  segment NEAR_Z, align 1, keep-with-next
+   \   00000000                      REQUIRE `?<Segment init: NEAR_Z>`
+      9          char cmd_active=false;
+   \                     cmd_active:
+   \   00000000                      DS 1
+
+   \                                 In  segment NEAR_Z, align 1, keep-with-next
+   \   00000000                      REQUIRE `?<Segment init: NEAR_Z>`
+     10          char fnum=0;
+   \                     fnum:
+   \   00000000                      DS 1
+
+   \                                 In  segment NEAR_Z, align 1, keep-with-next
+   \   00000000                      REQUIRE `?<Segment init: NEAR_Z>`
+     11          char param1,param2;
+   \                     param1:
+   \   00000000                      DS 1
+
+   \                                 In  segment NEAR_Z, align 1, keep-with-next
+   \   00000000                      REQUIRE `?<Segment init: NEAR_Z>`
+   \                     param2:
+   \   00000000                      DS 1
+
+   \                                 In  segment NEAR_Z, align 1, keep-with-next
+   \   00000000                      REQUIRE `?<Segment init: NEAR_Z>`
+     12          char paramfl1;
+   \                     paramfl1:
+   \   00000000                      DS 1
+     13          #define nack 1
+     14          #define bipolar_coag 1
+     15          #define pure_cut 2
+     16          #define force 3
+     17          /*
+     18          extern unsigned char adcbuf[1000];
+     19          ///////////////////////////////////////////////////////////////////////////////////////
+     20          void idle(){
+     21          ///////////////////////////////////////////////////////////////////////////////////////
+     22            req0handle();
+     23            delayed_func();
+     24          }
+     25          UCHAR ledstate;
+     26          UCHAR l_avg;
+     27          UCHAR l_cnt;
+     28          UCHAR l_max;
+     29          int l_samples;
+     30          int iabs(int i){
+     31            if(i>0)return i;
+     32            else return -i;
+     33          }  
+     34          */
+
+
+   Segment part sizes:
+
+     Function/Label Bytes
+     -------------- -----
+     cmd_active        1
+     fnum              1
+     param1            1
+     param2            1
+     paramfl1          1
+      Others           7
+
+ 
+ 7 bytes in segment INITTAB
+ 5 bytes in segment NEAR_Z
+ 
+ 0 bytes of CODE memory (+ 7 bytes shared)
+ 5 bytes of DATA memory
+
+Errors: none
+Warnings: 1

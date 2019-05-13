@@ -1,0 +1,2578 @@
+Warning[w6]: Type conflict for external/entry "setch", in module main against external/entry in module coms; prototyped function vs K&R function
+  /* In module main: */
+  /* K&R Function, args 0, attr 0 */
+  int (__version_3 setch)();
+  /* In module coms: */
+  /* Function, args 2, attr 0 */
+  void (__version_3 setch)(int,
+                           char);
+Warning[w6]: Type conflict for external/entry "memcpy", in module coms against external/entry in module ?memcpy; prototyped function vs K&R function
+  /* In module coms: */
+  /* K&R Function, args 0, attr 0 */
+  int (__version_3 memcpy)();
+  /* In module ?memcpy: */
+  /* Function, args 3, attr 0 */
+  void * (__version_3 memcpy)(void *,
+                              void const *,
+                              size_t);
+    typedef unsigned int size_t;
+################################################################################
+#                                                                              #
+#      IAR Universal Linker V4.60I/386                                         #
+#                                                                              #
+#           Link time     =  12/Jan/2011  12:16:47                             #
+#           Target CPU    =  A90                                               #
+#           List file     =  D:\current_prj\batt\BATT_emb\Debug\List\batt_emb. #
+#                            map                                               #
+#           Output file 1 =  D:\current_prj\batt\BATT_emb\Debug\Exe\batt_emb.d #
+#                            bg                                                #
+#                            Format: debug                                     #
+#                            UBROF version 10.0.2                              #
+#           Output file 2 =  D:\current_prj\batt\BATT_emb\Debug\Exe\batt_activ #
+#                            .hex                                              #
+#                            Format: intel-standard                            #
+#           Command line  =  D:\current_prj\batt\BATT_emb\Debug\Obj\adc.r90    #
+#                            D:\current_prj\batt\BATT_emb\Debug\Obj\coms.r90   #
+#                            D:\current_prj\batt\BATT_emb\Debug\Obj\crc.r90    #
+#                            D:\current_prj\batt\BATT_emb\Debug\Obj\hist.r90   #
+#                            D:\current_prj\batt\BATT_emb\Debug\Obj\main.r90   #
+#                            D:\current_prj\batt\BATT_emb\Debug\Obj\timeservic #
+#                            e.r90                                             #
+#                            D:\current_prj\batt\BATT_emb\byte_stuff.r90 -o    #
+#                            D:\current_prj\batt\BATT_emb\Debug\Exe\batt_emb.d #
+#                            bg                                                #
+#                            -Fubrof -l                                        #
+#                            D:\current_prj\batt\BATT_emb\Debug\List\batt_emb. #
+#                            map                                               #
+#                            -xmo                                              #
+#                            "-IC:\Program Files\IAR Systems\Embedded Workbenc #
+#                            h 4.0 Evaluation\avr\LIB\"                        #
+#                            -f                                                #
+#                            "C:\Program Files\IAR Systems\Embedded Workbench  #
+#                            4.0 Evaluation\avr\src\template\cfgm128.xcl"      #
+#                            (-D_..X_INTVEC_SIZE=8C -D_..X_FLASH_NEND=FFFF     #
+#                            -D_..X_FLASH_END=1FFFF -D_..X_SRAM_BASE=100       #
+#                            -D_..X_SRAM_TBASE=0 -D_..X_SRAM_TSIZE=0           #
+#                            -D_..X_SRAM_END=10FF -D_..X_EEPROM_END=FFF        #
+#                            -D_..X_EEPROM_START=0) -D_..X_HEAP_SIZE=10        #
+#                            -D_..X_TINY_HEAP_SIZE=0 -D_..X_NEAR_HEAP_SIZE=0   #
+#                            -D_..X_FAR_HEAP_SIZE=0 -D_..X_HUGE_HEAP_SIZE=0    #
+#                            -D_..X_CSTACK_SIZE=80 -D_..X_RSTACK_SIZE=28 -f    #
+#                            "C:\Program Files\IAR Systems\Embedded Workbench  #
+#                            4.0 Evaluation\avr\src\template\cfg3s.xcl"        #
+#                            (-ca90 -w29                                       #
+#                            -Z(CODE)INTVEC=0-(_..X_INTVEC_SIZE-1)             #
+#                            -Z(CODE)TINY_F=_..X_FLASH_BASE-FF                 #
+#                            -Z(CODE)NEAR_F=_..X_FLASH_BASE-_..X_FLASH_NEND    #
+#                            -Z(CODE)SWITCH=_..X_FLASH_BASE-_..X_FLASH_NEND    #
+#                            -Z(CODE)DIFUNCT=_..X_FLASH_BASE-_..X_FLASH_NEND   #
+#                            -Z(CODE)CODE=_..X_FLASH_BASE-_..X_FLASH_END       #
+#                            -Z(CODE)FAR_F=[_..X_FLASH_BASE-_..X_FLASH_END]/10 #
+#                            000                                               #
+#                            -Z(CODE)INITTAB=_..X_FLASH_BASE-_..X_FLASH_END    #
+#                            -Z(CODE)HUGE_F=_..X_FLASH_BASE-_..X_FLASH_END     #
+#                            -Z(CODE)TINY_ID=_..X_FLASH_BASE-_..X_FLASH_END    #
+#                            -Z(CODE)NEAR_ID=_..X_FLASH_BASE-_..X_FLASH_END    #
+#                            -Z(CODE)CHECKSUM#_..X_FLASH_END                   #
+#                            -Z(DATA)TINY_I,TINY_Z,TINY_N=_..X_SRAM_TBASE:+_.. #
+#                            X_SRAM_TSIZE                                      #
+#                            -Z(DATA)CSTACK+_..X_CSTACK_SIZE=_..X_CSTACK_BASE- #
+#                            _..X_CSTACK_END                                   #
+#                            -Z(DATA)HEAP+_..X_HEAP_SIZE=_..X_SRAM_BASE-_..X_S #
+#                            RAM_END,_..X_EXT_SRAM_BASE:+_..X_EXT_SRAM_SIZE    #
+#                            -Z(DATA)IOSTREAM_N#_..X_SRAM_BASE-_..X_SRAM_END,_ #
+#                            ..X_EXT_SRAM_BASE:+_..X_EXT_SRAM_SIZE             #
+#                            -Z(DATA)NEAR_HEAP+_..X_NEAR_HEAP_SIZE=_..X_SRAM_B #
+#                            ASE-_..X_SRAM_END,_..X_EXT_SRAM_BASE:+_..X_EXT_SR #
+#                            AM_SIZE                                           #
+#                            -Z(DATA)RSTACK+_..X_RSTACK_SIZE=_..X_RSTACK_BASE- #
+#                            _..X_RSTACK_END                                   #
+#                            -Z(DATA)NEAR_I,NEAR_Z=_..X_SRAM_BASE-_..X_SRAM_EN #
+#                            D,_..X_EXT_SRAM_BASE:+_..X_EXT_SRAM_SIZE          #
+#                            -Z(DATA)NEAR_C=_..X_EXT_ROM_BASE:+_..X_EXT_ROM_SI #
+#                            ZE                                                #
+#                            -Z(DATA)NEAR_N=_..X_EXT_NV_BASE:+_..X_EXT_NV_SIZE #
+#                            -Z(XDATA)EEPROM_I,EEPROM_N=_..X_EEPROM_START-_..X #
+#                            _EEPROM_END)                                      #
+#                            -D_..X_FLASH_BASE=_..X_INTVEC_SIZE -H1895         #
+#                            -h(CODE)0-(_..X_INTVEC_SIZE-1)                    #
+#                            -D_..X_EXT_SRAM_BASE=_..X_SRAM_END                #
+#                            -D_..X_EXT_SRAM_SIZE=0                            #
+#                            -D_..X_EXT_ROM_BASE=_..X_SRAM_END                 #
+#                            -D_..X_EXT_ROM_SIZE=0                             #
+#                            -D_..X_EXT_NV_BASE=_..X_SRAM_END                  #
+#                            -D_..X_EXT_NV_SIZE=0                              #
+#                            -D_..X_CSTACK_BASE=_..X_SRAM_BASE                 #
+#                            -D_..X_CSTACK_END=_..X_SRAM_END                   #
+#                            -D_..X_RSTACK_BASE=_..X_SRAM_BASE                 #
+#                            -D_..X_RSTACK_END=_..X_SRAM_END                   #
+#                            -Ointel-standard=D:\current_prj\batt\BATT_emb\Deb #
+#                            ug\Exe\batt_activ.hex                             #
+#                            -s __program_start                                #
+#                            "C:\Program Files\IAR Systems\Embedded Workbench  #
+#                            4.0 Evaluation\avr\LIB\CLIB\cl3s-ec_mul.r90"      #
+#                            -e_small_write=_formatted_write                   #
+#                            -e_medium_read=_formatted_read                    #
+#                                                                              #
+#                        Copyright 1987-2007 IAR Systems. All rights reserved. #
+################################################################################
+
+
+
+
+
+                ****************************************
+                *                                      *
+                *           CROSS REFERENCE            *
+                *                                      *
+                ****************************************
+
+       Program entry at : CODE      00000000  Relocatable, from module : ?RESET
+
+
+
+
+                ****************************************
+                *                                      *
+                *            RUNTIME MODEL             *
+                *                                      *
+                ****************************************
+
+  EEPROM_SIZE     = 2
+  R10             = REG
+  R12             = REG
+  R13             = REG
+  R14             = REG
+  R15             = REG
+  R4              = REG
+  R5              = REG
+  R6              = REG
+  R7              = REG
+  R8              = REG
+  R9              = REG
+  __64bit_doubles = disabled
+  __cpu           = 3
+  __cpu_name      = ATmega128
+  __enhanced_core = enabled
+  __has_elpm      = true
+  __memory_model  = 2
+  __no_rampd      = enabled
+  __rt_version    = 3
+
+
+
+                ****************************************
+                *                                      *
+                *              MODULE MAP              *
+                *                                      *
+                ****************************************
+
+
+  DEFINED ABSOLUTE ENTRIES
+  PROGRAM MODULE, NAME : ?ABS_ENTRY_MOD
+
+Absolute parts
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _..X_RSTACK_END         000010FF 
+           _..X_RSTACK_BASE        00000100 
+           _..X_CSTACK_END         000010FF 
+           _..X_CSTACK_BASE        00000100 
+           _..X_EXT_NV_SIZE        00000000 
+           _..X_EXT_NV_BASE        000010FF 
+           _..X_EXT_ROM_SIZE       00000000 
+           _..X_EXT_ROM_BASE       000010FF 
+           _..X_EXT_SRAM_SIZE      00000000 
+           _..X_EXT_SRAM_BASE      000010FF 
+           _..X_FLASH_BASE         0000008C 
+           _..X_RSTACK_SIZE        00000028 
+           _..X_CSTACK_SIZE        00000080 
+           _..X_HUGE_HEAP_SIZE     00000000 
+           _..X_FAR_HEAP_SIZE      00000000 
+           _..X_NEAR_HEAP_SIZE     00000000 
+           _..X_TINY_HEAP_SIZE     00000000 
+           _..X_HEAP_SIZE          00000010 
+           _..X_EEPROM_START       00000000 
+           _..X_EEPROM_END         00000FFF 
+           _..X_SRAM_END           000010FF 
+           _..X_SRAM_TSIZE         00000000 
+           _..X_SRAM_TBASE         00000000 
+           _..X_SRAM_BASE          00000100 
+           _..X_FLASH_END          0001FFFF 
+           _..X_FLASH_NEND         0000FFFF 
+           _..X_INTVEC_SIZE        0000008C 
+    *************************************************************************
+
+  FILE NAME : D:\current_prj\batt\BATT_emb\Debug\Obj\adc.r90
+  PROGRAM MODULE, NAME : adc
+
+  SEGMENTS IN THE MODULE
+  ======================
+ABSOLUTE
+  Relative segment, address: DATA 00000024 - 00000025 (0x2 bytes), align: 0
+  Segment part 1.             Intra module refs:   ADC_isr
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _A_ADC                  00000024 
+    -------------------------------------------------------------------------
+ABSOLUTE
+  Relative segment, address: DATA 00000026 - 00000026 (0x1 bytes), align: 0
+  Segment part 2.             Intra module refs:   ADC_isr
+                                                   adcini
+                                                   adcstart
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _A_ADCSR                00000026 
+    -------------------------------------------------------------------------
+ABSOLUTE
+  Relative segment, address: DATA 00000027 - 00000027 (0x1 bytes), align: 0
+  Segment part 3.             Intra module refs:   ADC_isr
+                                                   adcini
+                                                   adcstart
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _A_ADMUX                00000027 
+    -------------------------------------------------------------------------
+NEAR_Z
+  Relative segment, address: DATA 000001AE - 000001CD (0x20 bytes), align: 0
+  Segment part 11.            Intra module refs:   ADC_isr
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           summ                    000001AE 
+    -------------------------------------------------------------------------
+NEAR_Z
+  Relative segment, address: DATA 000001CE - 000001ED (0x20 bytes), align: 0
+  Segment part 13.            Intra module refs:   ADC_isr
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           summcnt                 000001CE 
+    -------------------------------------------------------------------------
+NEAR_Z
+  Relative segment, address: DATA 000001EE - 000001FD (0x10 bytes), align: 0
+  Segment part 14.            Intra module refs:   ADC_isr
+                                                   adcini
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           maxsummcnt              000001EE 
+    -------------------------------------------------------------------------
+NEAR_Z
+  Relative segment, address: DATA 000001FE - 000001FE (0x1 bytes), align: 0
+  Segment part 15.            Intra module refs:   ADC_isr
+                                                   adcini
+                                                   adcstart
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           chn                     000001FE 
+    -------------------------------------------------------------------------
+NEAR_Z
+  Relative segment, address: DATA 000001FF - 0000020E (0x10 bytes), align: 0
+  Segment part 20.            Intra module refs:   ADC_isr
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           results                 000001FF 
+    -------------------------------------------------------------------------
+NEAR_Z
+  Relative segment, address: DATA 0000020F - 0000026A (0x5c bytes), align: 0
+  Segment part 21.            Intra module refs:   ADC_isr
+                                                   addsamples
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           batt                    0000020F        calibration (main)
+                                                   ini_activation (main)
+                                                   req0handle (coms)
+                                                   setind_prof (main)
+                                                   setstate (main)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 000002A6 - 000005BB (0x316 bytes), align: 1
+  Segment part 24.            Intra module refs:   ADC_isr::??INTVEC 84
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ADC_isr                 000002A6 
+               interrupt function
+               stack 1 = 00000000 ( 0000001D )
+               stack 2 = 00000000 ( 00000004 )
+    -------------------------------------------------------------------------
+NEAR_Z
+  Relative segment, address: DATA 0000026B - 0000026E (0x4 bytes), align: 0
+  Segment part 23.            Intra module refs:   addsamples
+                                                   ini_addsamples
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           nextsampletime          0000026B        ini_workbyprofile (main)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 000005BC - 00000615 (0x5a bytes), align: 1
+  Segment part 25.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ini_addsamples          000005BC        main (main)
+               stack 1 = 00000000 ( 00000000 )
+               stack 2 = 00000000 ( 00000002 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00000616 - 0000072F (0x11a bytes), align: 1
+  Segment part 26.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           addsamples              00000616        main (main)
+               stack 1 = 00000000 ( 00000004 )
+               stack 2 = 00000000 ( 00000004 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00000730 - 00000765 (0x36 bytes), align: 1
+  Segment part 27.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           adcini                  00000730        main (main)
+               stack 1 = 00000000 ( 00000000 )
+               stack 2 = 00000000 ( 00000002 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00000766 - 00000775 (0x10 bytes), align: 1
+  Segment part 28.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           adcstart                00000766        t0_comp_isr (timeservice)
+               stack 1 = 00000000 ( 00000000 )
+               stack 2 = 00000000 ( 00000002 )
+    -------------------------------------------------------------------------
+ABSOLUTE
+  Relative segment, address: DATA 0000001C, align: 0
+  Segment part 4.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           __?EECR                 0000001C        Segment part 0 (?EEPROM_16)
+                                                   Segment part 1 (?EEPROM_16)
+    -------------------------------------------------------------------------
+ABSOLUTE
+  Relative segment, address: DATA 0000001D, align: 0
+  Segment part 5.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           __?EEDR                 0000001D        __eeget16_16 (?EEPROM_16)
+                                                   __eeget8_16 (?EEPROM_16)
+    -------------------------------------------------------------------------
+ABSOLUTE
+  Relative segment, address: DATA 0000001E, align: 0
+  Segment part 6.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           __?EEARL                0000001E        Segment part 1 (?EEPROM_16)
+    -------------------------------------------------------------------------
+ABSOLUTE
+  Relative segment, address: DATA 0000001F, align: 0
+  Segment part 7.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           __?EEARH                0000001F        Segment part 1 (?EEPROM_16)
+    -------------------------------------------------------------------------
+INTVEC
+  Common segment, address: CODE 00000000 - 00000057 (0x58 bytes), align: 1
+  Segment part 8. ROOT.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ADC_isr::??INTVEC 84    00000054 
+    -------------------------------------------------------------------------
+INITTAB
+  Relative segment, address: CODE 00002624 - 0000262A (0x7 bytes), align: 0
+  Segment part 12.            Intra module refs:   batt
+                                                   cal (main)
+                                                   chn
+                                                   curbuf (coms)
+                                                   curoffset (coms)
+                                                   curtime (timeservice)
+                                                   forsend (coms)
+                                                   frmcnt (coms)
+                                                   hist (hist)
+                                                   longtouttable (timeservice)
+                                                   maxsummcnt
+                                                   nextsampletime
+                                                   prbuf0 (coms)
+                                                   prbuf1 (coms)
+                                                   profile (coms)
+                                                   rec0ctx (coms)
+                                                   results
+                                                   sbuf (coms)
+                                                   sen0ctx (coms)
+                                                   sendbuf (coms)
+                                                   senlen (coms)
+                                                   stepcnt (main)
+                                                   summ
+                                                   summcnt
+                                                   time (timeservice)
+                                                   touttable (timeservice)
+                                                   work_mode (coms)
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?<Segment init: NEAR_Z>
+                                   00002624 
+    -------------------------------------------------------------------------
+INITTAB
+  Relative segment, address: CODE 0000262B - 00002631 (0x7 bytes), align: 0
+  Segment part 18.            Intra module refs:   activ_time (main)
+                                                   adr (coms)
+                                                   tmp (timeservice)
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?<Segment init: NEAR_I>
+                                   0000262B 
+
+    *************************************************************************
+
+  FILE NAME : D:\current_prj\batt\BATT_emb\Debug\Obj\coms.r90
+  PROGRAM MODULE, NAME : coms
+
+  SEGMENTS IN THE MODULE
+  ======================
+ABSOLUTE
+  Relative segment, address: DATA 00000029 - 00000029 (0x1 bytes), align: 0
+  Segment part 1.             Intra module refs:   iniuart0
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _A_UBRR0L               00000029 
+    -------------------------------------------------------------------------
+ABSOLUTE
+  Relative segment, address: DATA 0000002A - 0000002A (0x1 bytes), align: 0
+  Segment part 2.             Intra module refs:   inisendfrm
+                                                   iniuart0
+                                                   req0handle
+                                                   rx0_isr
+                                                   sendexept
+                                                   tx0_isr
+                                                   tx0end_isr
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _A_UCSR0B               0000002A 
+    -------------------------------------------------------------------------
+ABSOLUTE
+  Relative segment, address: DATA 0000002B - 0000002B (0x1 bytes), align: 0
+  Segment part 3.             Intra module refs:   iniuart0
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _A_UCSR0A               0000002B 
+    -------------------------------------------------------------------------
+ABSOLUTE
+  Relative segment, address: DATA 0000002C - 0000002C (0x1 bytes), align: 0
+  Segment part 4.             Intra module refs:   rx0_isr
+                                                   tx0_isr
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _A_UDR0                 0000002C 
+    -------------------------------------------------------------------------
+ABSOLUTE
+  Relative segment, address: DATA 0000003C - 0000003C (0x1 bytes), align: 0
+  Segment part 5.             Intra module refs:   setch
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _A_EECR                 0000003C 
+    -------------------------------------------------------------------------
+ABSOLUTE
+  Relative segment, address: DATA 0000003D - 0000003D (0x1 bytes), align: 0
+  Segment part 6.             Intra module refs:   setch
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _A_EEDR                 0000003D 
+    -------------------------------------------------------------------------
+ABSOLUTE
+  Relative segment, address: DATA 0000003E - 0000003F (0x2 bytes), align: 0
+  Segment part 7.             Intra module refs:   setch
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _A_EEAR                 0000003E 
+    -------------------------------------------------------------------------
+ABSOLUTE
+  Relative segment, address: DATA 0000004A - 0000004B (0x2 bytes), align: 0
+  Segment part 8.             Intra module refs:   Init (main)
+                                                   rx0_isr
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _A_OCR1A                0000004A 
+    -------------------------------------------------------------------------
+ABSOLUTE
+  Relative segment, address: DATA 0000004C - 0000004D (0x2 bytes), align: 0
+  Segment part 9.             Intra module refs:   rx0_isr
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _A_TCNT1                0000004C 
+    -------------------------------------------------------------------------
+ABSOLUTE
+  Relative segment, address: DATA 00000056 - 00000056 (0x1 bytes), align: 0
+  Segment part 10.            Intra module refs:   Init (main)
+                                                   rx0_isr
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _A_TIFR                 00000056 
+    -------------------------------------------------------------------------
+ABSOLUTE
+  Relative segment, address: DATA 00000090 - 00000090 (0x1 bytes), align: 0
+  Segment part 11.            Intra module refs:   iniuart0
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _A_UBRR0H               00000090 
+    -------------------------------------------------------------------------
+ABSOLUTE
+  Relative segment, address: DATA 00000095 - 00000095 (0x1 bytes), align: 0
+  Segment part 12.            Intra module refs:   iniuart0
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _A_UCSR0C               00000095 
+    -------------------------------------------------------------------------
+ABSOLUTE
+  Relative segment, address: DATA 0000009A - 0000009A (0x1 bytes), align: 0
+  Segment part 13.            Intra module refs:   tx0end_isr
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _A_UCSR1B               0000009A 
+    -------------------------------------------------------------------------
+NEAR_Z
+  Relative segment, address: DATA 0000026F - 0000026F (0x1 bytes), align: 0
+  Segment part 23.            Intra module refs:   req0handle
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           frmcnt                  0000026F 
+    -------------------------------------------------------------------------
+NEAR_Z
+  Relative segment, address: DATA 00000270 - 00000271 (0x2 bytes), align: 0
+  Segment part 25.            Intra module refs:   req0handle
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           forsend                 00000270        ini_addsamples (adc)
+                                                   ini_workbyprofile (main)
+    -------------------------------------------------------------------------
+NEAR_Z
+  Relative segment, address: DATA 00000272 - 00000272 (0x1 bytes), align: 0
+  Segment part 26.            Intra module refs:   req0handle
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           work_mode               00000272        addsamples (adc)
+                                                   ini_activation (main)
+                                                   ini_workbyprofile (main)
+                                                   main (main)
+                                                   setstate (main)
+    -------------------------------------------------------------------------
+NEAR_I
+  Relative segment, address: DATA 000001A8 - 000001A8 (0x1 bytes), align: 0
+  Segment part 27.            Intra module refs:   inisendfrm
+                                                   req0handle
+                                                   sendexept
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           adr                     000001A8 
+    -------------------------------------------------------------------------
+NEAR_Z
+  Relative segment, address: DATA 00000273 - 00000475 (0x203 bytes), align: 0
+  Segment part 30.            Intra module refs:   inisendfrm
+                                                   iniuart0
+                                                   req0handle
+                                                   rx0_isr
+                                                   sendack
+                                                   sendexept
+                                                   tx0end_isr
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           rec0ctx                 00000273 
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00000776 - 00000849 (0xd4 bytes), align: 1
+  Segment part 45.            Intra module refs:   Segment part 59
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           iniuart0                00000776        main (main)
+               calls direct
+               stack 1 = 00000000 ( 00000004 )
+               stack 2 = 00000000 ( 00000002 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 0000084A - 000008AB (0x62 bytes), align: 1
+  Segment part 46.            Intra module refs:   tx0end_isr::??INTVEC 80
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           tx0end_isr              0000084A 
+               interrupt function
+               calls direct
+               stack 1 = 00000000 ( 00000010 )
+               stack 2 = 00000000 ( 00000002 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 000008AC - 0000092B (0x80 bytes), align: 1
+  Segment part 47.            Intra module refs:   rx0_isr::??INTVEC 72
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           rx0_isr                 000008AC 
+               interrupt function
+               calls direct
+               stack 1 = 00000000 ( 00000011 )
+               stack 2 = 00000000 ( 00000002 )
+    -------------------------------------------------------------------------
+NEAR_Z
+  Relative segment, address: DATA 00000476 - 0000047A (0x5 bytes), align: 0
+  Segment part 31.            Intra module refs:   inisendfrm
+                                                   sendexept
+                                                   tx0_isr
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           sen0ctx                 00000476 
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 0000092C - 000009B3 (0x88 bytes), align: 1
+  Segment part 48.            Intra module refs:   tx0_isr::??INTVEC 76
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           tx0_isr                 0000092C 
+               interrupt function
+               calls direct
+               stack 1 = 00000000 ( 00000011 )
+               stack 2 = 00000000 ( 00000002 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 000009B4 - 00000A1D (0x6a bytes), align: 1
+  Segment part 49.            Intra module refs:   req0handle
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           chkfrm                  000009B4 
+               calls direct
+               stack 1 = 00000000 ( 00000004 )
+               stack 2 = 00000000 ( 00000002 )
+    -------------------------------------------------------------------------
+NEAR_Z
+  Relative segment, address: DATA 0000047B - 0000087C (0x402 bytes), align: 0
+  Segment part 32.            Intra module refs:   sendexept
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           sbuf                    0000047B 
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00000A1E - 00000A3B (0x1e bytes), align: 1
+  Segment part 50.            Intra module refs:   sendexept
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _copy                   00000A1E 
+               stack 1 = 00000000 ( 00000000 )
+               stack 2 = 00000000 ( 00000002 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00000A3C - 00000AED (0xb2 bytes), align: 1
+  Segment part 51.            Intra module refs:   req0handle
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           sendexept               00000A3C 
+               calls direct
+               stack 1 = 00000000 ( 00000004 )
+               stack 2 = 00000000 ( 00000002 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00000AEE - 00000B55 (0x68 bytes), align: 1
+  Segment part 52.            Intra module refs:   req0handle
+                                                   sendack
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           inisendfrm              00000AEE 
+               calls direct
+               stack 1 = 00000000 ( 00000006 )
+               stack 2 = 00000000 ( 00000002 )
+    -------------------------------------------------------------------------
+NEAR_Z
+  Relative segment, address: DATA 0000087D - 00000944 (0xc8 bytes), align: 0
+  Segment part 33.            Intra module refs:   req0handle
+                                                   sendack
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           sendbuf                 0000087D 
+    -------------------------------------------------------------------------
+NEAR_Z
+  Relative segment, address: DATA 00000945 - 00000946 (0x2 bytes), align: 0
+  Segment part 35.            Intra module refs:   req0handle
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           curoffset               00000945        addsamples (adc)
+                                                   ini_addsamples (adc)
+                                                   ini_workbyprofile (main)
+    -------------------------------------------------------------------------
+NEAR_Z
+  Relative segment, address: DATA 00000947 - 00000948 (0x2 bytes), align: 0
+  Segment part 36.            Intra module refs:   req0handle
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           curbuf                  00000947        addsamples (adc)
+                                                   ini_addsamples (adc)
+                                                   ini_workbyprofile (main)
+    -------------------------------------------------------------------------
+NEAR_Z
+  Relative segment, address: DATA 00000949 - 00000CCC (0x384 bytes), align: 0
+  Segment part 37.            Intra module refs:   req0handle
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           prbuf0                  00000949        ini_addsamples (adc)
+                                                   ini_workbyprofile (main)
+    -------------------------------------------------------------------------
+NEAR_Z
+  Relative segment, address: DATA 00000CCD - 00001050 (0x384 bytes), align: 0
+  Segment part 38.            Intra module refs:   req0handle
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           prbuf1                  00000CCD        ini_addsamples (adc)
+                                                   ini_workbyprofile (main)
+    -------------------------------------------------------------------------
+NEAR_Z
+  Relative segment, address: DATA 00001051 - 00001095 (0x45 bytes), align: 0
+  Segment part 41.            Intra module refs:   read_settings
+                                                   req0handle
+                                                   wr_settings
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           profile                 00001051        addsamples (adc)
+                                                   ini_activation (main)
+                                                   ini_workbyprofile (main)
+                                                   main (main)
+                                                   setind_prof (main)
+                                                   setstate (main)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00000B56 - 00000B79 (0x24 bytes), align: 1
+  Segment part 53.            Intra module refs:   wr_settings
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           setch                   00000B56        calibration (main)
+               stack 1 = 00000000 ( 00000000 )
+               stack 2 = 00000000 ( 00000004 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00000B7A - 00000C17 (0x9e bytes), align: 1
+  Segment part 54.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           read_settings           00000B7A        main (main)
+               stack 1 = 00000000 ( 00000000 )
+               stack 2 = 00000000 ( 00000004 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00000C18 - 00000C45 (0x2e bytes), align: 1
+  Segment part 55.            Intra module refs:   req0handle
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           wr_settings             00000C18 
+               calls direct
+               stack 1 = 00000000 ( 00000004 )
+               stack 2 = 00000000 ( 00000002 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00000C46 - 00000C65 (0x20 bytes), align: 1
+  Segment part 57.            Intra module refs:   req0handle
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           sendack                 00000C46 
+               calls direct
+               stack 1 = 00000000 ( 00000001 )
+               stack 2 = 00000000 ( 00000002 )
+    -------------------------------------------------------------------------
+NEAR_Z
+  Relative segment, address: DATA 00001096 - 00001097 (0x2 bytes), align: 0
+  Segment part 44.            Intra module refs:   req0handle
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           senlen                  00001096 
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00000C66 - 00000E9D (0x238 bytes), align: 1
+  Segment part 58.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           req0handle              00000C66        main (main)
+               calls direct
+               stack 1 = 00000000 ( 00000004 )
+               stack 2 = 00000000 ( 00000002 )
+    -------------------------------------------------------------------------
+INTVEC
+  Common segment, address: CODE 00000000 - 0000004B (0x4c bytes), align: 1
+  Segment part 18. ROOT.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           rx0_isr::??INTVEC 72    00000048 
+    -------------------------------------------------------------------------
+INTVEC
+  Common segment, address: CODE 00000000 - 0000004F (0x50 bytes), align: 1
+  Segment part 19. ROOT.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           tx0_isr::??INTVEC 76    0000004C 
+    -------------------------------------------------------------------------
+INTVEC
+  Common segment, address: CODE 00000000 - 00000053 (0x54 bytes), align: 1
+  Segment part 20. ROOT.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           tx0end_isr::??INTVEC 80
+                                   00000050 
+    -------------------------------------------------------------------------
+NEAR_ID
+  Relative segment, address: CODE 00002632 - 00002632 (0x1 bytes), align: 0
+  Segment part 28.            Intra module refs:   adr
+    -------------------------------------------------------------------------
+SWITCH
+  Relative segment, address: CODE 0000028C - 000002A5 (0x1a bytes), align: 1
+  Segment part 59.            Intra module refs:   iniuart0
+
+    *************************************************************************
+
+  FILE NAME : D:\current_prj\batt\BATT_emb\Debug\Obj\crc.r90
+  PROGRAM MODULE, NAME : crc
+
+  SEGMENTS IN THE MODULE
+  ======================
+NEAR_F
+  Relative segment, address: CODE 0000008C - 0000018B (0x100 bytes), align: 0
+  Segment part 7.             Intra module refs:   getcrc
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           auchCRCHi               0000008C 
+    -------------------------------------------------------------------------
+NEAR_F
+  Relative segment, address: CODE 0000018C - 0000028B (0x100 bytes), align: 0
+  Segment part 8.             Intra module refs:   getcrc
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           auchCRCLo               0000018C 
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00000E9E - 00000EE7 (0x4a bytes), align: 1
+  Segment part 9.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           getcrc                  00000E9E        chkfrm (coms)
+                                                   inisendfrm (coms)
+                                                   sendexept (coms)
+               stack 1 = 00000000 ( 00000000 )
+               stack 2 = 00000000 ( 00000002 )
+
+    *************************************************************************
+
+  FILE NAME : D:\current_prj\batt\BATT_emb\Debug\Obj\hist.r90
+  PROGRAM MODULE, NAME : hist
+
+  SEGMENTS IN THE MODULE
+  ======================
+NEAR_Z
+  Relative segment, address: DATA 00001098 - 0000109F (0x8 bytes), align: 0
+  Segment part 7.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           hist                    00001098        main (main)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00000EE8 - 00000EE9 (0x2 bytes), align: 1
+  Segment part 11.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           addh                    00000EE8        inisend (byte_stuff)
+                                                   tx0_isr (coms)
+               stack 1 = 00000000 ( 00000000 )
+               stack 2 = 00000000 ( 00000002 )
+
+    *************************************************************************
+
+  FILE NAME : D:\current_prj\batt\BATT_emb\Debug\Obj\main.r90
+  PROGRAM MODULE, NAME : main
+
+  SEGMENTS IN THE MODULE
+  ======================
+ABSOLUTE
+  Relative segment, address: DATA 00000022 - 00000022 (0x1 bytes), align: 0
+  Segment part 1.             Intra module refs:   iniports
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _A_DDRE                 00000022 
+    -------------------------------------------------------------------------
+ABSOLUTE
+  Relative segment, address: DATA 00000031 - 00000031 (0x1 bytes), align: 0
+  Segment part 2.             Intra module refs:   iniports
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _A_DDRD                 00000031 
+    -------------------------------------------------------------------------
+ABSOLUTE
+  Relative segment, address: DATA 00000032 - 00000032 (0x1 bytes), align: 0
+  Segment part 3.             Intra module refs:   setdac
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _A_PORTD                00000032 
+    -------------------------------------------------------------------------
+ABSOLUTE
+  Relative segment, address: DATA 00000034 - 00000034 (0x1 bytes), align: 0
+  Segment part 4.             Intra module refs:   iniports
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _A_DDRC                 00000034 
+    -------------------------------------------------------------------------
+ABSOLUTE
+  Relative segment, address: DATA 00000035 - 00000035 (0x1 bytes), align: 0
+  Segment part 5.             Intra module refs:   calibration
+                                                   setgroff
+                                                   setgron
+                                                   setind_prof
+                                                   setredoff
+                                                   setredon
+                                                   setyel
+                                                   setyeloff
+                                                   setyelon
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _A_PORTC                00000035 
+    -------------------------------------------------------------------------
+ABSOLUTE
+  Relative segment, address: DATA 00000037 - 00000037 (0x1 bytes), align: 0
+  Segment part 6.             Intra module refs:   iniports
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _A_DDRB                 00000037 
+    -------------------------------------------------------------------------
+ABSOLUTE
+  Relative segment, address: DATA 00000038 - 00000038 (0x1 bytes), align: 0
+  Segment part 7.             Intra module refs:   setdac
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _A_PORTB                00000038 
+    -------------------------------------------------------------------------
+ABSOLUTE
+  Relative segment, address: DATA 0000003A - 0000003A (0x1 bytes), align: 0
+  Segment part 8.             Intra module refs:   iniports
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _A_DDRA                 0000003A 
+    -------------------------------------------------------------------------
+ABSOLUTE
+  Relative segment, address: DATA 0000003B - 0000003B (0x1 bytes), align: 0
+  Segment part 9.             Intra module refs:   calibration
+                                                   setgroff
+                                                   setgron
+                                                   setind_prof
+                                                   setredoff
+                                                   setredon
+                                                   setyel
+                                                   setyeloff
+                                                   setyelon
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _A_PORTA                0000003B 
+    -------------------------------------------------------------------------
+ABSOLUTE
+  Relative segment, address: DATA 00000041 - 00000041 (0x1 bytes), align: 0
+  Segment part 10.            Intra module refs:   main
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _A_WDTCR                00000041 
+    -------------------------------------------------------------------------
+ABSOLUTE
+  Relative segment, address: DATA 0000004E - 0000004E (0x1 bytes), align: 0
+  Segment part 12.            Intra module refs:   Init
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _A_TCCR1B               0000004E 
+    -------------------------------------------------------------------------
+ABSOLUTE
+  Relative segment, address: DATA 0000004F - 0000004F (0x1 bytes), align: 0
+  Segment part 13.            Intra module refs:   Init
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _A_TCCR1A               0000004F 
+    -------------------------------------------------------------------------
+ABSOLUTE
+  Relative segment, address: DATA 00000064 - 00000064 (0x1 bytes), align: 0
+  Segment part 15.            Intra module refs:   iniports
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _A_DDRG                 00000064 
+    -------------------------------------------------------------------------
+ABSOLUTE
+  Relative segment, address: DATA 00000065 - 00000065 (0x1 bytes), align: 0
+  Segment part 16.            Intra module refs:   setdac
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _A_PORTG                00000065 
+    -------------------------------------------------------------------------
+ABSOLUTE
+  Relative segment, address: DATA 00000086 - 00000087 (0x2 bytes), align: 0
+  Segment part 17.            Intra module refs:   Init
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _A_OCR3A                00000086 
+    -------------------------------------------------------------------------
+ABSOLUTE
+  Relative segment, address: DATA 00000088 - 00000089 (0x2 bytes), align: 0
+  Segment part 18.            Intra module refs:   Init
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _A_TCNT3                00000088 
+    -------------------------------------------------------------------------
+ABSOLUTE
+  Relative segment, address: DATA 0000008A - 0000008A (0x1 bytes), align: 0
+  Segment part 19.            Intra module refs:   Init
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _A_TCCR3B               0000008A 
+    -------------------------------------------------------------------------
+ABSOLUTE
+  Relative segment, address: DATA 0000008B - 0000008B (0x1 bytes), align: 0
+  Segment part 20.            Intra module refs:   Init
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _A_TCCR3A               0000008B 
+    -------------------------------------------------------------------------
+NEAR_Z
+  Relative segment, address: DATA 000010A0 - 000010A0 (0x1 bytes), align: 0
+  Segment part 27.            Intra module refs:   ini_workbyprofile
+                                                   main
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           stepcnt                 000010A0        req0handle (coms)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00000EEA - 00000FB1 (0xc8 bytes), align: 1
+  Segment part 35.            Intra module refs:   setcur
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           setdac                  00000EEA 
+               stack 1 = 00000000 ( 00000000 )
+               stack 2 = 00000000 ( 00000002 )
+    -------------------------------------------------------------------------
+NEAR_Z
+  Relative segment, address: DATA 000010A1 - 000010AE (0xe bytes), align: 0
+  Segment part 29.            Intra module refs:   calibration
+                                                   load_calibr
+                                                   setcur
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           cal                     000010A1 
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00000FB2 - 0000101D (0x6c bytes), align: 1
+  Segment part 36.            Intra module refs:   calibration
+                                                   ini_activation
+                                                   ini_workbyprofile
+                                                   main
+                                                   setstate
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           setcur                  00000FB2 
+               calls direct
+               stack 1 = 00000000 ( 00000008 )
+               stack 2 = 00000000 ( 00000004 )
+    -------------------------------------------------------------------------
+NEAR_I
+  Relative segment, address: DATA 000001A9 - 000001AC (0x4 bytes), align: 0
+  Segment part 30.            Intra module refs:   setstate
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           activ_time              000001A9 
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 0000101E - 00001219 (0x1fc bytes), align: 1
+  Segment part 37.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           calibration             0000101E        req0handle (coms)
+               calls direct
+               stack 1 = 00000000 ( 0000000A )
+               stack 2 = 00000000 ( 00000004 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 0000121A - 00001293 (0x7a bytes), align: 1
+  Segment part 38.            Intra module refs:   main
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           load_calibr             0000121A 
+               stack 1 = 00000000 ( 00000000 )
+               stack 2 = 00000000 ( 00000004 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00001294 - 000012B7 (0x24 bytes), align: 1
+  Segment part 39.            Intra module refs:   setstate
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           setredon                00001294 
+               stack 1 = 00000000 ( 00000000 )
+               stack 2 = 00000000 ( 00000002 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 000012B8 - 000012DB (0x24 bytes), align: 1
+  Segment part 40.            Intra module refs:   setstate
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           setredoff               000012B8 
+               stack 1 = 00000000 ( 00000000 )
+               stack 2 = 00000000 ( 00000002 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 000012DC - 000012FF (0x24 bytes), align: 1
+  Segment part 41.            Intra module refs:   setstate
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           setyelon                000012DC 
+               stack 1 = 00000000 ( 00000000 )
+               stack 2 = 00000000 ( 00000002 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00001300 - 00001323 (0x24 bytes), align: 1
+  Segment part 42.            Intra module refs:   setstate
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           setyeloff               00001300 
+               stack 1 = 00000000 ( 00000000 )
+               stack 2 = 00000000 ( 00000002 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00001324 - 00001367 (0x44 bytes), align: 1
+  Segment part 43.            Intra module refs:   setstate
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           setyel                  00001324 
+               stack 1 = 00000000 ( 00000000 )
+               stack 2 = 00000000 ( 00000002 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00001368 - 0000138B (0x24 bytes), align: 1
+  Segment part 44.            Intra module refs:   setstate
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           setgron                 00001368 
+               stack 1 = 00000000 ( 00000000 )
+               stack 2 = 00000000 ( 00000002 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 0000138C - 000013AF (0x24 bytes), align: 1
+  Segment part 45.            Intra module refs:   setstate
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           setgroff                0000138C 
+               stack 1 = 00000000 ( 00000000 )
+               stack 2 = 00000000 ( 00000002 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 000013B0 - 0000179B (0x3ec bytes), align: 1
+  Segment part 47.            Intra module refs:   main
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           setstate                000013B0 
+               calls direct
+               stack 1 = 00000000 ( 00000007 )
+               stack 2 = 00000000 ( 00000004 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 0000179C - 000017B7 (0x1c bytes), align: 1
+  Segment part 48.            Intra module refs:   main
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           iniports                0000179C 
+               stack 1 = 00000000 ( 00000000 )
+               stack 2 = 00000000 ( 00000002 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 000017B8 - 000017F1 (0x3a bytes), align: 1
+  Segment part 49.            Intra module refs:   main
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Init                    000017B8 
+               stack 1 = 00000000 ( 00000000 )
+               stack 2 = 00000000 ( 00000002 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 000017F2 - 00001913 (0x122 bytes), align: 1
+  Segment part 50.            Intra module refs:   main
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           setind_prof             000017F2 
+               stack 1 = 00000000 ( 00000002 )
+               stack 2 = 00000000 ( 00000004 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00001914 - 0000199D (0x8a bytes), align: 1
+  Segment part 51.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ini_workbyprofile       00001914        req0handle (coms)
+               calls direct
+               stack 1 = 00000000 ( 00000000 )
+               stack 2 = 00000000 ( 00000002 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 0000199E - 00001A1F (0x82 bytes), align: 1
+  Segment part 52.            Intra module refs:   main
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ini_activation          0000199E        req0handle (coms)
+               calls direct
+               stack 1 = 00000000 ( 00000006 )
+               stack 2 = 00000000 ( 00000004 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00001A20 - 00001B11 (0xf2 bytes), align: 1
+  Segment part 53.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           main                    00001A20        ?cstartup_call_main (?C_STARTUP)
+               calls direct
+               stack 1 = 00000000 ( 00000002 )
+               stack 2 = 00000000 ( 00000002 )
+    -------------------------------------------------------------------------
+NEAR_ID
+  Relative segment, address: CODE 00002633 - 00002636 (0x4 bytes), align: 0
+  Segment part 31.            Intra module refs:   activ_time
+
+    *************************************************************************
+
+  FILE NAME : D:\current_prj\batt\BATT_emb\Debug\Obj\timeservice.r90
+  PROGRAM MODULE, NAME : timeservice
+
+  SEGMENTS IN THE MODULE
+  ======================
+ABSOLUTE
+  Relative segment, address: DATA 00000043 - 00000043 (0x1 bytes), align: 0
+  Segment part 1.             Intra module refs:   initime
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _A_OCR2                 00000043 
+    -------------------------------------------------------------------------
+ABSOLUTE
+  Relative segment, address: DATA 00000045 - 00000045 (0x1 bytes), align: 0
+  Segment part 2.             Intra module refs:   initime
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _A_TCCR2                00000045 
+    -------------------------------------------------------------------------
+ABSOLUTE
+  Relative segment, address: DATA 00000051 - 00000051 (0x1 bytes), align: 0
+  Segment part 3.             Intra module refs:   initime
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _A_OCR0                 00000051 
+    -------------------------------------------------------------------------
+ABSOLUTE
+  Relative segment, address: DATA 00000053 - 00000053 (0x1 bytes), align: 0
+  Segment part 4.             Intra module refs:   initime
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _A_TCCR0                00000053 
+    -------------------------------------------------------------------------
+ABSOLUTE
+  Relative segment, address: DATA 00000057 - 00000057 (0x1 bytes), align: 0
+  Segment part 5.             Intra module refs:   initime
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _A_TIMSK                00000057 
+    -------------------------------------------------------------------------
+NEAR_Z
+  Relative segment, address: DATA 000010AF - 000010B0 (0x2 bytes), align: 0
+  Segment part 14.            Intra module refs:   initime
+                                                   settout
+                                                   t2_comp_isr
+                                                   toutexpired
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           time                    000010AF        setind_prof (main)
+    -------------------------------------------------------------------------
+NEAR_Z
+  Relative segment, address: DATA 000010B1 - 000010BC (0xc bytes), align: 0
+  Segment part 16.            Intra module refs:   initime
+                                                   settout
+                                                   toutexpired
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           touttable               000010B1 
+    -------------------------------------------------------------------------
+NEAR_Z
+  Relative segment, address: DATA 000010BD - 000010D4 (0x18 bytes), align: 0
+  Segment part 17.            Intra module refs:   long_settout
+                                                   long_toutexpired
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           longtouttable           000010BD 
+    -------------------------------------------------------------------------
+NEAR_Z
+  Relative segment, address: DATA 000010D5 - 000010D8 (0x4 bytes), align: 0
+  Segment part 18.            Intra module refs:   t0_comp_isr
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           curtime                 000010D5        addsamples (adc)
+                                                   ini_addsamples (adc)
+                                                   ini_workbyprofile (main)
+                                                   setstate (main)
+    -------------------------------------------------------------------------
+NEAR_I
+  Relative segment, address: DATA 000001AD - 000001AD (0x1 bytes), align: 0
+  Segment part 19.            Intra module refs:   t0_comp_isr
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           tmp                     000001AD 
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00001B12 - 00001B5B (0x4a bytes), align: 1
+  Segment part 22.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           initime                 00001B12        main (main)
+               stack 1 = 00000000 ( 00000000 )
+               stack 2 = 00000000 ( 00000002 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00001B5C - 00001BDD (0x82 bytes), align: 1
+  Segment part 23.            Intra module refs:   t0_comp_isr::??INTVEC 60
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           t0_comp_isr             00001B5C 
+               interrupt function
+               calls direct
+               stack 1 = 00000000 ( 00000010 )
+               stack 2 = 00000000 ( 00000002 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00001BDE - 00001C19 (0x3c bytes), align: 1
+  Segment part 24.            Intra module refs:   t2_comp_isr::??INTVEC 36
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           t2_comp_isr             00001BDE 
+               interrupt function
+               stack 1 = 00000000 ( 00000006 )
+               stack 2 = 00000000 ( 00000002 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00001C1A - 00001C41 (0x28 bytes), align: 1
+  Segment part 25.            Intra module refs:   long_settout
+                                                   long_toutexpired
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           settout                 00001C1A        calibration (main)
+               stack 1 = 00000000 ( 00000000 )
+               stack 2 = 00000000 ( 00000002 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00001C42 - 00001C81 (0x40 bytes), align: 1
+  Segment part 26.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           long_settout            00001C42        ini_workbyprofile (main)
+                                                   main (main)
+               calls direct
+               stack 1 = 00000000 ( 00000005 )
+               stack 2 = 00000000 ( 00000002 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00001C82 - 00001D0D (0x8c bytes), align: 1
+  Segment part 27.            Intra module refs:   long_toutexpired
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           toutexpired             00001C82        calibration (main)
+               stack 1 = 00000000 ( 00000000 )
+               stack 2 = 00000000 ( 00000002 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00001D0E - 00001D73 (0x66 bytes), align: 1
+  Segment part 28.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           long_toutexpired        00001D0E        main (main)
+               calls direct
+               stack 1 = 00000000 ( 00000001 )
+               stack 2 = 00000000 ( 00000002 )
+    -------------------------------------------------------------------------
+INTVEC
+  Common segment, address: CODE 00000000 - 00000027 (0x28 bytes), align: 1
+  Segment part 10. ROOT.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           t2_comp_isr::??INTVEC 36
+                                   00000024 
+    -------------------------------------------------------------------------
+INTVEC
+  Common segment, address: CODE 00000000 - 0000003F (0x40 bytes), align: 1
+  Segment part 11. ROOT.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           t0_comp_isr::??INTVEC 60
+                                   0000003C 
+    -------------------------------------------------------------------------
+NEAR_ID
+  Relative segment, address: CODE 00002637 - 00002637 (0x1 bytes), align: 0
+  Segment part 20.            Intra module refs:   tmp
+
+    *************************************************************************
+
+  FILE NAME : D:\current_prj\batt\BATT_emb\byte_stuff.r90
+  PROGRAM MODULE, NAME : byte_stuff
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: CODE 00001D74 - 00001D89 (0x16 bytes), align: 1
+  Segment part 8.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           inirec                  00001D74        inisendfrm (coms)
+                                                   iniuart0 (coms)
+                                                   req0handle (coms)
+                                                   tx0end_isr (coms)
+               stack 1 = 00000000 ( 00000000 )
+               stack 2 = 00000000 ( 00000002 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00001D8A - 00001DB7 (0x2e bytes), align: 1
+  Segment part 9.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           inisend                 00001D8A        inisendfrm (coms)
+                                                   sendexept (coms)
+               calls direct
+               stack 1 = 00000000 ( 00000006 )
+               stack 2 = 00000000 ( 00000002 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00001DB8 - 00001E9B (0xe4 bytes), align: 1
+  Segment part 10.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           getnextch               00001DB8        tx0_isr (coms)
+               stack 1 = 00000000 ( 00000004 )
+               stack 2 = 00000000 ( 00000002 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00001E9C - 00001F9B (0x100 bytes), align: 1
+  Segment part 11.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           recnextch               00001E9C        rx0_isr (coms)
+               stack 1 = 00000000 ( 00000000 )
+               stack 2 = 00000000 ( 00000002 )
+
+    *************************************************************************
+
+  FILE NAME : C:\Program Files\IAR Systems\Embedded Workbench 4.0 Evaluation\avr\LIB\CLIB\cl3s-ec_mul.r90
+  LIBRARY MODULE, NAME : ?__exit
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: CODE 00001F9C - 00001FA1 (0x6 bytes), align: 1
+  Segment part 0.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           __exit                  00001F9E 
+           ?C_EXIT                 00001F9E 
+           ?C_FUNCALL              00001F9C 
+           _exit                   00001F9C        ?cstartup_call_main (?C_STARTUP)
+           exit                    00001F9C        ?cstartup_call_main (?C_STARTUP)
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?RESET
+
+  SEGMENTS IN THE MODULE
+  ======================
+INTVEC
+  Common segment, address: CODE 00000000 - 00000003 (0x4 bytes), align: 1
+  Segment part 0. ROOT.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           __program_start         00000000        Absolute parts (?ABS_ENTRY_MOD)
+           ?RESET                  00000000        Segment part 2 (?C_STARTUP)
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?C_STARTUP
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: CODE 00001FA2, align: 1
+  Segment part 2.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?C_STARTUP              00001FA2        Segment part 0 (?RESET)
+           __RESTART               00001FA2 
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00001FA2 - 00001FAD (0xc bytes), align: 1
+  Segment part 5.             Intra module refs:   Segment part 2
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00001FAE - 00001FB1 (0x4 bytes), align: 1
+  Segment part 7.             Intra module refs:   Segment part 5
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?call_low_level_init    00001FAE 
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00001FB2 - 00001FB9 (0x8 bytes), align: 1
+  Segment part 8.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?need_segment_init      00001FB2        ?<Segment init: NEAR_I> (adc)
+                                                   ?<Segment init: NEAR_Z> (adc)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00001FBA - 00001FC5 (0xc bytes), align: 1
+  Segment part 9.             Intra module refs:   ?call_low_level_init
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?cstartup_call_main     00001FBA 
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?EEPROM_16
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: CODE 00001FC6 - 00001FCB (0x6 bytes), align: 1
+  Segment part 0.             Intra module refs:   Segment part 1
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00001FCC - 00001FD9 (0xe bytes), align: 1
+  Segment part 1.             Intra module refs:   __eeget16_16
+                                                   __eeget8_16
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00001FDA - 00001FDF (0x6 bytes), align: 1
+  Segment part 3.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           __eeget8_16             00001FDA        load_calibr (main)
+                                                   read_settings (coms)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00001FE0 - 00001FE9 (0xa bytes), align: 1
+  Segment part 4.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           __eeget16_16            00001FE0        setch (coms)
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?S_EC_MUL_L02
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: CODE 00001FEA - 00001FF9 (0x10 bytes), align: 1
+  Segment part 0.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?S_EC_MUL_L02           00001FEA        ADC_isr (adc)
+                                                   addsamples (adc)
+                                                   calibration (main)
+                                                   ini_activation (main)
+                                                   setind_prof (main)
+                                                   setstate (main)
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?L_EC_MUL_L03
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: CODE 00001FFA - 00002039 (0x40 bytes), align: 1
+  Segment part 0.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?L_EC_MUL_L03           00001FFA        ADC_isr (adc)
+                                                   setcur (main)
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?UL_SHR_L03
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: CODE 0000203A - 00002049 (0x10 bytes), align: 1
+  Segment part 0.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?UL_SHR_L03             0000203A        Segment part 9 (?FLOATS_L04)
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?UL_DIVMOD_L03
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: CODE 0000204A - 0000208F (0x46 bytes), align: 1
+  Segment part 0.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?UL_DIVMOD_L03          0000204A        ?SL_DIVMOD_L03 (?SL_DIVMOD_L03)
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?SL_DIVMOD_L03
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: CODE 00002090 - 000020B3 (0x24 bytes), align: 1
+  Segment part 0.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?SL_DIVMOD_L03          00002090        ADC_isr (adc)
+                                                   calibration (main)
+                                                   setcur (main)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 000020B4 - 000020C3 (0x10 bytes), align: 1
+  Segment part 1.             Intra module refs:   ?SL_DIVMOD_L03
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?L_NEG_L03              000020B4        ?SL2F_L04 (?FLOATS_L04)
+                                                   Segment part 9 (?FLOATS_L04)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 000020C4 - 000020D3 (0x10 bytes), align: 1
+  Segment part 2.             Intra module refs:   ?SL_DIVMOD_L03
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?L_NEG_Q_L03            000020C4 
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?FLOATS_L04
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: CODE 000020D4 - 000020FD (0x2a bytes), align: 1
+  Segment part 0.             Intra module refs:   ?F2SL_L04
+                                                   ?F_ADD_L04
+                                                   ?F_DIV_L04
+                                                   ?F_MUL_L04
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 000020FE - 00002151 (0x54 bytes), align: 1
+  Segment part 1.             Intra module refs:   ?F_ADD_L04
+                                                   ?F_DIV_L04
+                                                   ?F_MUL_L04
+                                                   Segment part 5
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?F_ROUND_L04            0000211E 
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00002152 - 00002153 (0x2 bytes), align: 1
+  Segment part 3.             Intra module refs:   ?F_ROUND_L04
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00002154 - 0000215D (0xa bytes), align: 1
+  Segment part 4.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?SL2F_L04               00002154        calibration (main)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 0000215E - 00002169 (0xc bytes), align: 1
+  Segment part 5.             Intra module refs:   ?SL2F_L04
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 0000216A - 0000217B (0x12 bytes), align: 1
+  Segment part 8.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?F2SL_L04               0000216A        calibration (main)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 0000217C - 0000219F (0x24 bytes), align: 1
+  Segment part 9.             Intra module refs:   ?F2SL_L04
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 000021A0 - 000021CD (0x2e bytes), align: 1
+  Segment part 10.            Intra module refs:   ?F_ADD_L04
+                                                   ?F_DIV_L04
+                                                   ?F_MUL_L04
+                                                   Segment part 11
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?TEST_P_L04             000021A0 
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 000021CE - 000021ED (0x20 bytes), align: 1
+  Segment part 11.            Intra module refs:   ?F_ADD_L04
+                                                   ?F_DIV_L04
+                                                   ?F_MUL_L04
+                                                   Segment part 17
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 000021EE - 00002295 (0xa8 bytes), align: 1
+  Segment part 12.            Intra module refs:   Segment part 17
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?F_ADD_L04              0000220E        calibration (main)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00002296 - 000022A1 (0xc bytes), align: 1
+  Segment part 14.            Intra module refs:   ?F2SL_L04
+                                                   ?F_DIV_L04
+                                                   ?F_INFINITE_L04
+                                                   ?F_MUL_L04
+                                                   ?F_NAN_L04
+                                                   Segment part 9
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?F_ZERO_L04             00002296 
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 000022A2 - 000022A9 (0x8 bytes), align: 1
+  Segment part 15.            Intra module refs:   ?F_DIV_L04
+                                                   ?F_MUL_L04
+                                                   Segment part 3
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?F_INFINITE_L04         000022A2 
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 000022AA - 000022AF (0x6 bytes), align: 1
+  Segment part 16.            Intra module refs:   ?F_ADD_L04
+                                                   ?F_DIV_L04
+                                                   ?F_MUL_L04
+                                                   Segment part 17
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?F_NAN_L04              000022AA 
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 000022B0 - 000022C9 (0x1a bytes), align: 1
+  Segment part 17.            Intra module refs:   ?F_DIV_L04
+                                                   ?F_MUL_L04
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 000022CA - 0000239F (0xd6 bytes), align: 1
+  Segment part 18.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?F_MUL_L04              000022CA        calibration (main)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 000023A0 - 000024AF (0x110 bytes), align: 1
+  Segment part 19.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?F_DIV_L04              000023BC        calibration (main)
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?xV_SWITCH_L06
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: CODE 000024B0 - 0000254B (0x9c bytes), align: 1
+  Segment part 0.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?CV_SWITCH_L06          000024C2 
+           ?SV_SWITCH_L06          000024CA        iniuart0 (coms)
+           ?LV_SWITCH_L06          000024D6 
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?PROLOGUE_L09
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: CODE 0000254C - 0000254D (0x2 bytes), align: 1
+  Segment part 6.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?PROLOGUE10_L09         0000254C        calibration (main)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 0000254E - 0000254F (0x2 bytes), align: 1
+  Segment part 7.             Intra module refs:   ?PROLOGUE10_L09
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?PROLOGUE9_L09          0000254E 
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00002550 - 00002551 (0x2 bytes), align: 1
+  Segment part 8.             Intra module refs:   ?PROLOGUE9_L09
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?PROLOGUE8_L09          00002550        setcur (main)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00002552 - 00002553 (0x2 bytes), align: 1
+  Segment part 9.             Intra module refs:   ?PROLOGUE8_L09
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?PROLOGUE7_L09          00002552        setstate (main)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00002554 - 00002555 (0x2 bytes), align: 1
+  Segment part 10.            Intra module refs:   ?PROLOGUE7_L09
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?PROLOGUE6_L09          00002554        ini_activation (main)
+                                                   inisend (byte_stuff)
+                                                   inisendfrm (coms)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00002556 - 00002557 (0x2 bytes), align: 1
+  Segment part 11.            Intra module refs:   ?PROLOGUE6_L09
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?PROLOGUE5_L09          00002556        long_settout (timeservice)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00002558 - 00002559 (0x2 bytes), align: 1
+  Segment part 12.            Intra module refs:   ?PROLOGUE5_L09
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?PROLOGUE4_L09          00002558        addsamples (adc)
+                                                   chkfrm (coms)
+                                                   getnextch (byte_stuff)
+                                                   iniuart0 (coms)
+                                                   req0handle (coms)
+                                                   sendexept (coms)
+                                                   wr_settings (coms)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 0000255A - 0000255B (0x2 bytes), align: 1
+  Segment part 13.            Intra module refs:   ?PROLOGUE4_L09
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?PROLOGUE3_L09          0000255A 
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 0000255C - 0000255D (0x2 bytes), align: 1
+  Segment part 14.            Intra module refs:   ?PROLOGUE3_L09
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?PROLOGUE2_L09          0000255C 
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 0000255E - 0000255F (0x2 bytes), align: 1
+  Segment part 15.            Intra module refs:   ?PROLOGUE2_L09
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?PROLOGUE1_L09          0000255E 
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00002560 - 00002561 (0x2 bytes), align: 1
+  Segment part 16.            Intra module refs:   ?PROLOGUE1_L09
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?EPILOGUE_B_L09
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: CODE 00002562 - 00002563 (0x2 bytes), align: 1
+  Segment part 6.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?EPILOGUE_B10_L09       00002562        calibration (main)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00002564 - 00002565 (0x2 bytes), align: 1
+  Segment part 7.             Intra module refs:   ?EPILOGUE_B10_L09
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?EPILOGUE_B9_L09        00002564 
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00002566 - 00002567 (0x2 bytes), align: 1
+  Segment part 8.             Intra module refs:   ?EPILOGUE_B9_L09
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?EPILOGUE_B8_L09        00002566        setcur (main)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00002568 - 00002569 (0x2 bytes), align: 1
+  Segment part 9.             Intra module refs:   ?EPILOGUE_B8_L09
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?EPILOGUE_B7_L09        00002568        setstate (main)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 0000256A - 0000256B (0x2 bytes), align: 1
+  Segment part 10.            Intra module refs:   ?EPILOGUE_B7_L09
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?EPILOGUE_B6_L09        0000256A        ini_activation (main)
+                                                   inisend (byte_stuff)
+                                                   inisendfrm (coms)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 0000256C - 0000256D (0x2 bytes), align: 1
+  Segment part 11.            Intra module refs:   ?EPILOGUE_B6_L09
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?EPILOGUE_B5_L09        0000256C        long_settout (timeservice)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 0000256E - 0000256F (0x2 bytes), align: 1
+  Segment part 12.            Intra module refs:   ?EPILOGUE_B5_L09
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?EPILOGUE_B4_L09        0000256E        addsamples (adc)
+                                                   chkfrm (coms)
+                                                   getnextch (byte_stuff)
+                                                   iniuart0 (coms)
+                                                   req0handle (coms)
+                                                   sendexept (coms)
+                                                   wr_settings (coms)
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00002570 - 00002571 (0x2 bytes), align: 1
+  Segment part 13.            Intra module refs:   ?EPILOGUE_B4_L09
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?EPILOGUE_B3_L09        00002570 
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00002572 - 00002573 (0x2 bytes), align: 1
+  Segment part 14.            Intra module refs:   ?EPILOGUE_B3_L09
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?EPILOGUE_B2_L09        00002572 
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00002574 - 00002575 (0x2 bytes), align: 1
+  Segment part 15.            Intra module refs:   ?EPILOGUE_B2_L09
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?EPILOGUE_B1_L09        00002574 
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00002576 - 00002583 (0xe bytes), align: 1
+  Segment part 16.            Intra module refs:   ?EPILOGUE_B1_L09
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?EPILOGUE_B0_L09        00002576 
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?REGISTER_CGREGR4_L10
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: CODE 00002584, align: 1
+  Segment part 0.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?Register_R4_is_cg_reg
+                                   00002584        ADC_isr (adc)
+                                                   calibration (main)
+                                                   ini_activation (main)
+                                                   inisend (byte_stuff)
+                                                   inisendfrm (coms)
+                                                   long_settout (timeservice)
+                                                   setcur (main)
+                                                   setstate (main)
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?REGISTER_CGREGR5_L10
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: CODE 00002584, align: 1
+  Segment part 0.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?Register_R5_is_cg_reg
+                                   00002584        ADC_isr (adc)
+                                                   calibration (main)
+                                                   ini_activation (main)
+                                                   inisend (byte_stuff)
+                                                   inisendfrm (coms)
+                                                   setcur (main)
+                                                   setstate (main)
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?REGISTER_CGREGR6_L10
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: CODE 00002584, align: 1
+  Segment part 0.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?Register_R6_is_cg_reg
+                                   00002584        ADC_isr (adc)
+                                                   calibration (main)
+                                                   setcur (main)
+                                                   setstate (main)
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?REGISTER_CGREGR7_L10
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: CODE 00002584, align: 1
+  Segment part 0.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?Register_R7_is_cg_reg
+                                   00002584        ADC_isr (adc)
+                                                   calibration (main)
+                                                   setcur (main)
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?REGISTER_CGREGR8_L10
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: CODE 00002584, align: 1
+  Segment part 0.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?Register_R8_is_cg_reg
+                                   00002584        ADC_isr (adc)
+                                                   calibration (main)
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?REGISTER_CGREGR9_L10
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: CODE 00002584, align: 1
+  Segment part 0.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?Register_R9_is_cg_reg
+                                   00002584        ADC_isr (adc)
+                                                   calibration (main)
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?REGISTER_CGREGR10_L10
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: CODE 00002584, align: 1
+  Segment part 0.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?Register_R10_is_cg_reg
+                                   00002584        ADC_isr (adc)
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?REGISTER_CGREGR12_L10
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: CODE 00002584, align: 1
+  Segment part 0.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?Register_R12_is_cg_reg
+                                   00002584        ADC_isr (adc)
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?REGISTER_CGREGR13_L10
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: CODE 00002584, align: 1
+  Segment part 0.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?Register_R13_is_cg_reg
+                                   00002584        ADC_isr (adc)
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?REGISTER_CGREGR14_L10
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: CODE 00002584, align: 1
+  Segment part 0.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?Register_R14_is_cg_reg
+                                   00002584        ADC_isr (adc)
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?REGISTER_CGREGR15_L10
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: CODE 00002584, align: 1
+  Segment part 0.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?Register_R15_is_cg_reg
+                                   00002584        ADC_isr (adc)
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?low_level_init
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: CODE 00002584 - 00002587 (0x4 bytes), align: 1
+  Segment part 3.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           __low_level_init        00002584        ?call_low_level_init (?C_STARTUP)
+               stack 1 = 00000000 ( 00000000 )
+               stack 2 = 00000000 ( 00000002 )
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?memcpy
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: CODE 00002588 - 000025A3 (0x1c bytes), align: 1
+  Segment part 3.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           memcpy                  00002588        req0handle (coms)
+               stack 1 = 00000000 ( 00000000 )
+               stack 2 = 00000000 ( 00000002 )
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?segment_init
+
+  SEGMENTS IN THE MODULE
+  ======================
+CODE
+  Relative segment, address: CODE 000025A4 - 000025AB (0x8 bytes), align: 1
+  Segment part 3.             Intra module refs:   __segment_init
+           LOCAL                   ADDRESS         
+           =====                   =======         
+           __memclr                000025A4 
+               stack 1 = 00000000 ( 00000000 )
+               stack 2 = 00000000 ( 00000002 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 000025AC - 000025B7 (0xc bytes), align: 1
+  Segment part 4.             Intra module refs:   __segment_init
+           LOCAL                   ADDRESS         
+           =====                   =======         
+           __flashcpy              000025AC 
+               stack 1 = 00000000 ( 00000000 )
+               stack 2 = 00000000 ( 00000002 )
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 000025B8 - 000025C3 (0xc bytes), align: 1
+  Segment part 5.             Intra module refs:   __flashcpy
+                                                   __memclr
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 000025C4 - 00002623 (0x60 bytes), align: 1
+  Segment part 6.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           __segment_init          000025C4        ?need_segment_init (?C_STARTUP)
+               calls direct
+               stack 1 = 00000000 ( 00000000 )
+               stack 2 = 00000000 ( 00000002 )
+
+    *************************************************************************
+
+  DEFINED ABSOLUTE ENTRIES
+  PROGRAM MODULE, NAME : ?FILLER_BYTES
+
+  SEGMENTS IN THE MODULE
+  ======================
+INTVEC
+  Common segment, address: CODE 00000000 - 00000057 (0x58 bytes), align: 0
+  Segment part 1.
+    -------------------------------------------------------------------------
+?FILL1
+  Relative segment, address: CODE 00000058 - 0000008B (0x34 bytes), align: 0
+  Segment part 0.
+
+
+
+
+                ****************************************
+                *                                      *
+                *              CALL GRAPH              *
+                *                                      *
+                ****************************************
+
+  ->Sub-tree of type: Interrupt function tree that does not make
+                    : indirect calls
+                             CSTACK   RSTACK
+    | Stack used (prev) :  00000000 00000000
+  01  ADC_isr
+      | Stack used (prev) :  00000000 00000000
+      | + function block  :  0000001D 00000004
+  <-Sub-tree of type: Interrupt function tree that does not make
+                    : indirect calls
+    | Stack used          :  0000001D 00000004
+
+
+  ->Sub-tree of type: Interrupt function tree that does not make
+                    : indirect calls
+                             CSTACK   RSTACK
+    | Stack used (prev) :  0000001D 00000004
+  02    inirec
+        | Stack used (prev) :  0000001D 00000004
+        | + function block  :  00000000 00000002
+  01  tx0end_isr
+      | Stack used (prev) :  0000001D 00000006
+      | + function block  :  00000010 00000002
+  <-Sub-tree of type: Interrupt function tree that does not make
+                    : indirect calls
+    | Stack used          :  0000002D 00000008
+
+
+  ->Sub-tree of type: Interrupt function tree that does not make
+                    : indirect calls
+                             CSTACK   RSTACK
+    | Stack used (prev) :  0000002D 00000008
+  02    recnextch
+        | Stack used (prev) :  0000002D 00000008
+        | + function block  :  00000000 00000002
+  01  rx0_isr
+      | Stack used (prev) :  0000002D 0000000A
+      | + function block  :  00000011 00000002
+  <-Sub-tree of type: Interrupt function tree that does not make
+                    : indirect calls
+    | Stack used          :  0000003E 0000000C
+
+
+  ->Sub-tree of type: Interrupt function tree that does not make
+                    : indirect calls
+                             CSTACK   RSTACK
+    | Stack used (prev) :  0000003E 0000000C
+  02    getnextch
+        | Stack used (prev) :  0000003E 0000000C
+        | + function block  :  00000004 00000002
+  02    addh
+        | Stack used (prev) :  0000003E 0000000C
+        | + function block  :  00000000 00000002
+  01  tx0_isr
+      | Stack used (prev) :  00000042 0000000E
+      | + function block  :  00000011 00000002
+  <-Sub-tree of type: Interrupt function tree that does not make
+                    : indirect calls
+    | Stack used          :  00000053 00000010
+
+
+  ->Sub-tree of type: Interrupt function tree that does not make
+                    : indirect calls
+                             CSTACK   RSTACK
+    | Stack used (prev) :  00000053 00000010
+  02    adcstart
+        | Stack used (prev) :  00000053 00000010
+        | + function block  :  00000000 00000002
+  01  t0_comp_isr
+      | Stack used (prev) :  00000053 00000012
+      | + function block  :  00000010 00000002
+  <-Sub-tree of type: Interrupt function tree that does not make
+                    : indirect calls
+    | Stack used          :  00000063 00000014
+
+
+  ->Sub-tree of type: Interrupt function tree that does not make
+                    : indirect calls
+                             CSTACK   RSTACK
+    | Stack used (prev) :  00000063 00000014
+  01  t2_comp_isr
+      | Stack used (prev) :  00000063 00000014
+      | + function block  :  00000006 00000002
+  <-Sub-tree of type: Interrupt function tree that does not make
+                    : indirect calls
+    | Stack used          :  00000069 00000016
+
+
+  ->Sub-tree of type: Function tree
+                             CSTACK   RSTACK
+    | Stack used (prev) :  00000069 00000016
+  03      toutexpired
+          | Stack used (prev) :  00000069 00000016
+          | + function block  :  00000000 00000002
+  03      settout
+          | Stack used (prev) :  00000069 00000016
+          | + function block  :  00000000 00000002
+  02    long_toutexpired
+        | Stack used (prev) :  00000069 00000018
+        | + function block  :  00000001 00000002
+  03      settout
+          | Stack used (prev) :  00000069 00000016
+          | + function block  :  00000000 00000002
+          |  Already listed
+  02    long_settout
+        | Stack used (prev) :  00000069 00000018
+        | + function block  :  00000005 00000002
+  02    initime
+        | Stack used (prev) :  00000069 00000016
+        | + function block  :  00000000 00000002
+  04        setdac
+            | Stack used (prev) :  00000069 00000016
+            | + function block  :  00000000 00000002
+  04        setdac
+            | Stack used (prev) :  00000069 00000016
+            | + function block  :  00000000 00000002
+            |  Already listed
+  03      setcur
+          | Stack used (prev) :  00000069 00000016
+          | + function block  :  00000008 00000004
+  02    ini_activation
+        | Stack used (prev) :  00000071 0000001A
+        | + function block  :  00000006 00000002
+  02    setind_prof
+        | Stack used (prev) :  00000069 00000016
+        | + function block  :  00000002 00000004
+  02    Init
+        | Stack used (prev) :  00000069 00000016
+        | + function block  :  00000000 00000002
+  02    iniports
+        | Stack used (prev) :  00000069 00000016
+        | + function block  :  00000000 00000002
+  03      setgroff
+          | Stack used (prev) :  00000069 00000016
+          | + function block  :  00000000 00000002
+  03      setgroff
+          | Stack used (prev) :  00000069 00000016
+          | + function block  :  00000000 00000002
+          |  Already listed
+  03      setgron
+          | Stack used (prev) :  00000069 00000016
+          | + function block  :  00000000 00000002
+  03      setyel
+          | Stack used (prev) :  00000069 00000016
+          | + function block  :  00000000 00000002
+  03      setyel
+          | Stack used (prev) :  00000069 00000016
+          | + function block  :  00000000 00000002
+          |  Already listed
+  03      setyeloff
+          | Stack used (prev) :  00000069 00000016
+          | + function block  :  00000000 00000002
+  03      setyeloff
+          | Stack used (prev) :  00000069 00000016
+          | + function block  :  00000000 00000002
+          |  Already listed
+  03      setyelon
+          | Stack used (prev) :  00000069 00000016
+          | + function block  :  00000000 00000002
+  03      setredoff
+          | Stack used (prev) :  00000069 00000016
+          | + function block  :  00000000 00000002
+  03      setredon
+          | Stack used (prev) :  00000069 00000016
+          | + function block  :  00000000 00000002
+  03      setcur
+          | Stack used (prev) :  00000069 00000016
+          | + function block  :  00000008 00000004
+          |  Already listed
+  03      setcur
+          | Stack used (prev) :  00000069 00000016
+          | + function block  :  00000008 00000004
+          |  Already listed
+  03      setcur
+          | Stack used (prev) :  00000069 00000016
+          | + function block  :  00000008 00000004
+          |  Already listed
+  02    setstate
+        | Stack used (prev) :  00000071 0000001A
+        | + function block  :  00000007 00000002
+  02    load_calibr
+        | Stack used (prev) :  00000069 00000016
+        | + function block  :  00000000 00000004
+  02    setcur
+        | Stack used (prev) :  00000069 00000016
+        | + function block  :  00000008 00000004
+        |  Already listed
+  02    setcur
+        | Stack used (prev) :  00000069 00000016
+        | + function block  :  00000008 00000004
+        |  Already listed
+  03      memcpy
+          | Stack used (prev) :  00000069 00000016
+          | + function block  :  00000000 00000002
+  03      inirec
+          | Stack used (prev) :  0000001D 00000004
+          | + function block  :  00000000 00000002
+          |  Already listed
+  03      ini_activation
+          | Stack used (prev) :  00000071 0000001A
+          | + function block  :  00000006 00000002
+          |  Already listed
+  04        long_settout
+            | Stack used (prev) :  00000069 00000018
+            | + function block  :  00000005 00000002
+            |  Already listed
+  04        setcur
+            | Stack used (prev) :  00000069 00000016
+            | + function block  :  00000008 00000004
+            |  Already listed
+  03      ini_workbyprofile
+          | Stack used (prev) :  00000071 0000001A
+          | + function block  :  00000000 00000002
+  04        toutexpired
+            | Stack used (prev) :  00000069 00000016
+            | + function block  :  00000000 00000002
+            |  Already listed
+  04        settout
+            | Stack used (prev) :  00000069 00000016
+            | + function block  :  00000000 00000002
+            |  Already listed
+  04        setcur
+            | Stack used (prev) :  00000069 00000016
+            | + function block  :  00000008 00000004
+            |  Already listed
+  04        setcur
+            | Stack used (prev) :  00000069 00000016
+            | + function block  :  00000008 00000004
+            |  Already listed
+  04        setcur
+            | Stack used (prev) :  00000069 00000016
+            | + function block  :  00000008 00000004
+            |  Already listed
+  04        setch
+            | Stack used (prev) :  00000069 00000016
+            | + function block  :  00000000 00000004
+  03      calibration
+          | Stack used (prev) :  00000071 0000001A
+          | + function block  :  0000000A 00000002
+  06            addh
+                | Stack used (prev) :  0000003E 0000000C
+                | + function block  :  00000000 00000002
+                |  Already listed
+  05          inisend
+              | Stack used (prev) :  00000069 00000016
+              | + function block  :  00000006 00000002
+  05          inirec
+              | Stack used (prev) :  0000001D 00000004
+              | + function block  :  00000000 00000002
+              |  Already listed
+  05          getcrc
+              | Stack used (prev) :  00000069 00000016
+              | + function block  :  00000000 00000002
+  04        inisendfrm
+            | Stack used (prev) :  0000006F 00000018
+            | + function block  :  00000006 00000002
+  03      sendack
+          | Stack used (prev) :  00000075 0000001A
+          | + function block  :  00000001 00000002
+  03      sendack
+          | Stack used (prev) :  00000075 0000001A
+          | + function block  :  00000001 00000002
+          |  Already listed
+  03      sendack
+          | Stack used (prev) :  00000075 0000001A
+          | + function block  :  00000001 00000002
+          |  Already listed
+  03      sendack
+          | Stack used (prev) :  00000075 0000001A
+          | + function block  :  00000001 00000002
+          |  Already listed
+  03      sendack
+          | Stack used (prev) :  00000075 0000001A
+          | + function block  :  00000001 00000002
+          |  Already listed
+  04        setch
+            | Stack used (prev) :  00000069 00000016
+            | + function block  :  00000000 00000004
+            |  Already listed
+  03      wr_settings
+          | Stack used (prev) :  00000069 0000001A
+          | + function block  :  00000004 00000002
+  03      inisendfrm
+          | Stack used (prev) :  0000006F 00000018
+          | + function block  :  00000006 00000002
+          |  Already listed
+  03      inisendfrm
+          | Stack used (prev) :  0000006F 00000018
+          | + function block  :  00000006 00000002
+          |  Already listed
+  03      inisendfrm
+          | Stack used (prev) :  0000006F 00000018
+          | + function block  :  00000006 00000002
+          |  Already listed
+  03      inisendfrm
+          | Stack used (prev) :  0000006F 00000018
+          | + function block  :  00000006 00000002
+          |  Already listed
+  04        inisend
+            | Stack used (prev) :  00000069 00000016
+            | + function block  :  00000006 00000002
+            |  Already listed
+  04        getcrc
+            | Stack used (prev) :  00000069 00000016
+            | + function block  :  00000000 00000002
+            |  Already listed
+  04        _copy
+            | Stack used (prev) :  00000069 00000016
+            | + function block  :  00000000 00000002
+  03      sendexept
+          | Stack used (prev) :  0000006F 00000018
+          | + function block  :  00000004 00000002
+  04        getcrc
+            | Stack used (prev) :  00000069 00000016
+            | + function block  :  00000000 00000002
+            |  Already listed
+  03      chkfrm
+          | Stack used (prev) :  00000069 00000018
+          | + function block  :  00000004 00000002
+  02    req0handle
+        | Stack used (prev) :  0000007B 0000001C
+        | + function block  :  00000004 00000002
+  02    read_settings
+        | Stack used (prev) :  00000069 00000016
+        | + function block  :  00000000 00000004
+  03      inirec
+          | Stack used (prev) :  0000001D 00000004
+          | + function block  :  00000000 00000002
+          |  Already listed
+  02    iniuart0
+        | Stack used (prev) :  00000069 00000016
+        | + function block  :  00000004 00000002
+  02    adcini
+        | Stack used (prev) :  00000069 00000016
+        | + function block  :  00000000 00000002
+  02    addsamples
+        | Stack used (prev) :  00000069 00000016
+        | + function block  :  00000004 00000004
+  02    ini_addsamples
+        | Stack used (prev) :  00000069 00000016
+        | + function block  :  00000000 00000002
+  01  main
+      | Stack used (prev) :  0000007F 0000001E
+      | + function block  :  00000002 00000002
+  <-Sub-tree of type: Function tree
+    | Stack used          :  00000081 00000020
+
+
+  ->Sub-tree of type: Function tree
+                             CSTACK   RSTACK
+    | Stack used (prev) :  00000081 00000020
+  01  __low_level_init
+      | Stack used (prev) :  00000081 00000020
+      | + function block  :  00000000 00000002
+  <-Sub-tree of type: Function tree
+    | Stack used          :  00000081 00000022
+
+
+  ->Sub-tree of type: Function tree
+                             CSTACK   RSTACK
+    | Stack used (prev) :  00000081 00000022
+  02    __flashcpy
+        | Stack used (prev) :  00000081 00000022
+        | + function block  :  00000000 00000002
+  02    __memclr
+        | Stack used (prev) :  00000081 00000022
+        | + function block  :  00000000 00000002
+  01  __segment_init
+      | Stack used (prev) :  00000081 00000024
+      | + function block  :  00000000 00000002
+  <-Sub-tree of type: Function tree
+    | Stack used          :  00000081 00000026
+
+
+
+                ****************************************
+                *                                      *
+                *        END OF CROSS REFERENCE        *
+                *                                      *
+                ****************************************
+
+ 9 732 bytes of CODE memory (+             52 range fill )
+ 4 057 bytes of DATA memory (+ 45 absolute )
+
+Errors: none
+Warnings: 2
+

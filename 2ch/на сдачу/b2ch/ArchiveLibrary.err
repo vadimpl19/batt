@@ -1,0 +1,157 @@
+Errors:
+
+Component HC49SU was placed from library BATT.LIB.  Library BATT.LIB is not one 
+of the open libraries.  Open libraries will be searched for component HC49SU.
+
+Component IDC-10MS was placed from library BATT.LIB.  Library BATT.LIB is not on
+e of the open libraries.  Open libraries will be searched for component IDC-10MS
+.
+
+Component REF19X was placed from library BATT.LIB.  Library BATT.LIB is not one 
+of the open libraries.  Open libraries will be searched for component REF19X.
+
+Component +5V was placed from library BATT.LIB.  Library BATT.LIB is not one of 
+the open libraries.  Open libraries will be searched for component +5V.
+
+Component USBB-1J was placed from library BATT.LIB.  Library BATT.LIB is not one
+ of the open libraries.  Open libraries will be searched for component USBB-1J.
+
+Component GND was placed from library BATT.LIB.  Library BATT.LIB is not one of 
+the open libraries.  Open libraries will be searched for component GND.
+
+Component AT1281 was placed from library BATT.LIB.  Library BATT.LIB is not one 
+of the open libraries.  Open libraries will be searched for component AT1281.
+
+Component IRF7470 was placed from library BATT.LIB.  Library BATT.LIB is not one
+ of the open libraries.  Open libraries will be searched for component IRF7470.
+
+Component STR was placed from library BATT.LIB.  Library BATT.LIB is not one of 
+the open libraries.  Open libraries will be searched for component STR.
+
+Component AD5331 was placed from library BATT.LIB.  Library BATT.LIB is not one 
+of the open libraries.  Open libraries will be searched for component AD5331.
+
+Component R0805 was placed from library BATT.LIB.  Library BATT.LIB is not one o
+f the open libraries.  Open libraries will be searched for component R0805.
+
+Component C0805 was placed from library BATT.LIB.  Library BATT.LIB is not one o
+f the open libraries.  Open libraries will be searched for component C0805.
+
+Component TPS3825 was placed from library BATT.LIB.  Library BATT.LIB is not one
+ of the open libraries.  Open libraries will be searched for component TPS3825.
+
+Component L0805 was placed from library BATT.LIB.  Library BATT.LIB is not one o
+f the open libraries.  Open libraries will be searched for component L0805.
+
+Component C2_29_125 was placed from library BATT.LIB.  Library BATT.LIB is not o
+ne of the open libraries.  Open libraries will be searched for component C2_29_1
+25.
+
+Component L-1344 was placed from library BATT.LIB.  Library BATT.LIB is not one 
+of the open libraries.  Open libraries will be searched for component L-1344.
+
+Component LM2902D was placed from library BATT.LIB.  Library BATT.LIB is not one
+ of the open libraries.  Open libraries will be searched for component LM2902D.
+
+Component FTR232 was placed from library BATT.LIB.  Library BATT.LIB is not one 
+of the open libraries.  Open libraries will be searched for component FTR232.
+
+Component MAX860 was placed from library BATT.LIB.  Library BATT.LIB is not one 
+of the open libraries.  Open libraries will be searched for component MAX860.
+
+Component XK2(2.54MM) was placed from library BATT.LIB.  Library BATT.LIB is not
+ one of the open libraries.  Open libraries will be searched for component XK2(2
+.54MM).
+
+Total error messages: 20
+
+Information:
+
+Component HC49SU copied from library D:\PCADLIB\MYLIBS\B.LIB to library D:\curre
+nt_prj\batt\2ch\на сдачу\b2ch\B2CH.lib.
+
+Component IDC-10MS copied from library D:\PCADLIB\MYLIBS\XP.LIB to library D:\cu
+rrent_prj\batt\2ch\на сдачу\b2ch\B2CH.lib.
+
+Component REF19X copied from library D:\PCADLIB\MYLIBS\DA.LIB to library D:\curr
+ent_prj\batt\2ch\на сдачу\b2ch\B2CH.lib.
+
+Component XK2(2MM) copied from library D:\PCADLIB\MYLIBS\XK.LIB to library D:\cu
+rrent_prj\batt\2ch\на сдачу\b2ch\B2CH.lib.
+
+Component +5V copied from library D:\PCADLIB\MYLIBS\POWER.LIB to library D:\curr
+ent_prj\batt\2ch\на сдачу\b2ch\B2CH.lib.
+
+Component USBB-1J copied from library D:\PCADLIB\MYLIBS\DA.LIB to library D:\cur
+rent_prj\batt\2ch\на сдачу\b2ch\B2CH.lib.
+
+Component GND copied from library D:\PCADLIB\MYLIBS\POWER.LIB to library D:\curr
+ent_prj\batt\2ch\на сдачу\b2ch\B2CH.lib.
+
+Component AT1281 copied from library D:\PCADLIB\MYLIBS\DD.LIB to library D:\curr
+ent_prj\batt\2ch\на сдачу\b2ch\B2CH.lib.
+
+Component AD620 copied from library D:\PCADLIB\MYLIBS\DA.LIB to library D:\curre
+nt_prj\batt\2ch\на сдачу\b2ch\B2CH.lib.
+
+Component TANTAL_C copied from library D:\PCADLIB\MYLIBS\C.LIB to library D:\cur
+rent_prj\batt\2ch\на сдачу\b2ch\B2CH.lib.
+
+Component T491D copied from library D:\PCADLIB\MYLIBS\C.LIB to library D:\curren
+t_prj\batt\2ch\на сдачу\b2ch\B2CH.lib.
+
+Component IRF7470 copied from library D:\PCADLIB\MYLIBS\VT.LIB to library D:\cur
+rent_prj\batt\2ch\на сдачу\b2ch\B2CH.lib.
+
+Component MBR0540 copied from library D:\PCADLIB\MYLIBS\VD.LIB to library D:\cur
+rent_prj\batt\2ch\на сдачу\b2ch\B2CH.lib.
+
+Component STR copied from library D:\PCADLIB\MYLIBS\POWER.LIB to library D:\curr
+ent_prj\batt\2ch\на сдачу\b2ch\B2CH.lib.
+
+Component AD5331 copied from library D:\PCADLIB\MYLIBS\DA.LIB to library D:\curr
+ent_prj\batt\2ch\на сдачу\b2ch\B2CH.lib.
+
+Component R0805 copied from library D:\PCADLIB\MYLIBS\R.LIB to library D:\curren
+t_prj\batt\2ch\на сдачу\b2ch\B2CH.lib.
+
+Component BATT copied from library D:\PCADLIB\MYLIBS\XK.LIB to library D:\curren
+t_prj\batt\2ch\на сдачу\b2ch\B2CH.lib.
+
+Component C0805 copied from library D:\PCADLIB\MYLIBS\C.LIB to library D:\curren
+t_prj\batt\2ch\на сдачу\b2ch\B2CH.lib.
+
+Component TPS3825 copied from library D:\PCADLIB\MYLIBS\DA.LIB to library D:\cur
+rent_prj\batt\2ch\на сдачу\b2ch\B2CH.lib.
+
+Component L0805 copied from library D:\PCADLIB\MYLIBS\L.LIB to library D:\curren
+t_prj\batt\2ch\на сдачу\b2ch\B2CH.lib.
+
+Component C2_29_125 copied from library D:\PCADLIB\MYLIBS\R.LIB to library D:\cu
+rrent_prj\batt\2ch\на сдачу\b2ch\B2CH.lib.
+
+Component L-1344 copied from library D:\PCADLIB\MYLIBS\INDICATOR.LIB to library 
+D:\current_prj\batt\2ch\на сдачу\b2ch\B2CH.lib.
+
+Component LM2902D copied from library D:\PCADLIB\MYLIBS\DA.LIB to library D:\cur
+rent_prj\batt\2ch\на сдачу\b2ch\B2CH.lib.
+
+Component AD8672 copied from library D:\PCADLIB\MYLIBS\DA.LIB to library D:\curr
+ent_prj\batt\2ch\на сдачу\b2ch\B2CH.lib.
+
+Component FTR232 copied from library D:\PCADLIB\MYLIBS\DD.LIB to library D:\curr
+ent_prj\batt\2ch\на сдачу\b2ch\B2CH.lib.
+
+Component MAX860 copied from library D:\PCADLIB\MYLIBS\DA.LIB to library D:\curr
+ent_prj\batt\2ch\на сдачу\b2ch\B2CH.lib.
+
+Component XK2(2.54MM) copied from library D:\PCADLIB\MYLIBS\XK.LIB to library D:
+\current_prj\batt\2ch\на сдачу\b2ch\B2CH.lib.
+
+Component MC34063ABD copied from library D:\PCADLIB\MYLIBS\DA.LIB to library D:\
+current_prj\batt\2ch\на сдачу\b2ch\B2CH.lib.
+
+Component CW68 copied from library D:\PCADLIB\MYLIBS\L.LIB to library D:\current
+_prj\batt\2ch\на сдачу\b2ch\B2CH.lib.
+
+Total informational messages: 29
